@@ -20,7 +20,7 @@ class LoginPage extends Component {
             <div className='container'>
                 <form onSubmit={this.onHandleLogin}>
                     <h3>Sign in</h3>
-                    <Button buttonName= {this.state.buttonName}/>
+                    <Button label= "SIGN IN"/>
                 </form>
             </div>
         );

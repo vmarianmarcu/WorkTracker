@@ -16,7 +16,7 @@ class RegisterPage extends Component {
                     <h3>Sign up</h3>
                     <FirstName/>
                     <LastName/>
-                    <Button/>
+                    <Button label="SIGN UP" />
                 </form>
             </div>
         );
