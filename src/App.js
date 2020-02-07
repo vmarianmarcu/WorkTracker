@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginPage from './container/LoginPage';
 import RegisterPage from './container/RegisterPage';
-// import DashboardPage from './container/DashboargPage.js'
+import DashboardPage from './container/DashboardPage';
 
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <LoginPage/>
       <RegisterPage/>
-      {/* <DashboardPage/> */}
+      <DashboardPage/>
     </div>
   );
 }

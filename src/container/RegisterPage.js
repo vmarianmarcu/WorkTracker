@@ -11,7 +11,7 @@ class RegisterPage extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='containerRegister'>
                 <form onSubmit={this.onHandleRegistration}>
                     <h3>Sign up</h3>
                     <FirstName/>
