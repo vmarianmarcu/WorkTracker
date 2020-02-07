@@ -1,18 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import FirstName from '../components/FirstName';
 import LastName from '../components/LastName';
 import Button from '../components/Button';
 
-class RegisterPage extends Component {
+const RegisterPage = () => {
 
-    onHandleRegistration = (e) => {
-        e.preventDefault();
-    }
-
-    render() {
         return (
             <div className='containerRegister'>
-                <form onSubmit={this.onHandleRegistration}>
+                <form>
                     <h3>Sign up</h3>
                     <FirstName/>
                     <LastName/>
@@ -21,5 +16,4 @@ class RegisterPage extends Component {
             </div>
         );
     }
-}
 export default RegisterPage;

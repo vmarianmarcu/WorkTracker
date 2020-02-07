@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-// import Navbar from '../components/Navbar';
+import React from 'react';
 
-class DashboardPage extends Component {
-
-    render() {
-        return(
-            <div className="containerDashboard">
-                {/* <Navbar/> */}
+const DashboardPage = () => {       
+        return (
+            <div className='containerDashboard'>
+                <form>
+                    <h3>Dashboard Page</h3>
+                </form>
             </div>
-        )
+        );
     }
-}
 export default DashboardPage;
