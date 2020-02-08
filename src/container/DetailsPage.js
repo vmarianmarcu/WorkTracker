@@ -1,6 +1,8 @@
 import React from 'react';
 
-const DetailsPage = () => {       
+const DetailsPage = (props) => {  
+        console.log(props);
+             
         return (
             <div className='containerDetails'>
                 <form>

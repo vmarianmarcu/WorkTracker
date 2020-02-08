@@ -9,8 +9,6 @@ import Projects  from './container/ProjectsPage';
 import Details from './container/DetailsPage';
 import Logout from './container/LogoutPage';
 
-
-
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';

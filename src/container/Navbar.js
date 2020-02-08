@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import '../static/navbar.css';
+
+import { Link, NavLink } from 'react-router-dom';
  
 const Navbar = () => {
     return(
@@ -8,10 +10,10 @@ const Navbar = () => {
             <div className="container">
                 <a className="navName">Schedule work</a>
                 <ul>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/projects">Projects</a></li>
-                    <li><a href="/details">Details</a></li>
-                    <li><a href="/logout">Logout</a></li>
+                    <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                    <li><NavLink to="/projects">Projects</NavLink></li>
+                    <li><NavLink to="/details">Details</NavLink></li>
+                    <li><NavLink to="/logout">Logout</NavLink></li>
                 </ul>
             </div>
         </nav>
