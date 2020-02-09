@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ProjectsPage = () => {       
+const Projects = () => {       
         return (
             <div className='containerProjects'>
                 <form>
-                    <h3>Projects Page</h3>
+                    <h3>Projects</h3>
                 </form>
             </div>
         );
     }
-export default ProjectsPage;
+export default Projects;

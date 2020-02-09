@@ -8,7 +8,7 @@ class ButtonSubmit extends Component {
         return (
             <div>
                 <div className="content-section implementation button-demo">
-                    <Button label={label} />
+                    <Button label={label}/>
                 </div>
             </div>
         )

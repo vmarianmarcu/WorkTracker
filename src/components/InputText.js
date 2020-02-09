@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {InputText} from "primereact/inputtext";
 
-class FirstName extends Component {
+class InputField extends Component {
     constructor() {
         super();
         this.state = {
@@ -21,4 +21,4 @@ class FirstName extends Component {
         );
     }
 }
-export default FirstName;
+export default InputField;

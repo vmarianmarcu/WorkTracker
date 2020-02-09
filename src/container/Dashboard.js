@@ -1,12 +1,12 @@
 import React from 'react';
 
-const DashboardPage = () => {       
+const Dashboard = () => {       
         return (
             <div className='containerDashboard'>
                 <form>
-                    <h3>Dashboard Page</h3>
+                    <h3>Dashboard</h3>
                 </form>
             </div>
         );
     }
-export default DashboardPage;
+export default Dashboard;

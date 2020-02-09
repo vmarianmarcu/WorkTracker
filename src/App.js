@@ -1,14 +1,14 @@
 import  React, { Component } from 'react';
-import LoginPage from './container/LoginPage';
-import RegisterPage from './container/RegisterPage';
-import {BrowserRouter, Route} from 'react-router-dom';
+import Login from './container/Login';
+import RegisterPage from './container/Register';
+import {BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Navbar from './container/Navbar';
-import Dashboard from './container/DashboardPage';
-import Projects  from './container/ProjectsPage';
-import Details from './container/DetailsPage';
-import Logout from './container/LogoutPage';
+import Dashboard from './container/Dashboard';
+import Projects  from './container/Projects';
+import Details from './container/Details';
 
+// The css dependencies for PrimePeact components
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -19,13 +19,14 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar/>
-          <Route exact path="/" component={LoginPage} />
-          <Route path="/login" component={LoginPage} />
+          <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/login" component={Login} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/projects" component={Projects} />
           <Route path="/details" component={Details} />
-          <Route path="/logout" component={Logout} />
+          </Switch>
         </div>
       </BrowserRouter>
     );

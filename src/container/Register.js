@@ -1,5 +1,5 @@
 import React from 'react';
-import FirstName from '../components/FirstName';
+import InputText from '../components/InputText';
 import LastName from '../components/LastName';
 import Button from '../components/Button';
 
@@ -9,7 +9,7 @@ const RegisterPage = () => {
             <div className='containerRegister'>
                 <form>
                     <h3>Sign up</h3>
-                    <FirstName/>
+                    <InputText/>
                     <LastName/>
                     <Button label="SIGN UP" />
                 </form>

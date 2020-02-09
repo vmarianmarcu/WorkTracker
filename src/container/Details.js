@@ -1,14 +1,14 @@
 import React from 'react';
 
-const DetailsPage = (props) => {  
+const Details = (props) => {  
         console.log(props);
              
         return (
             <div className='containerDetails'>
                 <form>
-                    <h3>Details Page</h3>
+                    <h3>Details</h3>
                 </form>
             </div>
         );
     }
-export default DetailsPage;
+export default Details;
