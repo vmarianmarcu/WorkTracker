@@ -2,21 +2,15 @@ import React, { Component } from 'react';
 import {InputText} from "primereact/inputtext";
 
 class InputField extends Component {
-    constructor() {
-        super();
-        this.state = {
-            firstName: null
-        }
-    }
+   
     render() {
+        const {id, placeholder, onChange } = this.props;
         return(
-            <div className="p-col-12 p-md-4">
-                <div className="p-inputgroup">
-                    <span className="p-inputgroup-addon">
-                        <i className="pi pi-user"></i>
-                    </span>
-                    <InputText placeholder="FirstName*" />
-                </div>
+            <div className="input-text-container">
+               <span className="p-float-label">
+                    <InputText id={id} onChange={onChange} />
+                    <label htmlFor={id}>{placeholder}</label>
+                </span>
             </div>
         );
     }
