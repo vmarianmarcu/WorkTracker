@@ -16,7 +16,6 @@ class Login extends Component {
         })
     }
 
-
     handleSubmit = (e)=> {
         e.preventDefault();
         console.log(this.state);
@@ -29,7 +28,7 @@ class Login extends Component {
                     <h3>Sign in</h3>
                     <Input type="email" id="email" placeholder="Email Address*" onChange={this.handleChange} />
                     <Input type="password" id="password" placeholder="Password*" onChange={this.handleChange} />
-                    <Button label= "SIGN IN"/>
+                    <Button type="submit" label= "SIGN IN"/>
                 </form>
                 <p className="linkToRegister"> Don't have an account? <Link to="register">Sign Up</Link></p>
             </div>

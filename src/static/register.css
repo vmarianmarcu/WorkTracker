@@ -1,0 +1,29 @@
+body{
+    font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: rgb(245,245,245);
+    font-size: 13px;
+    letter-spacing: .01em;
+    line-height: 20px;
+    font-weight: 400;
+}
+.containerRegister {
+    width: 500px;
+    background: white;
+    border: solid 1px red;
+}
+.containerRegister form Input {
+    min-height: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    width: 400px;
+    height: 50px;
+}
+.containerRegister form Button{
+width: 200px;
+}
+.containerRegister h3 {
+    letter-spacing: .01em;
+    line-height: 20px;
+    font-weight: 400;
+}
+
