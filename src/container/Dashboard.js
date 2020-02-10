@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ProjectList  from '../components/ProjectsList';
+import { connect } from 'react-redux';
 
-const Dashboard = () => {       
+class Dashboard extends Component {       
+    
+    render(){
+        const { projects } = this.props; 
+        
         return (
             <div className='containerDashboard'>
-                <form>
                     <h3>Dashboard</h3>
-                </form>
+                    <ProjectList projects={projects} />
+    
             </div>
         );
     }
-export default Dashboard;
+}
+
+const mapStateToProps = (state) => {
+    return {
+        projects: state.project.projects
+    }
+}
+
+export default connect(mapStateToProps) (Dashboard);
