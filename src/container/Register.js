@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import { Link } from 'react-router-dom';
 
-class RegisterPage extends Component {
+class Register extends Component {
 
     state = {
         firstName: '',
@@ -35,8 +36,9 @@ class RegisterPage extends Component {
                     <Input type="password" id="password" placeholder="Password*" onChange={this.handleChange} />
                     <Button label="SIGN UP" />
                 </form>
+                <p className="linkToRegister"> Already have an account? <Link to="login">Sign in</Link></p>
             </div>
         );
     }
 }
-export default RegisterPage;
+export default Register;

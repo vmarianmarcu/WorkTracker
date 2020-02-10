@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../components/Button';
-import Input from '../components/Input'
+import Input from '../components/Input';
+import { Link } from 'react-router-dom'
 
 class Login extends Component {   
     
@@ -30,6 +31,7 @@ class Login extends Component {
                     <Input type="password" id="password" placeholder="Password*" onChange={this.handleChange} />
                     <Button label= "SIGN IN"/>
                 </form>
+                <p className="linkToRegister"> Don't have an account? <Link to="register">Sign Up</Link></p>
             </div>
         );
     }
