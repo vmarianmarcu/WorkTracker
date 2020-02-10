@@ -8,8 +8,8 @@ class InputField extends Component {
         return(
             <div className="input-text-container">
                <span className="p-float-label">
-                    <InputText type={type} id={id} onChange={onChange} />
-                    <label htmlFor={id}>{placeholder}</label>
+                    <InputText type={type} id={id} placeholder={placeholder} onChange={onChange} />
+                    {/* <label htmlFor={id}>{placeholder}</label> */}
                 </span>
             </div>
         );
