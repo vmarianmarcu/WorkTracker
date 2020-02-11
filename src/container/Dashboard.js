@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProjectList  from '../components/ProjectsList';
 import { connect } from 'react-redux';
+import AddProject from '../components/AddProject'
 
 class Dashboard extends Component {       
     
@@ -10,8 +11,8 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                     <h3>Dashboard</h3>
+                    <AddProject />
                     <ProjectList projects={projects} />
-    
             </div>
         );
     }
