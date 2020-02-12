@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Input from './Input';
 import Button from './Button';
+import { connect } from 'react-redux';
+import { createProject } from '../store/actions/projectActions';
 
 class AddProject extends Component {   
-    
+
     state = {
        title: ''
     }
@@ -16,7 +18,8 @@ class AddProject extends Component {
 
     handleSubmit = (e)=> {
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
+        this.props.createProject(this.state)
     }
     
     render() {
@@ -24,10 +27,17 @@ class AddProject extends Component {
             <div className='containerLogin'>
                 <form onSubmit={this.handleSubmit}>
                     <Input type="text" id="title" placeholder="Add Project*" onChange={this.handleChange} />
-                    <Button type="submit" label= "ADD" />
+                    <Button type="submit" label="ADD" />
                 </form>
             </div>
         );
     }
 }
-export default AddProject;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createProject: (project) => dispatch(createProject(project))
+    }
+
+}
+export default connect(null, mapDispatchToProps) (AddProject);
