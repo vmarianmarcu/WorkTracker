@@ -18,9 +18,9 @@ class Dashboard extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (props) => {
     return {
-        projects: state.project.projects
+        projects: props.projects
     }
 }
 
