@@ -4,11 +4,11 @@ import {InputText} from "primereact/inputtext";
 class InputField extends Component {
    
     render() {
-        const {id, placeholder, onChange,type } = this.props;
+        const {id, placeholder, onChange,type, className, name, value } = this.props;
         return(
             <div className="input-text-container">
                <span className="p-float-label">
-                    <InputText type={type} id={id} placeholder={placeholder} onChange={onChange} />
+                    <InputText type={type} id={id} className={className} name={name} value={value} placeholder={placeholder} onChange={onChange} />
                     {/* <label htmlFor={id}>{placeholder}</label> */}
                 </span>
             </div>

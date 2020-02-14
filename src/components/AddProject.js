@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Input from './Input';
 import Button from './Button';
 import { connect } from 'react-redux';
-import { createProject } from '../store/actions/projectActions';
+import { createProject } from '../actions/projectActions';
 
 class AddProject extends Component {   
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ProjectList  from '../components/ProjectsList';
+import ProjectList  from '../../components/ProjectsList';
 import { connect } from 'react-redux';
-import AddProject from '../components/AddProject'
+import AddProject from '../../components/AddProject';
 
 class Dashboard extends Component {       
     
