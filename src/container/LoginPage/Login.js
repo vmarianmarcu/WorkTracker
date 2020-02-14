@@ -65,7 +65,7 @@ class Login extends Component {
                         <Input type="email" id="email" className="form-control"  name="email"  value={email} placeholder="Email Address*" onChange={this.handleChange} />
                         {
                             submitted && !email &&
-                            <div> className="help-block"> Email is required </div>
+                            <div className="help-block"> Email is required </div>
                         }
                     </div>
                     <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
