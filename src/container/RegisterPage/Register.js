@@ -99,9 +99,11 @@ class Register extends Component {
                     <div className="form-group">
                         <Button type="submit" label="SIGN UP" />
                         { registering }
+
+                        <p className="linkToRegister"> Already have an account? <Link to="login">Sign in</Link></p>
                     </div>
                 </form>
-                <p className="linkToRegister"> Already have an account? <Link to="login">Sign in</Link></p>
+                
             </div>
         );
     }

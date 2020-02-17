@@ -1,0 +1,21 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.6;
+    /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,
+     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: linear-gradient(120deg, #59c2ff, rgb(245,245,245));
+     color: #666;
+ }

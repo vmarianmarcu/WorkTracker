@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 // import { login } from '../reducers/Reducer';
 import authentication from '../../reducers';
 
-import { userActions } from '../../actions'
+import { userActions } from '../../actions';
+import '../../static/login.css';
 
 class Login extends Component {
 
@@ -78,7 +79,6 @@ class Login extends Component {
 
                     <div className="form-group">
                         <Button type="submit" label= "SIGN IN"/>
-
 
                         <p className="linkToRegister"> Don't have an account? <Link to="register">Sign Up</Link></p>
                     </div>

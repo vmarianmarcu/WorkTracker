@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Input from './Input';
 import Button from './Button';
 import { connect } from 'react-redux';
-import { createProject } from '../actions/projectActions';
 
 class AddProject extends Component {   
 
@@ -19,7 +18,6 @@ class AddProject extends Component {
     handleSubmit = (e)=> {
         e.preventDefault();
         console.log(this.state);
-        this.props.createProject(this.state)
     }
     
     render() {
@@ -34,10 +32,11 @@ class AddProject extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        createProject: (project) => dispatch(createProject(project))
-    }
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         createProject: (project) => dispatch(createProject(project))
+//     }
 
-}
-export default connect(null, mapDispatchToProps) (AddProject);
+// }
+// export default connect(null, mapDispatchToProps) (AddProject);
+export default AddProject;

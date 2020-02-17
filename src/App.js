@@ -17,6 +17,8 @@ import { connect } from 'react-redux';
 import { history } from './helpers';
 import { alertActions } from './actions';
 
+import './static/app.css'
+
 
 class App extends Component {
 
@@ -38,7 +40,7 @@ class App extends Component {
           }
         <Router history={history}>
           <div className="App">
-            <Navbar/>
+            {/* <Navbar/> */}
             <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
