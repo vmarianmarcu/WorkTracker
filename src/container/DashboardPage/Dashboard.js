@@ -12,28 +12,71 @@ import { projectActions } from '../../actions/project.actions';
 
 class Dashboard extends Component {  
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [],
+            isLoaded: false
+        }
+    }
+
     // componentWillMount() {
     //     const { fetchProjects } = this.props;
     //     fetchProjects();
     // }
 
+    componentDidMount() {
+
+      fetch('http://localhost:3000/projects')
+        .then(res => res.json())
+        .then(json => {
+            this.setState({
+                isLoaded: true,
+                items: json,
+            })
+        })
+    }
+
     
     render(){
-        const { projects, error } = this.props; 
-        
-        return (
-            <div className='containerDashboard'>
-                <div>
-                    <Navbar />
-                    <h3>Dashboard</h3>
-                    <AddProject />
-                </div>
-                <div className='product-list-wrapper'>
-                    {error && <span className='product-list-error'>{error}</span>}
-                    <ProjectList project={projects} />
-                </div>
-            </div>
-        );
+        // const { projects, error } = this.props; 
+            const { isLoaded, items } = this.state;
+              if (!isLoaded) {
+                  return <div>Loading...</div>;
+              }  
+              else {
+                  return (
+                      <div>
+                          <ul>
+                              {items.map(item => (
+                                  <li key={item.id}>
+                                      { item.name }
+                                  </li>
+                              ))};
+                          </ul>
+                      </div>
+                  )
+              }
+
+
+
+
+
+
+            // <div className='containerDashboard'>
+            //     <div>
+            //         <Navbar />
+            //         <h3>Dashboard</h3>
+            //         <AddProject />
+            //     </div>
+            //     {/* <div className='product-list-wrapper'>
+            //         {error && <span className='product-list-error'>{error}</span>}
+            //         <ProjectList project={projects} />
+            //     </div> */}
+
+            
+           
+            // </div>
     }
 }
 
