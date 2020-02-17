@@ -1,26 +1,23 @@
 import { projectConstants } from '../constants';
+import { projectService } from '../services/project.service';
 
 export const projectActions = {
-    request,
-    success,
-    failure
+    getAll
 }
 
-function request() { 
-    return { 
-        type: projectConstants.FETCH_PROJECTS_PANDING 
-    } 
-}
+function getAll() {
+    return dispatch => {
+        dispatch(request());
 
-function success(projects) {
-    return {
-        type: projectConstants.FETCH_PROJECTS_SUCCESS, projects 
-    } 
-}
+        projectService.getAll()
+            .then(
+                projects => dispatch(success(projects)),
+                error => dispatch(failure(error.toString()))
+            );
+    };
 
-function failure(error) {
-    return { 
-        type:  projectConstants.FETCH_PROJECTS_ERROR, error 
-    } 
-}
+function request() { return { type: projectConstants.FETCH_PROJECTS_PANDING } }
+function success(projects) { return { type: projectConstants.FETCH_PROJECTS_SUCCESS, projects } }
+function failure(error) { return {  type:  projectConstants.FETCH_PROJECTS_ERROR, error } }
 
+}

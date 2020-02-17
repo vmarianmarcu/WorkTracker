@@ -8,14 +8,14 @@ import '../../static/dashboard.css';
 
 import { getProjects, getProjectsPending, getProjectsError } from '../../reducers/project.reducer';
 import { bindActionCreators } from 'redux';
-import fetchProjects from '../../services/project.service';
+import { projectActions } from '../../actions/project.actions';
 
 class Dashboard extends Component {  
 
-    componentWillMount() {
-        const { fetchProjects } = this.props;
-        fetchProjects();
-    }
+    // componentWillMount() {
+    //     const { fetchProjects } = this.props;
+    //     fetchProjects();
+    // }
 
     
     render(){
@@ -43,9 +43,12 @@ const mapStateToProps =  state => ({
     pending: getProjectsPending(state)
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    fetchProjects: fetchProjects
-}, dispatch)
+// const mapDispatchToProps = dispatch => bindActionCreators({
+    
+// }, dispatch)
 
+const actionCreators = {
+    projects: projectActions.getAll,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps) (Dashboard);
+export default connect(mapStateToProps, actionCreators) (Dashboard);
