@@ -16,7 +16,7 @@ function getAll() {
             );
     };
 
-function request() { return { type: projectConstants.FETCH_PROJECTS_PANDING } }
+function request(projects) { return { type: projectConstants.FETCH_PROJECTS_PANDING,projects } }
 function success(projects) { return { type: projectConstants.FETCH_PROJECTS_SUCCESS, projects } }
 function failure(error) { return {  type:  projectConstants.FETCH_PROJECTS_ERROR, error } }
 

@@ -1,17 +1,18 @@
 import React from 'react';
-import ListBox from './ListBox';
+import LIistBox from './ListBox';
 
 const projectList = ({projects}) => {
 
         return(
-            <div className="project-list section">
-                {
-                    projects && projects.map(project => {
-                        return(
-                           <ListBox name="Projects" options={project} project={project} key={project.id} />
-                        )
+            <div className="p-listbox-list">
+                {/* {
+                    projects.items && projects.items.map(project => {
+                        return( */}
+                            <LIistBox value={ projects.items } options={projects.items} />
+                        {/* )
                     })
-                }
+
+                } */}
             </div>
         )
     }
