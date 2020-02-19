@@ -83,11 +83,7 @@ class Login extends Component {
                         <p className="linkToRegister"> Don't have an account? <Link to="register">Sign Up</Link></p>
                     </div>
 
-                    {loggingIn}
-
-                    {/* { isLoginPending && <div>Please wait...</div> }
-                    { isLoginSuccess && <div>Welcome back!</div> }
-                    { loginError && <div>{loginError.message}</div> } */}
+                    {loggingIn} 
 
                 </form>
                 
@@ -107,20 +103,3 @@ const actionCreators = {
 };;
 
 export default connect(mapState, actionCreators) (Login);
-
-
-// const mapStateToProps = (state) => {
-//     return {
-//         isLoginPending: state.isLoginPending, 
-//         isLoginSuccess: state.isLoginSuccess,
-//         loginError: state.loginError
-//     }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         login: (email, password) => dispatch(login(email, password))
-//     };
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);

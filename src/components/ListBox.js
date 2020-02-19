@@ -1,24 +1,15 @@
 import React from 'react';
 import {ListBox} from 'primereact/listbox';
 
-const LIistBox = ({ name, options, project }) => {
-
+const LIistBox = ({ value,name, options, optionLabel }) => {
     return(
-        <div className="p-listbox">
-            {/* <div className="p-listbox-header">
-                <div className="p-listbox-list-wrapper">
-                    <div className="p-listbox-list">
-                        <div className="p-listbox-item">
-                            <ListBox optionLabel={name} options={project} multiple={true} />
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-            <span>
-                {project.title}
-            </span>
-
-        </div>
+            <div className="p-listbox-item" >
+               <ListBox  optionLabel={optionLabel} />
+                {/* <span>
+                    {name}
+                </span> */}
+            </div>
+            
     )
 }
 export default LIistBox;

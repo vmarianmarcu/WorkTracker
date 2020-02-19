@@ -16,6 +16,7 @@ import {Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { history } from './helpers';
 import { alertActions } from './actions';
+import { PrivateRoute } from './components/PrivateRoute';
 
 import './static/app.css'
 
@@ -45,7 +46,7 @@ class App extends Component {
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={RegisterPage} />
-            <Route path="/dashboard" component={Dashboard} />
+            <PrivateRoute path="/dashboard" component={Dashboard} />
             <Route path="/projects" component={Projects} />
             <Route path="/details" component={Details} />
             <Redirect from="*" to="/" />

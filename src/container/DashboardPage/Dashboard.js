@@ -6,92 +6,60 @@ import AddProject from '../../components/AddProject';
 import Navbar from '../Navbar/Navbar'; 
 import '../../static/dashboard.css';
 
-import { getProjects, getProjectsPending, getProjectsError } from '../../reducers/project.reducer';
-import { bindActionCreators } from 'redux';
 import { projectActions } from '../../actions/project.actions';
 
 class Dashboard extends Component {  
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: [],
-            isLoaded: false
+    componentDidMount() {
+        this.props.getProjects();
+    }
+                
+    
+    render() {
+        const { projects } = this.props; 
+
+            return (
+                <div>
+                    {/* <div>
+                        <h3>All registered projects:</h3>
+                        {projects.pending && <em>Loading users...</em>}
+                        {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
+                        {projects.items &&
+                            <ul>
+                                {projects.items.map((project) =>
+                                    <li key={project.id}>
+                                        {project.name}<br></br>
+                                    </li>
+                                )}
+                            </ul>
+                        }
+                    </div> */}
+
+                    <div className='containerDashboard'>
+                        <div>
+                            <Navbar />
+                            <h3>Dashboard</h3>
+                            <AddProject />
+                        </div>
+                        <div className="">
+                            <h3>All registered projects:</h3>
+                            {projects.pending && <em>Loading users...</em>}
+                            {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
+                            <ProjectList projects={projects} />
+                        </div>
+                    </div>
+                </div>    
+            );
         }
     }
 
-    // componentWillMount() {
-    //     const { fetchProjects } = this.props;
-    //     fetchProjects();
-    // }
-
-    componentDidMount() {
-
-      fetch('http://localhost:3000/projects')
-        .then(res => res.json())
-        .then(json => {
-            this.setState({
-                isLoaded: true,
-                items: json,
-            })
-        })
-    }
-
-    
-    render(){
-        // const { projects, error } = this.props; 
-            const { isLoaded, items } = this.state;
-              if (!isLoaded) {
-                  return <div>Loading...</div>;
-              }  
-              else {
-                  return (
-                      <div>
-                          <ul>
-                              {items.map(item => (
-                                  <li key={item.id}>
-                                      { item.name }
-                                  </li>
-                              ))};
-                          </ul>
-                      </div>
-                  )
-              }
-
-
-
-
-
-
-            // <div className='containerDashboard'>
-            //     <div>
-            //         <Navbar />
-            //         <h3>Dashboard</h3>
-            //         <AddProject />
-            //     </div>
-            //     {/* <div className='product-list-wrapper'>
-            //         {error && <span className='product-list-error'>{error}</span>}
-            //         <ProjectList project={projects} />
-            //     </div> */}
-
-            
-           
-            // </div>
-    }
+function mapStateToProps(state) {
+    const { projects, project } = state;
+    return { project, projects};
 }
 
-const mapStateToProps =  state => ({
-    error: getProjectsError(state),
-    projects: getProjects(state),
-    pending: getProjectsPending(state)
-})
-
-// const mapDispatchToProps = dispatch => bindActionCreators({
-    
-// }, dispatch)
-
 const actionCreators = {
-    projects: projectActions.getAll,
-};
+    getProjects: projectActions.getAll
+}
 
 export default connect(mapStateToProps, actionCreators) (Dashboard);
