@@ -20,21 +20,6 @@ class Dashboard extends Component {
 
             return (
                 <div>
-                    {/* <div>
-                        <h3>All registered projects:</h3>
-                        {projects.pending && <em>Loading users...</em>}
-                        {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
-                        {projects.items &&
-                            <ul>
-                                {projects.items.map((project) =>
-                                    <li key={project.id}>
-                                        {project.name}<br></br>
-                                    </li>
-                                )}
-                            </ul>
-                        }
-                    </div> */}
-
                     <div className='containerDashboard'>
                         <div>
                             <Navbar />

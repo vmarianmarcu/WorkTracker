@@ -3,10 +3,9 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { login } from '../reducers/Reducer';
 import authentication from '../../reducers';
 
-import { userActions } from '../../actions';
+import { userActions } from '../../actions/user.actions';
 import '../../static/login.css';
 
 class Login extends Component {

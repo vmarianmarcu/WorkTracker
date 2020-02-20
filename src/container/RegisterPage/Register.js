@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import '../../static/register.css';
 import { connect } from 'react-redux';
 
-import { userActions } from '../../actions';
+import { userActions } from '../../actions/user.actions';
 import registration from '../../reducers'
 
 

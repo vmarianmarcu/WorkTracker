@@ -22,7 +22,7 @@ class AddProject extends Component {
     
     render() {
         return (
-            <div className='containerLogin'>
+            <div className='addProject'>
                 <form onSubmit={this.handleSubmit}>
                     <Input type="text" id="title" placeholder="Add Project*" onChange={this.handleChange} />
                     <Button type="submit" label="ADD" />
@@ -32,11 +32,4 @@ class AddProject extends Component {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         createProject: (project) => dispatch(createProject(project))
-//     }
-
-// }
-// export default connect(null, mapDispatchToProps) (AddProject);
 export default AddProject;
