@@ -7,6 +7,8 @@ import Navbar from '../Navbar/Navbar';
 import '../../static/dashboard.css';
 
 import { projectActions } from '../../actions/project.actions';
+import CAlendar from '../../components/Calendar';
+import INputTextarea from '../../components/InputTextarea';
 
 class Dashboard extends Component {  
 
@@ -31,6 +33,8 @@ class Dashboard extends Component {
                             {projects.pending && <em>Loading users...</em>}
                             {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
                             <ProjectList projects={projects} />
+                            <CAlendar />
+                            <INputTextarea />
                         </div>
                     </div>
                 </div>    
