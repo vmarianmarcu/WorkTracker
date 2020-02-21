@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import ProjectList  from '../../components/ProjectsList';
+import ProjectList  from 'components/ProjectsList';
 import { connect } from 'react-redux';
-import AddProject from '../../components/AddProject';
+import AddProject from 'components/AddProject';
 
-import Navbar from '../Navbar/Navbar'; 
-import '../../static/dashboard.css';
+import Navbar from '../../Navbar/Navbar'; 
+import 'static/dashboard.css';
 
-import { projectActions } from '../../actions/project.actions';
-import CAlendar from '../../components/Calendar';
-import INputTextarea from '../../components/InputTextarea';
+import { projectActions } from 'actions/project.actions';
+import CAlendar from 'components/Calendar';
+import INputTextarea from 'components/InputTextarea';
+import MEnubar from "components/Menubar";
 
 class Dashboard extends Component {  
 
@@ -35,6 +36,7 @@ class Dashboard extends Component {
                             <ProjectList projects={projects} />
                             <CAlendar />
                             <INputTextarea />
+                            <MEnubar />
                         </div>
                     </div>
                 </div>    

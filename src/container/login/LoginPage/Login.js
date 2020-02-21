@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Button from 'components/Button';
+import Input from 'components/Input';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import authentication from '../../reducers';
+import authentication from 'reducers';
 
-import { userActions } from '../../actions/user.actions';
-import '../../static/login.css';
+import { userActions } from '../actions/user.actions';
+import 'static/login.css';
 
 class Login extends Component {
 

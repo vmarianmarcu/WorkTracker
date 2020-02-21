@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Login from './container/LoginPage/Login';
-import RegisterPage from './container/RegisterPage/Register';
+import Login from 'container/login/LoginPage/Login';
+import RegisterPage from 'container/login/RegisterPage/Register';
 
 import Navbar from './container/Navbar/Navbar';
-import Dashboard from './container/DashboardPage/Dashboard';
-import Projects  from './container/Navbar/Projects';
-import Details from './container/Navbar/Details';
+import Dashboard from 'container/dashboard/DashboardPage/Dashboard';
+import Projects  from 'container/Navbar/Projects';
+import Details from 'container/Navbar/Details';
 
 // The css dependencies for PrimePeact components
 import 'primereact/resources/themes/nova-light/theme.css';
@@ -14,9 +14,9 @@ import 'primeicons/primeicons.css';
 
 import {Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { history } from './helpers';
-import { alertActions } from './actions';
-import { PrivateRoute } from './components/PrivateRoute';
+import { history } from 'helpers';
+import { alertActions } from 'actions';
+import { PrivateRoute } from 'components/PrivateRoute';
 
 import './static/app.css'
 

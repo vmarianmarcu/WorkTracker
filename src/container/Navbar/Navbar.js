@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import '../../static/navbar.css';
+import 'static/navbar.css';
 
 import { NavLink } from 'react-router-dom';
  
@@ -12,7 +12,7 @@ const Navbar = () => {
                 <ul>
                     <li><NavLink to="/projects">Projects</NavLink></li>
                     <li><NavLink to="/details">Details</NavLink></li>
-                    <li><NavLink to="/logout">Logout</NavLink></li>
+                    <li><NavLink to="/login">Logout</NavLink></li>
                 </ul>
             </div>
         </nav>

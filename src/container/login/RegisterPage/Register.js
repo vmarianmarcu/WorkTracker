@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Input from 'components/Input';
+import Button from 'components/Button';
 import { Link } from 'react-router-dom';
-import '../../static/register.css';
+import 'static/register.css';
 import { connect } from 'react-redux';
 
-import { userActions } from '../../actions/user.actions';
-import registration from '../../reducers'
+import { userActions } from 'container/login/actions/user.actions';
+import registration from 'reducers/index';
 
 
 class Register extends Component {
-
-    // state = {
-    //     firstName: '',
-    //     lastName: '',
-    //     email: '',
-    //     password: ''
-    // }
 
     constructor(props) {
         super(props);
@@ -118,4 +111,4 @@ const actionsCreators = {
     register: userActions.register
 }
 
-export  default connect(mapState, actionsCreators) (Register);
+export default connect(mapState, actionsCreators) (Register);
