@@ -35,19 +35,19 @@ class App extends Component {
     const { alert } = this.props;
     return (
       <div className="container">
-         {alert.message &&
-            <div className={`alert ${alert.type}`}>{alert.message}</div>
+         {  alert.message &&
+              <div className={`alert ${alert.type}`}>{alert.message}</div>
           }
         <Router history={history}>
           <div className="App">
             <Switch>
-            <Route exact path="/" component={Login} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={RegisterPage} />
-            <PrivateRoute path="/dashboard" component={Dashboard} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/details" component={Details} />
-            <Redirect from="*" to="/" />
+              <Route exact path="/" component={Login} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={RegisterPage} />
+              <PrivateRoute path="/dashboard" component={Dashboard} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/details" component={Details} />
+              <Redirect from="*" to="/" />
             </Switch>
           </div>
         </Router>
