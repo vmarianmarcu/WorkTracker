@@ -1,5 +1,5 @@
-import { userConstants } from 'constants/user.constants';
-import { userService } from 'services/user.service';
+import { userConstants } from 'container/login/constants/user.constants';
+import { userService } from 'container/login/services/user.service';
 import { alertActions } from 'actions/alert.action';
 import { history } from 'helpers/history';
 

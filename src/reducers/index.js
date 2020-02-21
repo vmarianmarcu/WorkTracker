@@ -1,10 +1,10 @@
 
 import { combineReducers } from 'redux';
-import { alert } from './alert.reducer';
-import { authentication } from './authentication.reducer';
-import { registration } from './registration.reducer';
-import { users } from './user.reducer';
-import { projects } from './project.reducer';
+import { alert } from 'reducers/alert.reducer';
+import { authentication } from 'reducers/authentication.reducer';
+import { registration } from 'reducers/registration.reducer';
+import { users } from 'reducers/user.reducer';
+import { projects } from 'reducers/project.reducer';
 
 const rootReducer = combineReducers({
    authentication,

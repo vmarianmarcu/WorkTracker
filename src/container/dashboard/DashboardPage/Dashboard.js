@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ProjectList  from 'components/ProjectsList';
+import ProjectList  from 'container/project/components/ProjectsList';
 import { connect } from 'react-redux';
-import AddProject from 'components/AddProject';
+import AddProject from 'container/project/components/AddProject';
 
-import Navbar from '../../Navbar/Navbar'; 
+import Navbar from 'container/navbar/Navbar'; 
 import 'static/dashboard.css';
 
-import { projectActions } from 'actions/project.actions';
+import { projectActions } from 'container/project/actions/project.actions';
 import CAlendar from 'components/Calendar';
 import INputTextarea from 'components/InputTextarea';
 import MEnubar from "components/Menubar";

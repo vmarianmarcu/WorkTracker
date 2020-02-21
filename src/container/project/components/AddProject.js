@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Input from './Input';
-import Button from './Button';
-import { connect } from 'react-redux';
+import Input from 'components/Input';
+import Button from 'components/Button';
 
 class AddProject extends Component {   
 

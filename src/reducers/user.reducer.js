@@ -1,4 +1,4 @@
-import { userConstants } from '../constants'
+import { userConstants } from 'container/login/constants/user.constants'
 
 export function users(state = {}, action) {
   switch (action.type) {

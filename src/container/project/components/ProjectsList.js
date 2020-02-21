@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LIistBox from './ListBox';
+import LIistBox from 'components/ListBox';
 
 // const projectList = ({projects}) => {
 class projectList extends Component {

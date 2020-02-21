@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import Login from 'container/login/LoginPage/Login';
 import RegisterPage from 'container/login/RegisterPage/Register';
 
-import Navbar from './container/Navbar/Navbar';
 import Dashboard from 'container/dashboard/DashboardPage/Dashboard';
-import Projects  from 'container/Navbar/Projects';
-import Details from 'container/Navbar/Details';
+import Projects  from 'container/navbar/Projects';
+import Details from 'container/navbar/Details';
 
 // The css dependencies for PrimePeact components
 import 'primereact/resources/themes/nova-light/theme.css';
@@ -41,7 +40,6 @@ class App extends Component {
           }
         <Router history={history}>
           <div className="App">
-            {/* <Navbar/> */}
             <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />

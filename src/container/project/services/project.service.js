@@ -1,5 +1,5 @@
 
-import { API_SERVER_URL, PROJECTS } from '../config';
+import { API_SERVER_URL, PROJECTS } from 'config';
 
 
 export const projectService = {
