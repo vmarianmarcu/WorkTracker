@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Login from './container/LoginPage/Login';
-import RegisterPage from './container/RegisterPage/Register';
+import Login from 'container/login/LoginPage/Login';
+import RegisterPage from 'container/login/RegisterPage/Register';
 
-import Navbar from './container/Navbar/Navbar';
-import Dashboard from './container/DashboardPage/Dashboard';
-import Projects  from './container/Navbar/Projects';
-import Details from './container/Navbar/Details';
+import Dashboard from 'container/dashboard/DashboardPage/Dashboard';
+import Projects  from 'container/navbar/Projects';
+import Details from 'container/navbar/Details';
 
 // The css dependencies for PrimePeact components
 import 'primereact/resources/themes/nova-light/theme.css';
@@ -14,9 +13,9 @@ import 'primeicons/primeicons.css';
 
 import {Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { history } from './helpers';
-import { alertActions } from './actions';
-import { PrivateRoute } from './components/PrivateRoute';
+import { history } from 'helpers';
+import { alertActions } from 'actions';
+import { PrivateRoute } from 'components/PrivateRoute';
 
 import './static/app.css'
 
@@ -36,20 +35,19 @@ class App extends Component {
     const { alert } = this.props;
     return (
       <div className="container">
-         {alert.message &&
-            <div className={`alert ${alert.type}`}>{alert.message}</div>
+         {  alert.message &&
+              <div className={`alert ${alert.type}`}>{alert.message}</div>
           }
         <Router history={history}>
           <div className="App">
-            {/* <Navbar/> */}
             <Switch>
-            <Route exact path="/" component={Login} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={RegisterPage} />
-            <PrivateRoute path="/dashboard" component={Dashboard} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/details" component={Details} />
-            <Redirect from="*" to="/" />
+              <Route exact path="/" component={Login} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={RegisterPage} />
+              <PrivateRoute path="/dashboard" component={Dashboard} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/details" component={Details} />
+              <Redirect from="*" to="/" />
             </Switch>
           </div>
         </Router>

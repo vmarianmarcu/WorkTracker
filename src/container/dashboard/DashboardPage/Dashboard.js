@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import ProjectList  from '../../components/ProjectsList';
+import ProjectList  from 'container/project/components/ProjectsList';
 import { connect } from 'react-redux';
-import AddProject from '../../components/AddProject';
+import AddProject from 'container/project/components/AddProject';
 
-import Navbar from '../Navbar/Navbar'; 
-import '../../static/dashboard.css';
+import 'static/dashboard.css';
 
-import { projectActions } from '../../actions/project.actions';
+import { projectActions } from 'container/project/actions/project.actions';
+import CAlendar from 'components/Calendar';
+import INputTextarea from 'components/InputTextarea';
+import Sidebar from 'components/Sidebar';
 
 class Dashboard extends Component {  
 
@@ -20,24 +22,9 @@ class Dashboard extends Component {
 
             return (
                 <div>
-                    {/* <div>
-                        <h3>All registered projects:</h3>
-                        {projects.pending && <em>Loading users...</em>}
-                        {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
-                        {projects.items &&
-                            <ul>
-                                {projects.items.map((project) =>
-                                    <li key={project.id}>
-                                        {project.name}<br></br>
-                                    </li>
-                                )}
-                            </ul>
-                        }
-                    </div> */}
-
+                    <Sidebar />
                     <div className='containerDashboard'>
                         <div>
-                            <Navbar />
                             <h3>Dashboard</h3>
                             <AddProject />
                         </div>
@@ -46,6 +33,8 @@ class Dashboard extends Component {
                             {projects.pending && <em>Loading users...</em>}
                             {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
                             <ProjectList projects={projects} />
+                            <CAlendar />
+                            <INputTextarea />
                         </div>
                     </div>
                 </div>    

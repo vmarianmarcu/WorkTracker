@@ -1,4 +1,4 @@
-import { projectConstants } from '../constants';
+import { projectConstants } from 'container/project/constants/project.constants';
 import { projectService } from '../services/project.service';
 
 export const projectActions = {

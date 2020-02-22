@@ -1,4 +1,4 @@
-import { projectConstants } from '../constants/project.constants';
+import { projectConstants } from 'container/project/constants/project.constants';
 
 
 export function projects(state = {}, action) {

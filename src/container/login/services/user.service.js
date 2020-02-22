@@ -1,5 +1,5 @@
-import { API_SERVER_URL, USER, PROJECTS, REGISTRED_USERS } from '../config';
-import { authHeader } from '../helpers';
+import { API_SERVER_URL, USER, PROJECTS, REGISTRED_USERS } from 'config';
+import { authHeader } from 'helpers/auth-header';
 
 export const userService = {
     login,
