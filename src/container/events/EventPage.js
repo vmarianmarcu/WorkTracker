@@ -5,22 +5,16 @@ import FullCalendar from 'components/FullCalendar';
 // import dayGridPlugin from '@fullcalendar/daygrid';
 import 'static/app.css';
 import 'index.css';
+import Sidebar from 'components/Sidebar';
 
 class EventPage extends Component {
     state = {  }
     render() { 
         return ( 
             <div>
+                  <Sidebar />
                 <h3>Events page</h3>
-                <FullCalendar
-                    // defaultView="dayGridMonth"
-                    // plugins={[dayGridPlugin]}
-                    // weekends={false}
-                    // events={[
-                    //     { title: 'event 1', date: '2019-04-01' },
-                    //     { title: 'event 2', date: '2019-04-02' }
-                    // ]}
-                />
+                <FullCalendar />
             </div>
          );
     }

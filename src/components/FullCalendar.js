@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {FullCalendar} from 'primereact/fullcalendar';
-// import {FullCalendar} from '@fullcalendar/fullcalendar';
 // import {EventService} from '../service/EventService';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';

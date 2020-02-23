@@ -35,7 +35,8 @@ class PAnelMenu extends Component {
                 },
                 {
                    label:'Details',
-                   icon:'pi pi-fw pi-file'
+                   icon:'pi pi-fw pi-file',
+                   url:"/details"
                 },
                 {
                    label:'Users',

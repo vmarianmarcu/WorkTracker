@@ -15,11 +15,6 @@ class SIdebar extends Component {
     render() {
         return (
             <div>
-                <div className="content-section introduction">
-                    <div className="feature-intro">
-                        <h3>Sidebar</h3>
-                    </div>
-                </div>
 
                 <div className="content-section implementation">
                     <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({visibleLeft: false})}>
@@ -28,7 +23,7 @@ class SIdebar extends Component {
                         <Button type="button" onClick={(e) => this.setState({visibleLeft: false})} label="Cancel" className="p-button-secondary"/> */}
                         <PanelMenu />
                    </Sidebar>
-                    <Button icon="pi pi-arrow-right" onClick={(e) => this.setState({visibleLeft:true})} style={{marginRight:'.25em'}} />
+                    <Button icon="pi pi-bars pi" label="Show" onClick={(e) => this.setState({visibleLeft:true})} style={{marginRight:'.25em'}} />
                 </div>
             </div>
         )

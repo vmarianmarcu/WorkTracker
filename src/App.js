@@ -4,7 +4,7 @@ import RegisterPage from 'container/login/RegisterPage/Register';
 
 import Dashboard from 'container/dashboard/DashboardPage/Dashboard';
 import ProjectPage  from 'container/project/ProjectPage';
-import Details from 'container/navbar/Details';
+import DetailsPage from 'container/details/DetailsPage';
 import EventPage from 'container/events/EventPage';
 
 // The css dependencies for PrimePeact components
@@ -48,7 +48,7 @@ class App extends Component {
               <Route path="/register" component={RegisterPage} />
               <PrivateRoute path="/dashboard" component={Dashboard} />
               <Route path="/projects" component={ProjectPage} />
-              <Route path="/details" component={Details} />
+              <Route path="/details" component={DetailsPage} />
               <Route path="/events" component={EventPage} />
               <Redirect from="*" to="/" />
             </Switch>

@@ -5,6 +5,7 @@ import CAlendar from 'components/Calendar';
 import INputTextarea from 'components/InputTextarea';
 import Sidebar from 'components/Sidebar';
 import Dropdown from 'components/Dropdown';
+import InputTime from 'components/InputTime24H';
 import 'static/dashboard.css';
 
 class Dashboard extends Component {  
@@ -12,23 +13,41 @@ class Dashboard extends Component {
     componentDidMount() {
         this.props.getProjects();
     }
-                
+    
+    handleSubmit = (e)=> {
+        // e.preventDefault();
+
+    }
     
     render() {
         const { projects } = this.props; 
 
             return (
-                <div>
+                <div className='containerDashboard'>
                     <Sidebar />
-                    <div className='containerDashboard'>
+                    <form name="form" onSubmit={this.handleSubmit}>
                         <div className="contentSectin">
-                            {projects.pending && <em>Loading users...</em>}
-                            {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
-                            <Dropdown options={projects.items} />
-                            <CAlendar />
-                            <INputTextarea />
+                            <div className="dropdown">
+                                {projects.pending && <em>Loading users...</em>}
+                                {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
+                                <Dropdown options={projects.items} />
+                            </div>
+                            <div className="timeSection">
+                                <div className="arrivalTime">
+                                    <InputTime placeholder="Arrival time"/>
+                                </div>
+                                <div className="departureTime">
+                                    <InputTime placeholder="Departure time"/>
+                                </div>
+                            </div>
+                            <div className="calendar">
+                                <CAlendar />
+                            </div>
+                            <div className="textarea">
+                                <INputTextarea />
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>  
             );
         }
