@@ -1,64 +1,41 @@
 import React, {Component} from 'react';
 import {PanelMenu} from 'primereact/panelmenu';
 
-class PanelMenuDemo extends Component {
+class PAnelMenu extends Component {
 
     constructor() {
         super();
         this.state = {
-            
             items:[
-                {
-                   label:'File',
-                   icon:'pi pi-fw pi-file',
+                  {   
+                     label: 'Home', 
+                     icon: 'pi pi-fw pi-home',
+                     url:'/dashboard'
+                  },
+                  {
+                   label:'Project',
+                   icon:'pi pi-fw pi-pencil',
                    items:[
                       {
-                         label:'New',
+                        label:'List',
+                        icon:'pi pi-fw pi-bars',
+                        url:'/projects'
+                      },
+                      {
+                         label:'Add',
                          icon:'pi pi-fw pi-plus',
-                         items:[
-                            {
-                               label:'Bookmark',
-                               icon:'pi pi-fw pi-bookmark'
-                            },
-                            {
-                               label:'Video',
-                               icon:'pi pi-fw pi-video'
-                            },
-
-                         ]
+                         url:'/projects'
                       },
                       {
                          label:'Delete',
-                         icon:'pi pi-fw pi-trash'
-                      },
-                      {
-                         label:'Export',
-                         icon:'pi pi-fw pi-external-link'
+                         icon:'pi pi-fw pi-trash',
+                         url: '/projects'
                       }
                    ]
                 },
                 {
-                   label:'Edit',
-                   icon:'pi pi-fw pi-pencil',
-                   items:[
-                      {
-                         label:'Left',
-                         icon:'pi pi-fw pi-align-left'
-                      },
-                      {
-                         label:'Right',
-                         icon:'pi pi-fw pi-align-right'
-                      },
-                      {
-                         label:'Center',
-                         icon:'pi pi-fw pi-align-center'
-                      },
-                      {
-                         label:'Justify',
-                         icon:'pi pi-fw pi-align-justify'
-                      },
-
-                   ]
+                   label:'Details',
+                   icon:'pi pi-fw pi-file'
                 },
                 {
                    label:'Users',
@@ -80,13 +57,7 @@ class PanelMenuDemo extends Component {
                          items:[
                             {
                                label:'Filter',
-                               icon:'pi pi-fw pi-filter',
-                               items:[
-                                  {
-                                     label:'Print',
-                                     icon:'pi pi-fw pi-print'
-                                  }
-                               ]
+                               icon:'pi pi-fw pi-filter'
                             },
                             {
                                icon:'pi pi-fw pi-bars',
@@ -106,48 +77,31 @@ class PanelMenuDemo extends Component {
                          items:[
                             {
                                label:'Save',
-                               icon:'pi pi-fw pi-calendar-plus'
+                               icon:'pi pi-fw pi-calendar-plus',
+                               url:'/events'
                             },
                             {
                                label:'Delete',
                                icon:'pi pi-fw pi-calendar-minus'
                             }
                          ]
-                      },
-                      {
-                         label:'Archieve',
-                         icon:'pi pi-fw pi-calendar-times',
-                         items:[
-                            {
-                               label:'Remove',
-                               icon:'pi pi-fw pi-calendar-minus'
-                            }
-                         ]
                       }
                    ]
                 },
-                {   label: 'Logout', 
-                    icon: 'pi pi-power-off',
-                     url: '/login'
-                }
-             ]
+                {   label: 'Sign Out', 
+                icon: 'pi pi-power-off',
+                url: '/login'
+               }
+             ],
         };
     }
 
     render() {
         return (
-            <div>
-                <div className="content-section introduction">
-                    <div className="feature-intro">
-                        <h4>PanelMenu</h4>
-                    </div>
-                </div>
-
-                <div className="content-section implementation">
-                    <PanelMenu model={this.state.items} style={{width:'220px'}}/>
-                </div>
+            <div className="content-section implementation">
+               <PanelMenu model={this.state.items} /*style={{width:'300px'}}*/ />
             </div>
         );
     }
 }
-export default PanelMenuDemo; 
+export default PAnelMenu;

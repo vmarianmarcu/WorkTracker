@@ -20,7 +20,7 @@ class projectList extends Component {
        const { projects } = this.props;
         return(
             <div>
-                <LIistBox value={this.state.projects} options={projects.items} onChange={this.handleChange} multiple="true" optionLabel="name"/>
+                <LIistBox value={this.state.projects} options={projects.items} onChange={this.handleChange} optionLabel="name"/>
             </div>
         );
     }

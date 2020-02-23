@@ -3,13 +3,15 @@ import Login from 'container/login/LoginPage/Login';
 import RegisterPage from 'container/login/RegisterPage/Register';
 
 import Dashboard from 'container/dashboard/DashboardPage/Dashboard';
-import Projects  from 'container/navbar/Projects';
+import ProjectPage  from 'container/project/ProjectPage';
 import Details from 'container/navbar/Details';
+import EventPage from 'container/events/EventPage';
 
 // The css dependencies for PrimePeact components
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+
 
 import {Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -45,8 +47,9 @@ class App extends Component {
               <Route path="/login" component={Login} />
               <Route path="/register" component={RegisterPage} />
               <PrivateRoute path="/dashboard" component={Dashboard} />
-              <Route path="/projects" component={Projects} />
+              <Route path="/projects" component={ProjectPage} />
               <Route path="/details" component={Details} />
+              <Route path="/events" component={EventPage} />
               <Redirect from="*" to="/" />
             </Switch>
           </div>

@@ -12,8 +12,7 @@ class INputTextarea extends Component{
     render() {
         return(
             <div>
-                <h3>Textarea:</h3>
-                <InputTextarea rows={2} cols={50} value={this.state.value} onChange={(e) => this.setState({value: e.target.value})} autoResize={true} />
+                <InputTextarea rows={2} cols={50} value={this.state.value} placeholder="Textarea" onChange={(e) => this.setState({value: e.target.value})} autoResize={true} />
             </div>
         );
     }

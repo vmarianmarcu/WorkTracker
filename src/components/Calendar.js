@@ -46,8 +46,7 @@ class CAlendar extends Component {
 
         return(
             <div>
-                <h3>Date:</h3>
-                <Calendar value={this.state.date3} onChange={(e) => this.setState({date3: e.value})} showIcon={true} />
+                <Calendar placeholder='Date' value={this.state.date3} onChange={(e) => this.setState({date3: e.value})} showIcon={true} />
             </div>
         )
     }

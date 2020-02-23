@@ -11,3 +11,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';

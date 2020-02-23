@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Sidebar} from 'primereact/sidebar';
 import {Button} from 'primereact/button';
-import Accordion from './Accordion'
+import PanelMenu from './PanelMenu';
 
-class SidebarDemo extends Component {
+class SIdebar extends Component {
 
     constructor() {
         super();
@@ -17,8 +17,7 @@ class SidebarDemo extends Component {
             <div>
                 <div className="content-section introduction">
                     <div className="feature-intro">
-                        <h1>Sidebar</h1>
-                        <p>Sidebar </p>
+                        <h3>Sidebar</h3>
                     </div>
                 </div>
 
@@ -27,24 +26,12 @@ class SidebarDemo extends Component {
                         <h1 style={{fontWeight:'normal'}}>Left Sidebar</h1>
                         {/* <Button type="button" onClick={(e) => this.setState({visibleLeft: false})} label="Save" className="p-button-success" style={{marginRight:'.25em'}} />
                         <Button type="button" onClick={(e) => this.setState({visibleLeft: false})} label="Cancel" className="p-button-secondary"/> */}
-
-
-                        {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-
-                        <Accordion />
-                        
-                        {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-
-
-
+                        <PanelMenu />
                    </Sidebar>
                     <Button icon="pi pi-arrow-right" onClick={(e) => this.setState({visibleLeft:true})} style={{marginRight:'.25em'}} />
                 </div>
-
-                {/* <SidebarDoc/> */}
-
             </div>
         )
     }
 }
-export default SidebarDemo;
+export default SIdebar;
