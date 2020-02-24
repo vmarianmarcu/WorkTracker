@@ -10,15 +10,39 @@ import 'static/dashboard.css';
 
 class Dashboard extends Component {  
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            dash: {
+                projects: '',
+                arrivalTime: '',
+                departureTime: '',
+                date: '',
+                comment: ''
+            },
+             submitted: true 
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
     componentDidMount() {
         this.props.getProjects();
     }
     
-    handleSubmit = (e)=> {
-        // e.preventDefault();
+    handleChange = (e) => {
 
+        const { name, value } = e.target;
+        const { dash } = this.state;
+        this.setState({
+            dash: {
+                ...dash,
+                [name]: value
+            }
+        });
     }
-    
+
     render() {
         const { projects } = this.props; 
 

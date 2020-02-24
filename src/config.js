@@ -2,7 +2,8 @@
  const USER= '/user';
  const PROJECTS = '/projects';
  const REGISTRED_USERS = '/registredUsers';
+ const WORK_DETAILS= '/workDetails';
 
  export {
-   API_SERVER_URL, USER, PROJECTS, REGISTRED_USERS
+   API_SERVER_URL, USER, PROJECTS, REGISTRED_USERS, WORK_DETAILS
  }
