@@ -8,7 +8,38 @@ import Dropdown from 'components/Dropdown';
 import InputTime from 'components/InputTime24H';
 import 'static/dashboard.css';
 
+////////////////////
+
+// constructor(props) {
+//     super(props);
+
+//     this.state = {
+//         user: {
+//             firstName: '',
+//             lastName: '',
+//             email: '',
+//             password: ''
+//         },
+//         submitted: false
+//     };
+
+//     this.handleChange = this.handleChange.bind(this);
+//     this.handleSubmit = this.handleSubmit.bind(this);
+// }
+//////////////////
+
 class Dashboard extends Component {  
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            work: {
+                projects: '',
+                
+            }
+        }
+    }
 
     componentDidMount() {
         this.props.getProjects();
@@ -30,21 +61,21 @@ class Dashboard extends Component {
                             <div className="dropdown">
                                 {projects.pending && <em>Loading users...</em>}
                                 {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
-                                <Dropdown options={projects.items} />
+                                <Dropdown id="dropdown" name="dropdown" options={projects.items} />
                             </div>
                             <div className="timeSection">
                                 <div className="arrivalTime">
-                                    <InputTime placeholder="Arrival time"/>
+                                    <InputTime id="arr ivalTime" name="arrivalTime" placeholder="Arrival time"/>
                                 </div>
                                 <div className="departureTime">
-                                    <InputTime placeholder="Departure time"/>
+                                    <InputTime id="departureTime" name="departureTime" placeholder="Departure time"/>
                                 </div>
                             </div>
                             <div className="calendar">
-                                <CAlendar />
+                                <CAlendar id="calendar" name="calendar" placeholder="Date" />
                             </div>
                             <div className="textarea">
-                                <INputTextarea />
+                                <INputTextarea id="textArea" name="textArea" placeholder="Comment" />
                             </div>
                         </div>
                     </form>

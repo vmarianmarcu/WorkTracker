@@ -19,10 +19,10 @@ class DRopdown extends Component {
     }
 
     render() {
-        const { options } = this.props;
+        const { id, name, options } = this.props;
         return (
             <div className="dropdownSection">
-                <Dropdown value={this.state.projects} options={options} onChange={this.onCityChange} placeholder="Select a Project" optionLabel="name"/>
+                <Dropdown value={this.state.projects} id={id} name={name} options={options} onChange={this.onCityChange} placeholder="Select a Project" optionLabel="name"/>
                 <div style={{marginTop: '.5em'}}>{this.state.projects ? 'Selected Project: ' + this.state.projects.name : 'No project selected'}</div>
             </div>
         );

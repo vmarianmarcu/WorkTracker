@@ -11,10 +11,10 @@ class InputTime extends Component {
     }
 
     render() {
-        const { placeholder } = this.props;
+        const { id, name, placeholder } = this.props;
         return (
             <div className="hourInput">
-                <Calendar value={this.state.hour} placeholder={placeholder} onChange={(e) => this.setState({hour: e.value})} timeOnly={true} hourFormat="24" />
+                <Calendar value={this.state.hour} id={id} name={name} placeholder={placeholder} onChange={(e) => this.setState({hour: e.value})} timeOnly={true} hourFormat="24" />
             </div>
         );
     }

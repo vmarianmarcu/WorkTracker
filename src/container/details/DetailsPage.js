@@ -10,7 +10,7 @@ const Details = (props) => {
                 <Sidebar />
                 <form>
                     <h3>Details</h3>
-                    <Table />>
+                    <Table />
                 </form>
             </div>
         );

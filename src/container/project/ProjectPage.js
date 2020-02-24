@@ -3,7 +3,7 @@ import ProjectList  from 'container/project/components/ProjectsList';
 import { connect } from 'react-redux';
 import AddProject from 'container/project/components/AddProject';
 
-import 'static/dashboard.css';
+import 'static/projects.css';
 
 import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
@@ -21,12 +21,9 @@ class Dashboard extends Component {
             return (
                 <div>
                     <Sidebar />
-                    <div className='containerDashboard'>
-                        <div>
-                            <h3>Projects</h3>
-                            <AddProject />
-                        </div>
-                        <div className="">
+                    <div className='containerProject'>
+                        <AddProject />
+                        <div className="projectList">
                             <h3>All registered projects:</h3>
                             {projects.pending && <em>Loading users...</em>}
                             {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}

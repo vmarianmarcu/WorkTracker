@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from 'components/Input';
 import Button from 'components/Button';
+import 'static/projects.css';
 
 class AddProject extends Component {   
 
@@ -23,7 +24,7 @@ class AddProject extends Component {
         return (
             <div className='addProject'>
                 <form onSubmit={this.handleSubmit}>
-                    <Input type="text" id="title" placeholder="Add Project*" onChange={this.handleChange} />
+                    <Input className="inputAddProject" type="text" id="title" placeholder="Add Project*" onChange={this.handleChange} />
                     <Button type="submit" label="ADD" />
                 </form>
             </div>

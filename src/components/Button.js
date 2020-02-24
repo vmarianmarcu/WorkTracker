@@ -7,7 +7,7 @@ class ButtonSubmit extends Component {
         const { label, type} = this.props
         return (
             <div>
-                <div className="content-section implementation button-demo">
+                <div className="content-button">
                     <Button type={type} label={label}/>
                 </div>
             </div>
