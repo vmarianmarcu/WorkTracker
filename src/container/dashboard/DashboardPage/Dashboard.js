@@ -8,48 +8,41 @@ import Dropdown from 'components/Dropdown';
 import InputTime from 'components/InputTime24H';
 import 'static/dashboard.css';
 
-////////////////////
-
-// constructor(props) {
-//     super(props);
-
-//     this.state = {
-//         user: {
-//             firstName: '',
-//             lastName: '',
-//             email: '',
-//             password: ''
-//         },
-//         submitted: false
-//     };
-
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-// }
-//////////////////
-
 class Dashboard extends Component {  
 
     constructor(props) {
         super(props);
 
         this.state = {
-            work: {
+            dash: {
                 projects: '',
-                
-            }
-        }
+                arrivalTime: '',
+                departureTime: '',
+                date: '',
+                comment: ''
+            },
+             submitted: true 
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         this.props.getProjects();
     }
     
-    handleSubmit = (e)=> {
-        // e.preventDefault();
+    handleChange = (e) => {
 
+        const { name, value } = e.target;
+        const { dash } = this.state;
+        this.setState({
+            dash: {
+                ...dash,
+                [name]: value
+            }
+        });
     }
-    
+
     render() {
         const { projects } = this.props; 
 
