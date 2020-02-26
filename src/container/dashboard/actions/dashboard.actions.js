@@ -1,9 +1,9 @@
-import { dashboardConstants } from 'constants/dashboard.constants';
-import { dashboardService } from 'services/dashboard.services';
+import { dashboardConstants } from 'container/dashboard/constants/dashboard.constants';
+import { dashboardService } from 'container/dashboard/services/dashboard.services';
 import { history } from 'helpers/history';
 import { alertActions } from 'actions/alert.action';
 
-export const userActions = {
+export const dashboardActions = {
     dashboard
 };
 

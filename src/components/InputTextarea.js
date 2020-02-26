@@ -13,7 +13,7 @@ class INputTextarea extends Component{
         const { id, name, placeholder } = this.props;
         return(
             <div>
-                <InputTextarea rows={2} cols={25} value={this.state.value} id={id} name={name} placeholder={placeholder} onChange={(e) => this.setState({value: e.target.value})} autoResize={true} />
+                <InputTextarea rows={3} cols={21} value={this.state.value} id={id} name={name} placeholder={placeholder} onChange={(e) => this.setState({value: e.target.value})} autoResize={true} />
             </div>
         );
     }

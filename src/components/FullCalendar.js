@@ -36,17 +36,9 @@ class FUllCalendar extends Component {
 
         return (
             <div>
-                <div className="content-section introduction">
-                    <div className="feature-intro">
-                        <h1>FullCalendar</h1>
-                        <p>An event calendar based on the <a href="https://fullcalendar.io/">FullCalendar</a> library.</p>
-                    </div>
-                </div>
-
-                <div className="content-section implementation">
+                <div className="fullCalendar">
                     <FullCalendar  events={this.state.events} options={this.state.options} />
                 </div>
-
             </div>
         );
     }

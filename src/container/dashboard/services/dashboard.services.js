@@ -30,7 +30,7 @@ function handleResponse(response) {
         
             if (response.status === 401) {
                 // auto logout if 401 response returned from api
-                logout();
+               // logout();
                 // eslint-disable-next-line no-restricted-globals
                 location.reload(true);
             }

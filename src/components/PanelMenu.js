@@ -14,86 +14,25 @@ class PAnelMenu extends Component {
                   },
                   {
                    label:'Project',
-                   icon:'pi pi-fw pi-pencil',
-                   items:[
-                      {
-                        label:'List',
-                        icon:'pi pi-fw pi-bars',
-                        url:'/projects'
-                      },
-                      {
-                         label:'Add',
-                         icon:'pi pi-fw pi-plus',
-                         url:'/projects'
-                      },
-                      {
-                         label:'Delete',
-                         icon:'pi pi-fw pi-trash',
-                         url: '/projects'
-                      }
-                   ]
+                   icon:'pi pi-fw pi-bars',
+                   url:'/projects'
                 },
                 {
                    label:'Details',
                    icon:'pi pi-fw pi-file',
-                   url:"/details"
+                   url:'/details'
                 },
                 {
                    label:'Users',
-                   icon:'pi pi-fw pi-user',
-                   items:[
-                      {
-                         label:'New',
-                         icon:'pi pi-fw pi-user-plus',
-
-                      },
-                      {
-                         label:'Delete',
-                         icon:'pi pi-fw pi-user-minus',
-
-                      },
-                      {
-                         label:'Search',
-                         icon:'pi pi-fw pi-users',
-                         items:[
-                            {
-                               label:'Filter',
-                               icon:'pi pi-fw pi-filter'
-                            },
-                            {
-                               icon:'pi pi-fw pi-bars',
-                               label:'List'
-                            }
-                         ]
-                      }
-                   ]
+                   icon:'pi pi-fw pi-users',
+                   url:''
                 },
                 {
                    label:'Events',
                    icon:'pi pi-fw pi-calendar',
-                   items:[
-                      {
-                         label:'Edit',
-                         icon:'pi pi-fw pi-pencil',
-                         items:[
-                            {
-                               label:'Save',
-                               icon:'pi pi-fw pi-calendar-plus',
-                               url:'/events'
-                            },
-                            {
-                               label:'Delete',
-                               icon:'pi pi-fw pi-calendar-minus'
-                            }
-                         ]
-                      }
-                   ]
-                },
-                {   label: 'Sign Out', 
-                icon: 'pi pi-power-off',
-                url: '/login'
-               }
-             ],
+                   url:'/events'
+                }
+            ]
         };
     }
 
