@@ -2,19 +2,12 @@ import React, { Component } from 'react';
 import {InputTextarea} from 'primereact/inputtextarea';
 
 class INputTextarea extends Component{
-    constructor() {
-        super();
-        this.state = {
-            value: null
-        };
-    }
-
     render() {
-        const { id, name, placeholder } = this.props;
+        const { id, name, placeholder, value, onChange } = this.props;
         return(
             <div>
-                <InputTextarea rows={3} cols={21} value={this.state.value} id={id} name={name} placeholder={placeholder} onChange={(e) => this.setState({value: e.target.value})} autoResize={true} />
-            </div>
+                <InputTextarea rows={3} cols={21} value={value} id={id} name={name} placeholder={placeholder} onChange={onChange} autoResize={true} />
+            </div>    
         );
     }
 }

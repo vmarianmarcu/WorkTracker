@@ -21,7 +21,7 @@ class Dashboard extends Component {
 
         this.state = {
             dash: {
-                project: null,
+                projectName: null,
                 arrivalTime: null,
                 departureTime: null,
                 pause: "00:30",
@@ -56,7 +56,7 @@ class Dashboard extends Component {
 
         this.setState({ submitted: true });
         const { dash } = this.state;
-        if(dash.project && dash.arrivalTime && dash.departureTime && dash.pause && dash.date && dash.comment) {
+        if(dash.projectName && dash.arrivalTime && dash.departureTime && dash.pause && dash.date && dash.comment) {
             this.props.dashboard(dash);
         }
     }
@@ -77,7 +77,7 @@ class Dashboard extends Component {
                                 <div className="dropdown">
                                     {projects.pending && <em>Loading users...</em>}
                                     {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
-                                    <Dropdown id="dropdown" name="dropdown" value={dash.project} onChange={this.handleChange} options={projects.items} />
+                                    <Dropdown id="dropdown" name="dropdown" value={dash.projectName} onChange={this.handleChange} options={projects.items} />
                                 </div>
                                 <div className="timeSection">
                                     <div className="arrivalTime">
