@@ -4,17 +4,17 @@ import { history } from 'helpers/history';
 import { alertActions } from 'actions/alert.action';
 
 export const dashboardActions = {
-    dashboard
+    postAllFromDashboard
 };
 
-function dashboard(dash) {
+function postAllFromDashboard(dash) {
     return dispatch => {
         dispatch(request(dash));
 
         dashboardService.dashboard(dash)
             .then(
                 dash => {
-                    dispatch(success());
+                    dispatch(success(dash));
                     history.push('/dashboard');
                     // dispatch(alertActions.success('Registration successful'));
                 },

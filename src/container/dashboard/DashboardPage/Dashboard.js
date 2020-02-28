@@ -62,7 +62,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { projects, dashboarding } = this.props; 
+        const { projects, dashboardPost } = this.props; 
         const { dash, submitted } =  this.state;
 
             return (
@@ -72,12 +72,12 @@ class Dashboard extends Component {
                         <div className="contentSectin">
                             <div className="workDateAndTime">
                                 <div className="calendar">
-                                    <CAlendar id="calendar" name="calendar" value={dash.date} placeholder="Date" onChange={this.handleChange}/>
+                                    <CAlendar id="calendar" name="date" value={dash.date} placeholder="Date" onChange={this.handleChange}/>
                                 </div>
                                 <div className="dropdown">
                                     {projects.pending && <em>Loading users...</em>}
                                     {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
-                                    <Dropdown id="dropdown" name="dropdown" value={dash.projectName} onChange={this.handleChange} options={projects.items} />
+                                    <Dropdown id="dropdown" name="projectName" value={dash.projectName} onChange={this.handleChange} options={projects.items} />
                                 </div>
                                 <div className="timeSection">
                                     <div className="arrivalTime">
@@ -87,14 +87,14 @@ class Dashboard extends Component {
                                         <InputTime id="departureTime" name="departureTime" value={dash.departureTime} placeholder="Departure time" onChange={this.handleChange}/>
                                     </div>
                                     <div className="pause">
-                                        <Input type="text" id="pause" name="pause" value={dash.pause} placeholder="Pause" onChange={this.handleChange} />
+                                        <Input type="time" id="pause" name="pause" value={dash.pause} placeholder="Pause" onChange={this.handleChange} />
                                     </div>
                                     <div className="textarea">
                                         <INputTextarea id="textArea" name="textArea" value={dash.comment} placeholder="Comment" onChange={this.handleChange}/>
                                     </div>
                                     <div className="dash-save-button">
                                         <Button type="submit" label="SAVE" />
-                                        { dashboarding }
+                                        { dashboardPost }
                                     </div>
                                 </div>
                             </div>
@@ -107,10 +107,9 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
     const { projects, project } = state;
-    const { dashboarding } = dashboard;
-    return { project, projects, dashboarding};
+    const { dashboardPost } = dashboard;
+    return { project, projects, dashboardPost};
 }
-
 
 const actionCreators = {
     getProjects: projectActions.getAll,

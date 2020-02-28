@@ -3,7 +3,9 @@ import { dashboardConstants } from 'container/dashboard/constants/dashboard.cons
 export function dashboard(state = {}, action) {
     switch (action.type) {
       case dashboardConstants.DASHBOARD_REQUEST:
-        return {dashboarding: true};
+        return {
+          dashboardPost: true,
+        };
       case dashboardConstants.DASHBOARD_SUCCESS:
         return {};
       case dashboardConstants.DASHBOARD_FAILURE:

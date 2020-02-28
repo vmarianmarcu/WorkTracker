@@ -1,10 +1,10 @@
 import { API_SERVER_URL, WORK_DETAILS } from 'config';
 
 export const dashboardService = {
-    dashboard
+    dashboardPost
 };
 
-function dashboard(dash) {
+function dashboardPost(dash) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

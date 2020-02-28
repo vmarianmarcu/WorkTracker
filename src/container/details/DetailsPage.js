@@ -7,9 +7,8 @@ const Details = (props) => {
              
         return (
             <div className='containerDetails'>
-                <Sidebar />
+                {/* <Sidebar /> */}
                 <form>
-                    <h3>Details</h3>
                     <Table />
                 </form>
             </div>
