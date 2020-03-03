@@ -32,10 +32,9 @@ class PAnelMenu extends Component {
                    icon:'pi pi-fw pi-calendar',
                    url:'/events'
                 },
-                { 
-                    label: 'Sign Out',
-                    icon: 'pi pi-fw pi-power-off',
-                    url:'/login'
+                {  label: 'Sign Out', 
+                   icon: 'pi pi-fw pi-power-off',
+                   url: '/login'
                 }
             ]
         };
