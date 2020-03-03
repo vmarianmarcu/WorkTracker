@@ -43,7 +43,7 @@ class PAnelMenu extends Component {
     render() {
         return (
             <div className="content-section implementation">
-               <PanelMenu model={this.state.items} /*style={{width:'300px'}}*/ />
+               <PanelMenu model={this.state.items} />
             </div>
         );
     }

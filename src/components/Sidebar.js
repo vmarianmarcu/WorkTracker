@@ -19,8 +19,6 @@ class SIdebar extends Component {
                 <div className="content-section implementation">
                     <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({visibleLeft: false})}>
                         <h1 style={{fontWeight:'normal'}}>Left Sidebar</h1>
-                        {/* <Button type="button" onClick={(e) => this.setState({visibleLeft: false})} label="Save" className="p-button-success" style={{marginRight:'.25em'}} />
-                        <Button type="button" onClick={(e) => this.setState({visibleLeft: false})} label="Cancel" className="p-button-secondary"/> */}
                         <PanelMenu />
                    </Sidebar>
                     <Button icon="pi pi-bars pi" label="Show" onClick={(e) => this.setState({visibleLeft:true})} style={{marginRight:'.25em'}} />

@@ -3,7 +3,7 @@ import {ListBox} from 'primereact/listbox';
 
 const LIistBox = ({ value, options, optionLabel, onChange }) => {
     return(
-            <div /*className="p-listbox-list-wrapper"*/ >
+            <div>
                <ListBox value={value} options={options} optionLabel={optionLabel} onChange={onChange} />
             </div>
             
