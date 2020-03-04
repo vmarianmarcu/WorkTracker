@@ -13,9 +13,30 @@ import Input from 'components/Input';
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
 
-const Item = ()=> {
-    
-}
+const Item = ({ item, projects, handleChange }) => (
+    <div className="dynamicContent">
+        <div className="dropdown">
+            {projects.pending && <em>Loading users...</em>}
+            {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
+            <Dropdown id="dropdown" name="projectName" value={item.projectName} onChange={handleChange} options={projects.items} />
+        </div>
+        <div className="timeSection">
+            <div className="arrivalTime">
+                <InputTime id="arrivalTime" name="arrivalTime" value={item.arrivalTime} placeholder="Arrival time" onChange={handleChange} />
+            </div>
+            <div className="departureTime">
+                <InputTime id="departureTime" name="departureTime" value={item.departureTime} placeholder="Departure time" onChange={handleChange} />
+            </div>
+            <div className="pause">
+                <Input type="time" id="pause" name="pause" value={item.pause} placeholder="Pause" onChange={handleChange} />
+            </div>
+            <div className="textarea">
+                <INputTextarea id="textArea" name="textArea" value={item.comment} placeholder="Comment" onChange={handleChange} />
+            </div>
+        </div>
+    </div>
+)
+
 
 class Dashboard extends Component {  
 
@@ -40,7 +61,7 @@ class Dashboard extends Component {
     componentDidMount() {
         this.props.getProjects();
     }
-    
+
     handleChange = (e) => {
 
         const { name, value } = e.target;
@@ -110,41 +131,11 @@ class Dashboard extends Component {
                                 </div>
                                 <div className="addButton">
                                     <Button type="button" icon="pi pi-plus" onClick={ this.addInputs } />
-                                </div>
-                                {
-                                   dash.map((item, index) => {
-                                        return(
-                                            <div className="dynamicContent" key={index}>
-                                                <div>
-                                                    <span>
-                                                    <div className="deleteButton">
-                                                        <Button type="button" icon="pi pi-times" />
-                                                    </div>
-                                                    <div className="dropdown">
-                                                        {projects.pending && <em>Loading users...</em>}
-                                                        {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
-                                                        <Dropdown id="dropdown" name="projectName" value={item.projectName} onChange={this.handleChange} options={projects.items} />
-                                                    </div>
-                                                    </span>
-                                                </div>
-                                                <div className="timeSection">
-                                                    <div className="arrivalTime">
-                                                        <InputTime id="arrivalTime" name={`arrivalTime${index}`} value={item.arrivalTime} placeholder="Arrival time" onChange={this.handleChange} />
-                                                    </div>
-                                                    <div className="departureTime">
-                                                        <InputTime id="departureTime" name={`departureTime${index}`} value={item.departureTime} placeholder="Departure time" onChange={this.handleChange}/>
-                                                    </div>
-                                                    <div className="pause">
-                                                        <Input type="time" id="pause" name={`pause${index}`} value={item.pause} placeholder="Pause" onChange={this.handleChange} />
-                                                    </div>
-                                                    <div className="textarea">
-                                                        <INputTextarea id="textArea" name={`textArea${index}`} value={item.comment} placeholder="Comment" onChange={this.handleChange}/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
+                                </div> 
+                                    {
+                                        dash.map((item, index) =>
+                                            <Item key={index} item={item} projects={projects} handleChange={this.handleChange} />)
+                                    }
                                 <div className="dash-save-button">
                                     <Button type="submit" label="SAVE" />
                                     { dashboardPost }
