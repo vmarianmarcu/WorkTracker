@@ -41,9 +41,11 @@ const Item = ({ item, projects, handleChange, index }) => (
                     <InputTime id="departureTime" name={"departureTime" + index} value={item.departureTime} placeholder="Departure time" onChange={handleChange} />
                 </div>
             </span>
-            <div className="textarea">
+        </div>
+        <div className="textarea">
+            <span>
                 <INputTextarea id="textArea" name={"textArea" + index} value={item.comment} placeholder="Comment" onChange={handleChange} />
-            </div>
+            </span>
         </div>
     </div>
 )
@@ -145,14 +147,14 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                 <Sidebar />
+                <div className="addButton">
+                    <Button type="button" icon="pi pi-plus" onClick={this.addInputs} />
+                </div>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className="contentSectin">
                         <div className="workDateAndTime">
                             <div className="calendar">
                                 <CAlendar id="calendar" name="date" value={dash.date} placeholder="Date" onChange={this.handleChange} />
-                            </div>
-                            <div className="addButton">
-                                <Button type="button" icon="pi pi-plus" onClick={this.addInputs} />
                             </div>
                             {
                                 dash.map((item, index) =>
