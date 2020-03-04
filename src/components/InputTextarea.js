@@ -6,7 +6,7 @@ class INputTextarea extends Component{
         const { id, name, placeholder, value, onChange } = this.props;
         return(
             <div>
-                <InputTextarea rows={3} cols={21} value={value} id={id} name={name} placeholder={placeholder} onChange={onChange} autoResize={true} />
+                <InputTextarea rows={1} cols={41} value={value} id={id} name={name} placeholder={placeholder} onChange={onChange} autoResize={true} />
             </div>    
         );
     }
