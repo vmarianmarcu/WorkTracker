@@ -9,6 +9,7 @@ import InputTime from 'components/InputTime24H';
 import 'static/dashboard.css';
 import Button from 'components/Button';
 import Input from 'components/Input';
+import {Panel} from 'primereact/panel';
 
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
@@ -147,19 +148,34 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                 <Sidebar />
-                <div className="addButton">
-                    <Button type="button" icon="pi pi-plus" onClick={this.addInputs} />
-                </div>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className="contentSectin">
                         <div className="workDateAndTime">
                             <div className="calendar">
                                 <CAlendar id="calendar" name="date" value={dash.date} placeholder="Date" onChange={this.handleChange} />
                             </div>
-                            {
-                                dash.map((item, index) =>
-                                    <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} />)
-                            }
+                            <div>
+                                {
+                                    dash.map((item, index) =>
+                                        <div className="panel">
+                                            <div>
+                                                {/* <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} /> */}
+                                                <Panel header="Project name" toggleable={true}>
+                                                    <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} />
+                                                    <div className="dangerButton">
+                                                        <Button className="p-button-danger" type="button" icon="pi pi-times" /*onClick={}*/ />
+                                                    </div>
+                                                   <br/>
+                                                   <br/>
+                                                </Panel>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            <div className="addButton">
+                                <Button type="button" icon="pi pi-plus" onClick={this.addInputs} />
+                            </div>
                             <div className="dash-save-button">
                                 <Button type="submit" label="SAVE" />
                                 {dashboardPost}

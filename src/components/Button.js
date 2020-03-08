@@ -4,12 +4,10 @@ import { Button } from 'primereact/button';
 class ButtonSubmit extends Component {
 
     render() {
-        const { label, type, onClick, icon} = this.props
+        const { className, label, type, onClick, icon} = this.props
         return (
-            <div>
-                <div className="content-button">
-                    <Button type={type} icon={icon} label={label} onClick={onClick}/>
-                </div>
+            <div className="content-button">
+                <Button className={className} type={type} icon={icon} label={label} onClick={onClick}/>
             </div>
         )
     }
