@@ -8,7 +8,7 @@ import 'static/projects.css';
 import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
 
-class Dashboard extends Component {  
+class Projects extends Component {  
 
     componentDidMount() {
         this.props.getProjects();
@@ -44,4 +44,4 @@ const actionCreators = {
     getProjects: projectActions.getAll
 }
 
-export default connect(mapStateToProps, actionCreators) (Dashboard);
+export default connect(mapStateToProps, actionCreators) (Projects);
