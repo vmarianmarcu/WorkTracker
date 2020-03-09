@@ -19,5 +19,9 @@ function replacer(key, value) {
 }
 
 export function formatBody(body) {
-    return JSON.stringify({...body}, replacer);
+    return JSON.stringify({ ...body }, replacer);
+}
+
+export function parseBody(jsonBody) {
+
 }
