@@ -18,7 +18,7 @@
     display: inline-flex;
 }
 .dash-save-button {
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 50px;
 }
 .deleteButton {
@@ -60,9 +60,10 @@
     padding-left: 70px;
 }
 .addButton{
-   padding-left: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
 }
-.dangerButton{
+.deleteButton{
     padding-top: 7px;
     float: right;
 }

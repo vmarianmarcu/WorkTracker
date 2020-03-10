@@ -7,6 +7,7 @@ import 'static/projects.css';
 
 import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
+import {loadProjects} from 'data/actions';
 
 class Projects extends Component {  
 
@@ -41,7 +42,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-    getProjects: projectActions.getAll
+    getProjects: loadProjects
 }
 
 export default connect(mapStateToProps, actionCreators) (Projects);

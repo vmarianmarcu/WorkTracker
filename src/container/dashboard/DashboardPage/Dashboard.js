@@ -110,21 +110,6 @@ class Dashboard extends Component {
         }
     }
 
-    // addSection = (e) => {
-    //     this.setState((prevState) => ({
-    //         dash: [
-    //             ...prevState.dash,
-    //             {
-    //                 projectName: null,
-    //                 arrivalTime: null,
-    //                 departureTime: null,
-    //                 pause: "00:30",
-    //                 comment: null,
-    //             }
-    //         ]
-    //     }));
-    // }
-
     addInputs = () => {
         const item = {
             projectName: null,
@@ -137,8 +122,18 @@ class Dashboard extends Component {
         this.setState({
             dash: newDash
         })
-        // var newInputs = this.state.dash.length;
-        // this.setState(prevState => ({dash: prevState.dash.concat([newInputs]) }));
+    }
+
+    handleDeleteSection = (index) => {
+    
+        let array = [...this.state.dash];
+        if(index !== -1) {
+            array.splice(index, 1);
+            this.setState({
+                dash: array
+            })
+        }
+
     }
 
     render() {
@@ -162,8 +157,8 @@ class Dashboard extends Component {
                                                 {/* <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} /> */}
                                                 <Panel header="Project name" toggleable={true}>
                                                     <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} />
-                                                    <div className="dangerButton">
-                                                        <Button className="p-button-danger" type="button" icon="pi pi-times" /*onClick={}*/ />
+                                                    <div className="deleteButton">
+                                                        <Button key={index} className="p-button-danger" type="button" icon="pi pi-times" onClick={(index) =>{this.handleDeleteSection(index)}} />
                                                     </div>
                                                    <br/>
                                                    <br/>

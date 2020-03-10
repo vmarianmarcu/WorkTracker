@@ -1,4 +1,7 @@
-import { EMPTY_OBJECT, EMPTY_ARRAY } from 'utils';
+// import { EMPTY_OBJECT, EMPTY_ARRAY } from 'utils';
+export const EMPTY_ARRAY = [];
+export const EMPTY_STRING = '';
+export const EMPTY_OBJECT = {};
 
 const initialState = {
     requesting: false,
