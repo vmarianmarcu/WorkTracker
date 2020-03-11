@@ -18,7 +18,8 @@ class SIdebar extends Component {
 
                 <div className="content-section implementation">
                     <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({visibleLeft: false})}>
-                        <h1 style={{fontWeight:'normal'}}>Left Sidebar</h1>
+                        {/* <h1 style={{fontWeight:'normal'}}>Left Sidebar</h1> */}
+                        <br/>
                         <PanelMenu />
                    </Sidebar>
                     <Button icon="pi pi-bars pi" label="Show" onClick={(e) => this.setState({visibleLeft:true})} style={{marginRight:'.25em'}} />
