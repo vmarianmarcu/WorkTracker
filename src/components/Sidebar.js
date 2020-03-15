@@ -16,9 +16,11 @@ class SIdebar extends Component {
         return (
             <div>
 
-                <div className="content-section implementation">
+                <div className="sideBar">
                     <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({visibleLeft: false})}>
-                        {/* <h1 style={{fontWeight:'normal'}}>Left Sidebar</h1> */}
+                        <div className="sidebarTitle">
+                            <h1>Work Tracker</h1>
+                        </div>
                         <br/>
                         <PanelMenu />
                    </Sidebar>
