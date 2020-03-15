@@ -41,6 +41,4 @@ const Item = ({ item, projects, handleChange, index }) => (
         </div>
     </div>
 )
-
-
 export default Item;
