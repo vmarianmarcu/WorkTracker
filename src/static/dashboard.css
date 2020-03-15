@@ -8,6 +8,10 @@
    padding-left: 40px;
    padding-top: 5px;
 }
+.datepicker{
+    -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);
+}
 .dropdown {
     padding-top: 5px;
  }
@@ -76,6 +80,19 @@
 }
 .contentSectin{
     padding-top: 3%;
+}
+.p-button{
+    position: fixed;
+}
+.datepicker{
+    position: fixed;
+}
+.panelSection{
+    padding-left: 350px;
+}
+.workDateAndTime{
+    padding-top: 2%;
+    padding-left: 4%;
 }
 @media only screen and (max-width: 500px) {
     .workDateAndTime {

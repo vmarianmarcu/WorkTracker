@@ -112,10 +112,10 @@ class Dashboard extends Component {
                     <form name="form" onSubmit={handleSubmit}>
                         <div className="contentSectin">
                             <div className="workDateAndTime">
-                                <div className="calendar">
+                                <div className="datepicker">
                                     <CAlendar id="calendar" name="date" value={dash.date} placeholder="Date" onChange={this.handleChange} />
                                 </div>
-                                <div>
+                                <div className="panelSection">
                                     {
                                         dash.map((item, index) =>
                                             <div className="panel">

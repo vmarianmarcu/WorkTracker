@@ -41,7 +41,14 @@ text-shadow: 2px 0 0px #800040,
  17px 0 45px #408000,
  17px 2px 45px rgba(38,77,0,0.5);
  }
-
+ .sideBar{
+     z-index: 100000;
+    position: fixed;
+ }
+ .p-panel{
+    -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);
+ }
  @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
  
