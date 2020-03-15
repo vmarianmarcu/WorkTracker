@@ -18,8 +18,9 @@
     display: inline-flex;
 }
 .dash-save-button {
+    float: right;
     padding-top: 10px;
-    padding-left: 50px;
+    padding-left: 30px;
 }
 .deleteButton {
     float: right;
@@ -59,13 +60,22 @@
     margin-top: 0.5em;
     padding-left: 70px;
 }
+.fixedItems{
+    /* padding-top: 20%; */
+    padding-left: 64%;
+    position: fixed;
+    display: inline;
+}
 .addButton{
+    float: left;
     padding-top: 10px;
-    padding-left: 20px;
 }
 .deleteButton{
     padding-top: 7px;
     float: right;
+}
+.contentSectin{
+    padding-top: 3%;
 }
 @media only screen and (max-width: 500px) {
     .workDateAndTime {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {InputText} from "primereact/inputtext";
+import { Field } from 'react-final-form';
 
 class InputField extends Component {
    
@@ -15,3 +16,4 @@ class InputField extends Component {
     }
 }
 export default InputField;
+// export default props => <Field component={InputField} {...props} />;

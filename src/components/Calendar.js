@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Calendar} from 'primereact/calendar';
+import { Calendar } from 'primereact/calendar';
+import { Field } from 'react-final-form';
 
 class CAlendar extends Component {
 
@@ -12,7 +13,8 @@ class CAlendar extends Component {
         )
     }
 }
-export default CAlendar;
+// export default CAlendar;
+export default props => <Field component={CAlendar} {...props} />;
 
 
 

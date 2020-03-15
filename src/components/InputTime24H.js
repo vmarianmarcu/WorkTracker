@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Calendar} from 'primereact/calendar';
+import { Field } from 'react-final-form';
 
 class InputTime extends Component {
 
@@ -12,4 +13,5 @@ class InputTime extends Component {
         );
     }
 }
-export default InputTime;
+// export default InputTime;
+export default props => <Field component={InputTime} {...props} />;

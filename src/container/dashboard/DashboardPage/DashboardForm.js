@@ -4,6 +4,7 @@ import Dropdown from 'components/Dropdown';
 import InputTime from 'components/InputTime24H';
 import 'static/dashboard.css';
 import Input from 'components/Input';
+import Field from 'react-final-form';
 
 const Item = ({ item, projects, handleChange, index }) => (
     <div className="dynamicContent">

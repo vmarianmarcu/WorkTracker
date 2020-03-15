@@ -1,22 +1,8 @@
 import React, {Component} from 'react';
 import {Dropdown} from 'primereact/dropdown';
+import { Field } from 'react-final-form';
 
 class DRopdown extends Component {
-
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         projects: null
-    //     };
-
-    //     this.onCityChange = this.onCityChange.bind(this);
-    // }
-
-    // onCityChange(e) {
-    //     this.setState({
-    //         projects: e.value
-    //     });
-    // }
 
     render() {
         const { id, name, options, value, onChange } = this.props;
@@ -30,4 +16,5 @@ class DRopdown extends Component {
         );
     }
 }
-export default DRopdown;
+// export default DRopdown;
+export default props => <Field component={DRopdown} {...props} />;

@@ -14,6 +14,7 @@ import {Panel} from 'primereact/panel';
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
 import Item from './DashboardForm';
+import { Form } from 'react-final-form';
 
 class Dashboard extends Component {
 
@@ -31,8 +32,8 @@ class Dashboard extends Component {
             }],
             submitted: false
         };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -51,19 +52,19 @@ class Dashboard extends Component {
     //     });
     // }
 
-    handleChange = (e) => {
+    // handleChange = (e) => {
 
-        const { index, name, value } = e.target;
-        const { dash } = this.state;
-        this.setState(prevState => ({
-            dash: prevState.dash.map(item => (
-                index === item.index ? { ...dash, [name]: value } : item
-            ))
-        }));
-    }
+    //     const { index, name, value } = e.target;
+    //     const { dash } = this.state;
+    //     this.setState(prevState => ({
+    //         dash: prevState.dash.map(item => (
+    //             index === item.index ? { ...dash, [name]: value } : item
+    //         ))
+    //     }));
+    // }
 
     handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         console.log("Dashboard state: ", this.state);
 
         this.setState({ submitted: true });
@@ -106,41 +107,46 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                 <Sidebar />
-                <form name="form" onSubmit={this.handleSubmit}>
-                    <div className="contentSectin">
-                        <div className="workDateAndTime">
-                            <div className="calendar">
-                                <CAlendar id="calendar" name="date" value={dash.date} placeholder="Date" onChange={this.handleChange} />
-                            </div>
-                            <div>
-                                {
-                                    dash.map((item, index) =>
-                                        <div className="panel">
-                                            <div>
-                                                {/* <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} /> */}
-                                                <Panel header="Project name" toggleable={true}>
-                                                    <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} />
-                                                    <div className="deleteButton">
-                                                        <Button key={index} className="p-button-danger" type="button" icon="pi pi-times" onClick={(index) =>{this.handleDeleteSection(index)}} />
-                                                    </div>
-                                                   <br/>
-                                                   <br/>
-                                                </Panel>
+                <Form onSubmit={this.handleSubmit} >
+                    {({handleSubmit}) =>
+                    <form name="form" onSubmit={handleSubmit}>
+                        <div className="contentSectin">
+                            <div className="workDateAndTime">
+                                <div className="calendar">
+                                    <CAlendar id="calendar" name="date" value={dash.date} placeholder="Date" onChange={this.handleChange} />
+                                </div>
+                                <div>
+                                    {
+                                        dash.map((item, index) =>
+                                            <div className="panel">
+                                                <div>
+                                                    {/* <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} /> */}
+                                                    <Panel header={`Project ${index + 1}`} toggleable={true}>
+                                                        <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} />
+                                                        <div className="deleteButton">
+                                                            <Button key={index} className="p-button-danger" type="button" icon="pi pi-times" onClick={(index) =>{this.handleDeleteSection(index)}} />
+                                                        </div>
+                                                    <br/>
+                                                    <br/>
+                                                    </Panel>
+                                                </div>
                                             </div>
-                                        </div>
-                                    )
-                                }
-                            </div>
-                            <div className="addButton">
-                                <Button type="button" icon="pi pi-plus" onClick={this.addInputs} />
-                            </div>
-                            <div className="dash-save-button">
-                                <Button type="submit" label="SAVE" />
-                                {dashboardPost}
+                                        )
+                                    }
+                                </div>
+                                <div className="fixedItems">
+                                    <div className="addButton">
+                                        <Button type="button" icon="pi pi-plus" onClick={this.addInputs} />
+                                    </div>
+                                    <div className="dash-save-button">
+                                        <Button type="submit" label="SAVE" />
+                                        {dashboardPost}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>}
+                </Form>
             </div>
         );
     }

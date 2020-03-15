@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {InputTextarea} from 'primereact/inputtextarea';
+import { InputTextarea } from 'primereact/inputtextarea';
+import { Field } from 'react-final-form';
 
 class INputTextarea extends Component{
     render() {
@@ -11,5 +12,6 @@ class INputTextarea extends Component{
         );
     }
 }
-export default INputTextarea;
+// export default INputTextarea;
+export default props => <Field component={INputTextarea} {...props} />;
 
