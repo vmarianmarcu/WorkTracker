@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
-import {Sidebar} from 'primereact/sidebar';
-import {Button} from 'primereact/button';
+import React, { Component } from 'react';
+import { Sidebar } from 'primereact/sidebar';
+import { Button } from 'primereact/button';
 import PanelMenu from './PanelMenu';
+import '../static/app.css';
 
 class SIdebar extends Component {
 
@@ -17,14 +18,16 @@ class SIdebar extends Component {
             <div>
 
                 <div className="sideBar">
-                    <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({visibleLeft: false})}>
+                    <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({ visibleLeft: false })}>
                         <div className="sidebarTitle">
                             <h1>Work Tracker</h1>
                         </div>
-                        <br/>
+                        <br />
                         <PanelMenu />
-                   </Sidebar>
-                    <Button icon="pi pi-bars pi" label="Show" onClick={(e) => this.setState({visibleLeft:true})} style={{marginRight:'.25em'}} />
+                    </Sidebar>
+                    <div className="showSlidebarButton">
+                        <Button icon="pi pi-bars pi" label="Show" onClick={(e) => this.setState({ visibleLeft: true })} />
+                    </div>
                 </div>
             </div>
         )
