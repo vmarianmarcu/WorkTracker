@@ -5,10 +5,10 @@ import { Field } from 'react-final-form';
 class InputTime extends Component {
 
     render() {
-        const { id, name, placeholder, value, onChange } = this.props;
+        const { name, placeholder, value, onChange } = this.props;
         return (
             <div className="hourInput">
-                <Calendar value={value} id={id} name={name} placeholder={placeholder} onChange={onChange} timeOnly={true} hourFormat="24" />
+                <Calendar value={value} name={name} placeholder={placeholder} onChange={onChange} timeOnly={true} hourFormat="24" />
             </div>
         );
     }

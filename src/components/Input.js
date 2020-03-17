@@ -5,11 +5,11 @@ import { Field } from 'react-final-form';
 class InputField extends Component {
    
     render() {
-        const {id, placeholder, onChange,type, className, name, value } = this.props;
+        const { placeholder, onChange,type, className, name, value } = this.props;
         return(
             <div className="input-text-container">
                <span className="p-float-label">
-                    <InputText type={type} id={id} className={className} name={name} value={value} placeholder={placeholder} onChange={onChange} />
+                    <InputText type={type} className={className} name={name} value={value} placeholder={placeholder} onChange={onChange} />
                 </span>
             </div>
         );
