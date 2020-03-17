@@ -24,9 +24,6 @@
     padding-top: 10px;
     padding-left: 30px;
 }
-.deleteButton {
-    float: right;
-}
 .dropdownAndPause {
     display: inline-flex; 
 }
@@ -63,8 +60,8 @@
     padding-left: 70px;
 }
 .fixedItems{
-    /* padding-top: 20%; */
-    padding-left: 64%;
+    padding-top: 1.75%;
+    padding-left: 5%;
     position: fixed;
     display: inline;
 }
@@ -92,6 +89,7 @@
     padding-top: 2%;
     padding-left: 4%;
 }
+
 @media only screen and (max-width: 500px) {
     .workDateAndTime {
         display: block;

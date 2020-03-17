@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { projectActions } from 'container/project/actions/project.actions';
 import CAlendar from 'components/Calendar';
-import INputTextarea from 'components/InputTextarea';
 import Sidebar from 'components/Sidebar';
-import Dropdown from 'components/Dropdown';
-import InputTime from 'components/InputTime24H';
 import 'static/dashboard.css';
 import Button from 'components/Button';
-import Input from 'components/Input';
-import {Panel} from 'primereact/panel';
-
+import { Panel } from 'primereact/panel';
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
 import Item from './DashboardForm';
@@ -29,11 +24,8 @@ class Dashboard extends Component {
                 pause: "00:30",
                 date: "",
                 comment: "",
-            }],
-            submitted: false
+            }]
         };
-        // this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -67,7 +59,7 @@ class Dashboard extends Component {
         // e.preventDefault();
         console.log("Dashboard state: ", this.state);
 
-        this.setState({ submitted: true });
+        this.setState();
         const { dash } = this.state;
         if (dash.projectName && dash.arrivalTime && dash.departureTime && dash.pause && dash.date && dash.comment) {
             this.props.dashboard(dash);
@@ -82,6 +74,7 @@ class Dashboard extends Component {
             pause: "00:30",
             comment: null
         }
+
         let newDash = [...this.state.dash, item]
         this.setState({
             dash: newDash
@@ -89,54 +82,69 @@ class Dashboard extends Component {
     }
 
     handleDeleteSection = (index) => {
-    
         let array = [...this.state.dash];
-        if(index !== -1) {
+        if (index !== -1) {
             array.splice(index, 1);
             this.setState({
                 dash: array
             })
         }
-
     }
 
     render() {
         const { projects, dashboardPost } = this.props;
-        const { dash, submitted } = this.state;
+        const { dash } = this.state;
 
         return (
             <div className='containerDashboard'>
                 <Sidebar />
                 <Form onSubmit={this.handleSubmit} >
-                    {({handleSubmit}) =>
-                    <form name="form" onSubmit={handleSubmit}>
-                        <div className="contentSectin">
-                            <div className="workDateAndTime">
-                                <div className="datepicker">
-                                    <CAlendar id="calendar" name="date" value={dash.date} placeholder="Date" onChange={this.handleChange} />
-                                </div>
-                                <div className="panelSection">
-                                    {
-                                        dash.map((item, index) =>
-                                            <div className="panel">
-                                                <div>
-                                                    {/* <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} /> */}
-                                                    <Panel header={`Project ${index + 1}`} toggleable={true}>
-                                                        <Item key={index} index={index} item={item} projects={projects} handleChange={this.handleChange} />
-                                                        <div className="deleteButton">
-                                                            <Button key={index} className="p-button-danger" type="button" icon="pi pi-times" onClick={(index) =>{this.handleDeleteSection(index)}} />
-                                                        </div>
-                                                    <br/>
-                                                    <br/>
-                                                    </Panel>
+                    {({ handleSubmit, input }) =>
+                        <form name="form" onSubmit={handleSubmit}>
+                            <div className="contentSectin">
+                                <div className="workDateAndTime">
+                                    <div className="datepicker">
+                                        <CAlendar id="calendar"
+                                            name="date"
+                                            value={dash.date}
+                                            placeholder="Date"
+                                            onChange={value => input.onChange(value)}
+                                        />
+                                    </div>
+                                    <div className="panelSection">
+                                        {
+                                            dash.map((item, index) =>
+                                                <div className="panel">
+                                                    <div>
+                                                        <Panel header={`Project ${index + 1}`} toggleable={true}>
+                                                            <Item key={index} index={index}
+                                                                item={item}
+                                                                projects={projects}
+                                                                onChange={this.handleChange}
+                                                            />
+                                                            <div className="deleteButton">
+                                                                <Button key={index}
+                                                                    className="p-button-danger"
+                                                                    type="button"
+                                                                    icon="pi pi-times"
+                                                                    onClick={(index) => { this.handleDeleteSection(index) }}
+                                                                />
+                                                            </div>
+                                                            <br />
+                                                            <br />
+                                                        </Panel>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        )
-                                    }
+                                            )
+                                        }
+                                    </div>
                                 </div>
                                 <div className="fixedItems">
                                     <div className="addButton">
-                                        <Button type="button" icon="pi pi-plus" onClick={this.addInputs} />
+                                        <Button type="button"
+                                            icon="pi pi-plus"
+                                            onClick={this.addInputs}
+                                        />
                                     </div>
                                     <div className="dash-save-button">
                                         <Button type="submit" label="SAVE" />
@@ -144,8 +152,7 @@ class Dashboard extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>}
+                        </form>}
                 </Form>
             </div>
         );
