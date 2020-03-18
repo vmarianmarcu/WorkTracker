@@ -1,14 +1,23 @@
-import React, {Component} from 'react';
-import {Calendar} from 'primereact/calendar';
+import React, { Component } from 'react';
+import { Calendar } from 'primereact/calendar';
 import { Field } from 'react-final-form';
 
 class InputTime extends Component {
 
     render() {
-        const { name, placeholder, value, onChange } = this.props;
+        const { input, name, placeholder, value, ...rest } = this.props;
         return (
             <div className="hourInput">
-                <Calendar value={value} name={name} placeholder={placeholder} onChange={onChange} timeOnly={true} hourFormat="24" />
+                <Calendar
+                    {...input}
+                    {...rest}
+                    value={input.value}
+                    name={input.name}
+                    placeholder={placeholder}
+                    timeOnly={true}
+                    hourFormat="24"
+                    onChange={event => input.onChange(event)}
+                />
             </div>
         );
     }

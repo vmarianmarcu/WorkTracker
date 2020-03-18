@@ -1,17 +1,23 @@
-import React, {Component} from 'react';
-import {Dropdown} from 'primereact/dropdown';
+import React, { Component } from 'react';
+import { Dropdown } from 'primereact/dropdown';
 import { Field } from 'react-final-form';
 
 class DRopdown extends Component {
 
     render() {
-        const { name, options, value, onChange } = this.props;
+        const { input, name, options, value, ...rest } = this.props;
         return (
             <div className="dropdownSection">
-                <Dropdown value={value} name={name} options={options} onChange={onChange} placeholder="Select a Project" optionLabel="name"/>
-                {/* <div style={{marginTop: '.5em'}}>{this.state.projects ? 'Selected Project: ' + this.state.projects.name : 'No project selected'}</div> */}
-                {/* <Dropdown value={value} id={id} name={name} options={options} onChange={onChange} placeholder="Select a Project" optionLabel="name"/>
-                <div style={{marginTop: '.5em'}}>{{value} ? 'Selected Project: ' + {value} : 'No project selected'}</div>  */}
+                <Dropdown
+                    {...input}
+                    {...rest}
+                    value={input.value}
+                    name={input.name}
+                    options={options}
+                    placeholder="Select a Project"
+                    optionLabel="name"
+                    onChange={event => input.onChange(event)}
+                />
             </div>
         );
     }

@@ -2,29 +2,26 @@ import React, { Component } from 'react';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Field } from 'react-final-form';
 
-class INputTextarea extends Component{
+class Textarea extends Component {
     render() {
-        const { name, placeholder, value, onChange } = this.props;
-        return(
-            <Field name="textarea">
-                {props => (
-                        <div>
-                            <InputTextarea
-                                rows={1} 
-                                cols={47} 
-                                name={props.input.name}
-                                value={props.input.value} 
-                                onChange={props.input.onChange}
-                                placeholder={placeholder}  
-                                autoResize={true} 
-                             />
-                        </div>
-                    )
-                }  
-            </Field>  
+        const { input, name, placeholder, value, ...rest } = this.props;
+        return (
+            <div>
+                <InputTextarea
+                    {...input}
+                    {...rest}
+                    rows={1}
+                    cols={47}
+                    name={input.name}
+                    value={input.value}
+                    placeholder={placeholder}
+                    autoResize={true}
+                    onChange={event => input.onChange(event)}
+                />
+            </div>
         );
     }
 }
-export default INputTextarea;
-// export default props => <Field name="textarea" component={INputTextarea} {...props} />;
+// export default INputTextarea;
+export default props => <Field name="textarea" component={Textarea} {...props} />;
 

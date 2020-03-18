@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { projectActions } from 'container/project/actions/project.actions';
-import CAlendar from 'components/Calendar';
+import Calendar from 'components/Calendar';
 import Sidebar from 'components/Sidebar';
 import 'static/dashboard.css';
 import Button from 'components/Button';
@@ -61,7 +61,7 @@ class Dashboard extends Component {
 
         this.setState();
         const { dash } = this.state;
-        if (dash.projectName && dash.arrivalTime && dash.departureTime && dash.pause && dash.date && dash.comment) {
+        if (dash.projectName) {
             this.props.dashboard(dash);
         }
     }
@@ -98,17 +98,16 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                 <Sidebar />
-                <Form onSubmit={this.handleSubmit} >
-                    {({ handleSubmit, input }) =>
+                <Form onSubmit={this.handleSubmit}>
+                    {({ handleSubmit }) =>
                         <form name="form" onSubmit={handleSubmit}>
                             <div className="contentSectin">
                                 <div className="workDateAndTime">
                                     <div className="datepicker">
-                                        <CAlendar id="calendar"
+                                        <Calendar id="calendar"
                                             name="date"
                                             value={dash.date}
                                             placeholder="Date"
-                                            onChange={value => input.onChange(value)}
                                         />
                                     </div>
                                     <div className="panelSection">
@@ -120,7 +119,6 @@ class Dashboard extends Component {
                                                             <Item key={index} index={index}
                                                                 item={item}
                                                                 projects={projects}
-                                                                onChange={this.handleChange}
                                                             />
                                                             <div className="deleteButton">
                                                                 <Button key={index}

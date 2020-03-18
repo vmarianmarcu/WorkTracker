@@ -1,5 +1,5 @@
 import React from 'react';
-import INputTextarea from 'components/InputTextarea';
+import InputTextarea from 'components/InputTextarea';
 import Dropdown from 'components/Dropdown';
 import InputTime from 'components/InputTime24H';
 import 'static/dashboard.css';
@@ -36,7 +36,7 @@ const Item = ({ item, projects }) => (
         </div>
         <div className="textarea">
             <span>
-                <INputTextarea name="textArea" value={item.comment} placeholder="Comment" />
+                <InputTextarea name="textArea" value={item.comment} placeholder="Comment" />
             </span>
         </div>
     </div>
