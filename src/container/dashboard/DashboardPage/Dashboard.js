@@ -3,15 +3,13 @@ import { connect } from 'react-redux';
 import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
 import 'static/dashboard.css';
-import Button from 'components/Button';
-import { Panel } from 'primereact/panel';
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
-import Item from './components/DashboardForm';
 import { Form } from 'react-final-form';
 import AddItem from './components/AddItem';
 import SubmitButton from './components/SubmitButton';
 import Datepicker from './components/Datepicker';
+import PanelSection from './components/PanelSection';
 
 class Dashboard extends Component {
 
@@ -106,32 +104,8 @@ class Dashboard extends Component {
                             <div className="contentSectin">
                                 <div className="workDateAndTime">
                                     <Datepicker value={dash.date} />
-                                    <div className="panelSection">
-                                        {
-                                            dash.map((item, index) =>
-                                                <div className="panel">
-                                                    <div>
-                                                        <Panel header={`Project ${index + 1}`} toggleable={true}>
-                                                            <Item key={index} index={index}
-                                                                item={item}
-                                                                projects={projects}
-                                                            />
-                                                            <div className="deleteButton">
-                                                                <Button key={index}
-                                                                    className="p-button-danger"
-                                                                    type="button"
-                                                                    icon="pi pi-times"
-                                                                    onClick={(index) => { this.handleDeleteSection(index) }}
-                                                                />
-                                                            </div>
-                                                            <br />
-                                                            <br />
-                                                        </Panel>
-                                                    </div>
-                                                </div>
-                                            )
-                                        }
-                                    </div>
+                                    <PanelSection projects={projects} dash={dash} onClick={(index) => { this.handleDeleteSection(index) }} />
+                                    
                                 </div>
                                 <div className="fixedItems">
                                     <AddItem onClick={this.addInputs} />
