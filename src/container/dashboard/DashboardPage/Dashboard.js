@@ -32,38 +32,8 @@ class Dashboard extends Component {
         this.props.getProjects();
     }
 
-    // handleChange = (e) => {
-
-    //     const { name, value } = e.target;
-    //     const { dash } = this.state;
-    //     this.setState({
-    //         dash: {
-    //             ...dash,
-    //             [name]: value
-    //         }
-    //     });
-    // }
-
-    // handleChange = (e) => {
-
-    //     const { index, name, value } = e.target;
-    //     const { dash } = this.state;
-    //     this.setState(prevState => ({
-    //         dash: prevState.dash.map(item => (
-    //             index === item.index ? { ...dash, [name]: value } : item
-    //         ))
-    //     }));
-    // }
-
-    handleSubmit = (e) => {
-        // e.preventDefault();
-        console.log("Dashboard state: ", this.state);
-
-        this.setState();
-        const { dash } = this.state;
-        if (dash.projectName) {
-            this.props.dashboard(dash);
-        }
+    handleSubmit = (values) => {
+       
     }
 
     addInputs = () => {
@@ -105,7 +75,6 @@ class Dashboard extends Component {
                                 <div className="workDateAndTime">
                                     <Datepicker value={dash.date} />
                                     <PanelSection projects={projects} dash={dash} onClick={(index) => { this.handleDeleteSection(index) }} />
-                                    
                                 </div>
                                 <div className="fixedItems">
                                     <AddItem onClick={this.addInputs} />
