@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { projectActions } from 'container/project/actions/project.actions';
-import Calendar from 'components/Calendar';
 import Sidebar from 'components/Sidebar';
 import 'static/dashboard.css';
 import Button from 'components/Button';
@@ -12,6 +11,7 @@ import Item from './components/DashboardForm';
 import { Form } from 'react-final-form';
 import AddItem from './components/AddItem';
 import SubmitButton from './components/SubmitButton';
+import Datepicker from './components/Datepicker';
 
 class Dashboard extends Component {
 
@@ -105,13 +105,7 @@ class Dashboard extends Component {
                         <form name="form" onSubmit={handleSubmit}>
                             <div className="contentSectin">
                                 <div className="workDateAndTime">
-                                    <div className="datepicker">
-                                        <Calendar id="calendar"
-                                            name="date"
-                                            value={dash.date}
-                                            placeholder="Date"
-                                        />
-                                    </div>
+                                    <Datepicker value={dash.date} />
                                     <div className="panelSection">
                                         {
                                             dash.map((item, index) =>
