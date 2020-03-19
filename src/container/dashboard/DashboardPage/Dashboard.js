@@ -8,8 +8,10 @@ import Button from 'components/Button';
 import { Panel } from 'primereact/panel';
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
-import Item from './DashboardForm';
+import Item from './components/DashboardForm';
 import { Form } from 'react-final-form';
+import AddItem from './components/AddItem';
+import SubmitButton from './components/SubmitButton';
 
 class Dashboard extends Component {
 
@@ -138,16 +140,9 @@ class Dashboard extends Component {
                                     </div>
                                 </div>
                                 <div className="fixedItems">
-                                    <div className="addButton">
-                                        <Button type="button"
-                                            icon="pi pi-plus"
-                                            onClick={this.addInputs}
-                                        />
-                                    </div>
-                                    <div className="dash-save-button">
-                                        <Button type="submit" label="SAVE" />
-                                        {dashboardPost}
-                                    </div>
+                                    <AddItem onClick={this.addInputs} />
+                                    <SubmitButton />
+                                    {dashboardPost}
                                 </div>
                             </div>
                         </form>}
