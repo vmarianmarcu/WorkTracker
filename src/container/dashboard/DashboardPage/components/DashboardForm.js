@@ -3,7 +3,7 @@ import InputTextarea from 'components/InputTextarea';
 import Dropdown from 'components/Dropdown';
 import InputTime from 'components/InputTime24H';
 import 'static/dashboard.css';
-import Input from 'components/Input';
+import Input from 'components/InputField';
 
 const Item = ({ item, projects }) => (
     <div className="dynamicContent">

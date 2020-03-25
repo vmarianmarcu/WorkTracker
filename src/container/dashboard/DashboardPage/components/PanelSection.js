@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'components/Button';
 import { Panel } from 'primereact/panel';
 import Item from './DashboardForm';
 import DeleteItem from './DeleteItem';

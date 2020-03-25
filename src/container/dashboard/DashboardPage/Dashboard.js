@@ -68,9 +68,11 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                 <Sidebar />
-                <Form onSubmit={this.handleSubmit}>
-                    {({ handleSubmit }) =>
-                        <form name="form" onSubmit={handleSubmit}>
+                <Form  onSubmit={formObj => {
+                    console.log(formObj);
+                }}>
+                    {({ handleSubmit }) => (
+                        <form name="form" onSubmit={ handleSubmit }>
                             <div className="contentSectin">
                                 <div className="workDateAndTime">
                                     <Datepicker value={dash.date} />
@@ -82,7 +84,8 @@ class Dashboard extends Component {
                                     {dashboardPost}
                                 </div>
                             </div>
-                        </form>}
+                        </form>
+                    )}
                 </Form>
             </div>
         );
