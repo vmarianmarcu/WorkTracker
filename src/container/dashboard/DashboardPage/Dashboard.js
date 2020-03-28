@@ -10,6 +10,8 @@ import AddItem from './components/AddItem';
 import SubmitButton from './components/SubmitButton';
 import Datepicker from './components/Datepicker';
 import PanelSection from './components/PanelSection';
+import arrayMutators from 'final-form-arrays';
+import { FieldArray } from 'react-final-form-arrays';
 
 class Dashboard extends Component {
 
@@ -70,13 +72,20 @@ class Dashboard extends Component {
                 <Sidebar />
                 <Form  onSubmit={formObj => {
                     console.log(formObj);
-                }}>
+                }}
+                mutators={{
+                    // potentially other mutators could be merged here
+                    ...arrayMutators
+                  }}
+                >
                     {({ handleSubmit }) => (
                         <form name="form" onSubmit={ handleSubmit }>
                             <div className="contentSectin">
                                 <div className="workDateAndTime">
+                                    {/* <FieldArray> */}
                                     <Datepicker value={dash.date} />
                                     <PanelSection projects={projects} dash={dash} onClick={(index) => { this.handleDeleteSection(index) }} />
+                                    {/* </FieldArray> */}
                                 </div>
                                 <div className="fixedItems">
                                     <AddItem onClick={this.addInputs} />
