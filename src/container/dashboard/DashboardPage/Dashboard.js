@@ -10,8 +10,8 @@ import AddItem from './components/AddItem';
 import SubmitButton from './components/SubmitButton';
 import Datepicker from './components/Datepicker';
 import PanelSection from './components/PanelSection';
-import arrayMutators from 'final-form-arrays';
-import { FieldArray } from 'react-final-form-arrays';
+import arrayMutators from "final-form-arrays";
+import { FieldArray } from "react-final-form-arrays";
 
 class Dashboard extends Component {
 
@@ -70,21 +70,31 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                 <Sidebar />
-                <Form  onSubmit={formObj => {
-                    console.log(formObj);
-                }}
-                mutators={{
-                    // potentially other mutators could be merged here
-                    ...arrayMutators
-                  }}
-                >
-                    {({ handleSubmit }) => (
+                <Form  
+                    onSubmit={formObj => {
+                        console.log(formObj);
+                    }}
+                    mutators={{
+                        ...arrayMutators
+                    }}
+                    render={({
+                        handleSubmit,
+                        form: {
+                          mutators: { push, pop }
+                        }, // injected from final-form-arrays above
+                        pristine,
+                        form,
+                        submitting,
+                        values
+                      })=> { return (
+                
+                    // {({ handleSubmit }) => (
                         <form name="form" onSubmit={ handleSubmit }>
                             <div className="contentSectin">
                                 <div className="workDateAndTime">
-                                    {/* <FieldArray> */}
                                     <Datepicker value={dash.date} />
-                                    <PanelSection projects={projects} dash={dash} onClick={(index) => { this.handleDeleteSection(index) }} />
+                                    {/* <FieldArray> */}
+                                        <PanelSection projects={projects} dash={dash} onClick={(index) => { this.handleDeleteSection(index) }} />
                                     {/* </FieldArray> */}
                                 </div>
                                 <div className="fixedItems">
@@ -94,8 +104,9 @@ class Dashboard extends Component {
                                 </div>
                             </div>
                         </form>
-                    )}
-                </Form>
+                   );
+                }}
+                />
             </div>
         );
     }

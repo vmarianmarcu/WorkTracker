@@ -15,12 +15,11 @@ class InputTime extends Component {
                     name={input.name}
                     placeholder={placeholder}
                     timeOnly={true}
-                    hourFormat="24"
+                    hourFormat={24}
                     onChange={event => input.onChange(event)}
                 />
             </div>
         );
     }
 }
-// export default InputTime;
 export default props => <Field component={InputTime} {...props} />;
