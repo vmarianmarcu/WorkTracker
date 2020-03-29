@@ -2,6 +2,7 @@ import React from 'react';
 import InputTextarea from 'components/InputTextarea';
 import Dropdown from 'components/Dropdown';
 import InputTime from 'components/InputTime24H';
+import InputMask from 'components/InputMask';
 import 'static/dashboard.css';
 
 const Item = ({ index, item, projects }) => (
@@ -16,7 +17,7 @@ const Item = ({ index, item, projects }) => (
             </span>
             <span>
                 <div className="pause">
-                    <InputTime name={`pause${index}`} value={item.pause}  placeholder="Pause" required />
+                    <InputMask className="inputMask" type="time" name={`pause${index}`} value={item.pause}  placeholder="Pause" required />
                 </div>
             </span>
         </div>
