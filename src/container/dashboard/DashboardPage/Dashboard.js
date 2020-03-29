@@ -12,6 +12,7 @@ import Datepicker from './components/Datepicker';
 import PanelSection from './components/PanelSection';
 import arrayMutators from "final-form-arrays";
 import { FieldArray } from "react-final-form-arrays";
+import TestComp from '../DashboardPage/TestComp'
 
 class Dashboard extends Component {
 
@@ -86,17 +87,17 @@ class Dashboard extends Component {
                         form,
                         submitting,
                         values
-                      })=> { return (
-                
-                    // {({ handleSubmit }) => (
+                      }) => { return (
                         <form name="form" onSubmit={ handleSubmit }>
                             <div className="contentSectin">
+                            loadOrderAction()
                                 <div className="workDateAndTime">
                                     <Datepicker value={dash.date} />
                                     {/* <FieldArray> */}
                                         <PanelSection projects={projects} dash={dash} onClick={(index) => { this.handleDeleteSection(index) }} />
                                     {/* </FieldArray> */}
                                 </div>
+                                <TestComp />
                                 <div className="fixedItems">
                                     <AddItem onClick={this.addInputs} />
                                     <SubmitButton />
