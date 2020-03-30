@@ -1,14 +1,18 @@
-import { dashboardConstants } from 'container/dashboard/constants/dashboard.constants';
+import { 
+  ACTION_LOAD_CURRENT_PROJRCTS_REQUESTING,
+  ACTION_LOAD_CURRENT_PROJRCTS_SUCCESS,
+  ACTION_LOAD_CURRENT_PROJECTS_FAIL
+ } from 'container/dashboard/constants/dashboard.constants';
 
 export function dashboard(state = {}, action) {
     switch (action.type) {
-      case dashboardConstants.DASHBOARD_REQUEST:
+      case ACTION_LOAD_CURRENT_PROJRCTS_REQUESTING:
         return {
-          dashboardPost: true,
+          dashboardPost: true
         };
-      case dashboardConstants.DASHBOARD_SUCCESS:
+      case ACTION_LOAD_CURRENT_PROJRCTS_SUCCESS:
         return {};
-      case dashboardConstants.DASHBOARD_FAILURE:
+      case ACTION_LOAD_CURRENT_PROJECTS_FAIL:
         return {};
       default:
         return state
