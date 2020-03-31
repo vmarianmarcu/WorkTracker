@@ -6,7 +6,7 @@ import InputMask from 'components/InputMask';
 import 'static/dashboard.css';
 
 const Item = ({ name, index, item, projects }) => (
-    <div className={`${index}.dynamicContent`}>
+    <div className={`dynamicContent_${index}`} key={name} >
         <div className="dropdownAndPause">
             <span>
                 <div className="dropdown">

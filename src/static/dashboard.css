@@ -19,11 +19,6 @@
 .workDateAndTime {
     display: inline-block;
 }
-.dash-save-button {
-    float: right;
-    padding-top: 10px;
-    padding-left: 30px;
-}
 .dropdownAndPause {
     display: inline-flex; 
 }
@@ -59,14 +54,14 @@
     padding-left: 70px;
 }
 .fixedItems{
-    padding-top: 1.75%;
+    padding-top: 2%;
     padding-left: 5%;
     position: fixed;
-    display: inline;
+    display: inline-flex;
 }
 .addButton{
     float: left;
-    padding-top: 10px;
+    padding-top: 2%;
 }
 .deleteButton{
     padding-top: 7px;
