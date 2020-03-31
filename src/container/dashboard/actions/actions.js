@@ -1,13 +1,13 @@
 import { makeGetApiAction, makePostApiAction, makePutApiAction, makeDeleteApiAction } from 'api/index';
 
 import {
-    ACTION_LOAD_CURRENT_PROJRCTS_REQUESTING,
-    ACTION_LOAD_CURRENT_PROJRCTS_SUCCESS,
-    ACTION_LOAD_CURRENT_PROJECTS_FAIL,
+    ACTION_DASHBOARD_REQUESTING,
+    ACTION_DASHBOARD_SUCCESS,
+    ACTION_DASHBOARD_FAIL
 } from '../constants/dashboard.constants';
 
-const loadCurrentProjects = () => makeGetApiAction(
-    [ACTION_LOAD_CURRENT_PROJRCTS_REQUESTING, ACTION_LOAD_CURRENT_PROJRCTS_SUCCESS, ACTION_LOAD_CURRENT_PROJECTS_FAIL],
-    '/projects'
+const postCurrentDasboardData = () => makePostApiAction(
+    [ACTION_DASHBOARD_REQUESTING, ACTION_DASHBOARD_SUCCESS, ACTION_DASHBOARD_FAIL],
+    '/workDetails'
 );
-export default loadCurrentProjects;
+export default postCurrentDasboardData;
