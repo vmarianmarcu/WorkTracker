@@ -17,7 +17,7 @@ const Item = ({ name, index, item, projects }) => (
             </span>
             <span>
                 <div className="pause">
-                    <InputMask className="inputMask" type="time" name={`${name}.pause`} value={item.pause}  placeholder="Pause" required />
+                    <InputMask className="inputMask" type="time" name={`${name}.pause`} value={item.pause} placeholder="Pause" required />
                 </div>
             </span>
         </div>

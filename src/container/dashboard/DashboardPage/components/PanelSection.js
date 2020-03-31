@@ -3,10 +3,10 @@ import { Panel } from 'primereact/panel';
 import Items from './Items';
 import DeleteItem from './DeleteItem';
 
-const PanelSection = ({ name, projects, dash, onClick }) => (
+const PanelSection = ({ index, name, projects, dash, onClick }) => (
     <div className="panelSection">
         {
-            dash.map((item, index) =>
+            dash.map((item) =>
                 <div className="panel">
                     <div>
                         <Panel header={`Project ${index + 1}`} toggleable={true}>

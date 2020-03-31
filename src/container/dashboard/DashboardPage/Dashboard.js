@@ -5,14 +5,8 @@ import Sidebar from 'components/Sidebar';
 import 'static/dashboard.css';
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
-import { Form } from 'react-final-form';
-import AddItem from './components/AddItem';
-import SubmitButton from './components/SubmitButton';
-import Datepicker from './components/Datepicker';
-import PanelSection from './components/PanelSection';
-import arrayMutators from "final-form-arrays";
-import { FieldArray } from "react-final-form-arrays";
-import postCurrentDasboardData from '../actions/actions'
+import postCurrentDasboardData from '../actions/actions';
+import DashboardForm from './components/DashboardForm'
 
 class Dashboard extends Component {
 
@@ -36,7 +30,7 @@ class Dashboard extends Component {
     }
 
     handleSubmit = (values) => {
-       
+
     }
 
     render() {
@@ -46,48 +40,7 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                 <Sidebar />
-                <Form  
-                    onSubmit={formObj => {
-                        console.log(formObj);
-                    }}
-                    mutators={{
-                        ...arrayMutators
-                    }}
-                    render={({
-                        handleSubmit,
-                        form: {
-                          mutators: { push, pop }
-                        }, // injected from final-form-arrays above
-                        pristine,
-                        form,
-                        submitting,
-                        values
-                      }) => { return (
-                        <form name="form" onSubmit={ handleSubmit }>
-                            <div className="contentSectin">
-                                <div className="workDateAndTime">
-                                    <Datepicker value={dash.date} />
-                                    <FieldArray 
-                                        name="panelSection"
-                                        // initialValue={[{}]}
-                                    >
-                                        {({ fields }) =>
-                                            fields.map((name) => (
-                                                <PanelSection name={name} projects={projects} dash={dash} onClick={() =>  pop("panelSection")} />
-                                            ))
-                                        }
-                                    </FieldArray>
-                                </div>
-                                <div className="fixedItems">
-                                    <AddItem onClick={() => push("panelSection", undefined)} />
-                                    <SubmitButton postDashData={postDashData}/>
-                                    {dashboardPost}
-                                </div>
-                            </div>
-                        </form>
-                   );
-                }}
-                />
+                <DashboardForm dash={dash} projects={projects} dashboardPost={dashboardPost} postDashData={postDashData} />
             </div>
         );
     }
