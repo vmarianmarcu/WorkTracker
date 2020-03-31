@@ -1,6 +1,6 @@
 import React from 'react';
 import { Panel } from 'primereact/panel';
-import Item from './DashboardForm';
+import Items from './Items';
 import DeleteItem from './DeleteItem';
 
 const PanelSection = ({ name, projects, dash, onClick }) => (
@@ -10,7 +10,7 @@ const PanelSection = ({ name, projects, dash, onClick }) => (
                 <div className="panel">
                     <div>
                         <Panel header={`Project ${index + 1}`} toggleable={true}>
-                            <Item name={name} key={index} index={index} item={item} projects={projects} />
+                            <Items name={name} key={index} index={index} item={item} projects={projects} />
                             <DeleteItem onClick={onClick} />
                             <br />
                             <br />
