@@ -12,7 +12,6 @@ import Datepicker from './components/Datepicker';
 import PanelSection from './components/PanelSection';
 import arrayMutators from "final-form-arrays";
 import { FieldArray } from "react-final-form-arrays";
-// import TestComp from '../DashboardPage/TestComp'
 import postCurrentDasboardData from '../actions/actions'
 
 class Dashboard extends Component {
@@ -39,31 +38,6 @@ class Dashboard extends Component {
     handleSubmit = (values) => {
        
     }
-
-    // addInputs = () => {
-    //     const item = {
-    //         projectName: null,
-    //         arrivalTime: null,
-    //         departureTime: null,
-    //         pause: "00:30",
-    //         comment: null
-    //     }
-
-    //     let newDash = [...this.state.dash, item]
-    //     this.setState({
-    //         dash: newDash
-    //     })
-    // }
-
-    // handleDeleteSection = (index) => {
-    //     let array = [...this.state.dash];
-    //     if (index !== -1) {
-    //         array.splice(index, 1);
-    //         this.setState({
-    //             dash: array
-    //         })
-    //     }
-    // }
 
     render() {
         const { projects, dashboardPost, postDashData } = this.props;
@@ -104,7 +78,6 @@ class Dashboard extends Component {
                                         }
                                     </FieldArray>
                                 </div>
-                                {/* <TestComp /> */}
                                 <div className="fixedItems">
                                     <AddItem onClick={() => push("panelSection", undefined)} />
                                     <SubmitButton postDashData={postDashData}/>
