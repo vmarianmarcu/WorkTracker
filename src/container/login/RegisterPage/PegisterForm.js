@@ -1,73 +1,177 @@
 import React from 'react';
-import Input from 'components/Input';
 import Button from 'components/Button';
 import { Link } from 'react-router-dom';
 import 'static/register.css';
+import { Form, Field } from "react-final-form";
+
+import { InputText } from "primereact/inputtext";
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const onSubmit = async values => {
+    await sleep(300);
+    window.alert(JSON.stringify(values, 0, 2));
+};
+
+
 
 const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange }) => (
     <div className='containerRegister'>
         <h3>Sign up</h3>
-        <form onSubmit={handleSubmit}>
-            <div className={'form-group' + (submitted && !user.firstName ? ' has-error' : '')}>
-                <Input type="text"
-                    id="firstName"
-                    className="form-control"
-                    name="firstName"
-                    value={user.firstName}
-                    placeholder="FirstName*"
-                    onChange={handleChange}
-                />
-                {
-                    submitted && !user.firstName &&
-                    <div className="help-block">First Name is required</div>
+        <Form
+            onSubmit={onSubmit}
+            validate={values => {
+                const errors = {}
+                // if (!values.firstName) {
+                //     errors.firstName = 'Required'
+                // }
+                // if (!values.lastName) {
+                //     errors.lastName = 'Required'
+                // }
+                // if (!values.email) {
+                //     errors.email = 'Required'
+                // }
+                // if (!values.password) {
+                //     errors.password = 'Required'
+                // }
+                if (!values.confirm) {
+                    errors.confirm = 'Required'
+                } else if (values.confirm !== values.password) {
+                    errors.confirm = 'Must match'
                 }
-            </div>
-            <div className={'form-group' + (submitted && !user.lastName ? ' has-error' : '')}>
-                <Input type="text"
-                    id="lastName"
-                    className="form-control"
-                    name="lastName"
-                    value={user.lastName}
-                    placeholder="LastName*"
-                    onChange={handleChange}
-                />
-                {submitted && !user.lastName &&
-                    <div className="help-block">Last Name is required</div>
-                }
-            </div>
-            <div className={'form-group' + (submitted && !user.email ? ' has-error' : '')}>
-                <Input type="email"
-                    id="email"
-                    className="form-control"
-                    name="email"
-                    value={user.email}
-                    placeholder="Email Address*"
-                    onChange={handleChange}
-                />
-                {submitted && !user.email &&
-                    <div className="help-block">Email is required</div>
-                }
-            </div>
-            <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}>
-                <Input type="password"
-                    id="password"
-                    className="form-control"
-                    name="password"
-                    value={user.password}
-                    placeholder="Password*"
-                    onChange={handleChange} />
-                {submitted && !user.password &&
-                    <div className="help-block">Password is required</div>
-                }
-            </div>
-            <div className="form-group">
-                <Button type="submit" label="SIGN UP" />
-                {registering}
+                return errors
+            }}
+            render={({
+                handleSubmit,
+                form,
+                submitting,
+                pristine,
+                values
+            }) => (
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <Field name="firstName">
+                                {({ input, meta }) => (
+                                    <div>
+                                        <InputText
+                                            {...input}
+                                            type="text"
+                                            placeholder="FirstName*"
+                                            value={input.value}
+                                            name={input.name}
+                                            required
+                                            onChange={event => input.onChange(event)}
+                                        // id="firstName"
+                                        // className="form-control"
+                                        // name="firstName"
+                                        // value={user.firstName}
+                                        />
+                                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                                    </div>
+                                )}
+                            </Field>
+                        </div>
+                        <div className="form-group">
+                            <Field name="lastName">
+                                {({ input, meta }) => (
+                                    <div>
+                                        <InputText
+                                            {...input}
+                                            type="text"
+                                            placeholder="LastName*"
+                                            value={input.value}
+                                            name={input.name}
+                                            required
+                                            onChange={event => input.onChange(event)}
+                                        // id="lastName"
+                                        // className="form-control"
+                                        // name="lastName"
+                                        // value={user.lastName}
+                                        // placeholder="LastName*"
+                                        // onChange={handleChange}
+                                        />
+                                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                                    </div>
+                                )}
+                            </Field>
+                        </div>
+                        <div className="form-group">
+                            <Field name="email">
+                                {({ input, meta }) => (
+                                    <div>
+                                        <InputText
+                                            {...input}
+                                            type="email"
+                                            placeholder="Email Address*"
+                                            value={input.value}
+                                            name={input.name}
+                                            required
+                                            onChange={event => input.onChange(event)}
+                                        // id="email"
+                                        // className="form-control"
+                                        // name="email"
+                                        // value={user.email}
+                                        // placeholder="Email Address*"
+                                        // onChange={handleChange}
+                                        />
+                                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                                    </div>
+                                )}
+                            </Field>
+                        </div>
+                        <div className="form-group">
+                            <Field name="password">
+                                {({ input, meta }) => (
+                                    <div>
+                                        <InputText
+                                            {...input}
+                                            type="password"
+                                            placeholder="Password*"
+                                            value={input.value}
+                                            name={input.name}
+                                            required
+                                            onChange={event => input.onChange(event)}
+                                        // className="form-control"
+                                        // name="password"
+                                        // value={user.password}
+                                        // placeholder="Password*"
+                                        // onChange={handleChange}
+                                        />
+                                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                                    </div>
+                                )}
+                            </Field>
+                        </div>
+                        <div className="form-group">
+                            <Field name="confirm">
+                                {({ input, meta }) => (
+                                    <div>
+                                        <InputText
+                                            {...input}
+                                            type="password"
+                                            placeholder="Confirm Password*"
+                                            value={input.value}
+                                            name={input.name}
+                                            required
+                                            onChange={event => input.onChange(event)}
+                                        />
+                                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                                    </div>
+                                )}
+                            </Field>
+                        </div>
+                        <div className="form-group">
+                            <Button type="submit" label="SIGN UP" disabled={submitting || pristine} />
+                            {registering}
 
-                <p className="linkToRegister"> Already have an account? <Link to="login">Sign in</Link></p>
-            </div>
-        </form>
-
+                            <p className="linkToRegister"> Already have an account? <Link to="login">Sign in</Link></p>
+                        </div>
+                        <div className="form-group">
+                            <Button type="button" label="Reset" onClick={form.reset} disabled={submitting || pristine} />
+                        </div>
+                    </form>
+                )}
+        />
     </div>
 )
 export default RegisterForm;

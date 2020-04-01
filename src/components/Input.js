@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import {InputText} from "primereact/inputtext";
+import { InputText } from "primereact/inputtext";
 import { Field } from 'react-final-form';
 
 class InputField extends Component {
-   
+
     render() {
-        const { placeholder, onChange,type, className, name, value } = this.props;
-        return(
+        const { placeholder, onChange, type, className, name, value } = this.props;
+        return (
             <div className="input-text-container">
-               <span className="p-float-label">
-                    <InputText type={type} className={className} name={name} value={value} placeholder={placeholder} onChange={onChange} />
+                <span className="p-float-label">
+                    <InputText
+                        type={type}
+                        className={className}
+                        name={name}
+                        value={value}
+                        placeholder={placeholder}
+                        onChange={onChange}
+                    />
                 </span>
             </div>
         );

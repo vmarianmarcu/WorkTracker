@@ -29,10 +29,6 @@ class Dashboard extends Component {
         this.props.getProjects();
     }
 
-    handleSubmit = (values) => {
-
-    }
-
     render() {
         const { projects, dashboardPost, postDashData } = this.props;
         const { dash } = this.state;
