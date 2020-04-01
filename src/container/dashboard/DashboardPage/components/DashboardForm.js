@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form } from 'react-final-form';
-import AddItem from './AddItem';
 import Datepicker from './Datepicker';
 import PanelSection from './PanelSection';
 import arrayMutators from 'final-form-arrays';
@@ -51,8 +50,12 @@ const DashboardForm = ({ dash, projects, dashboardPost, postDashData }) => (
                                 </FieldArray>
                             </div>
                             <div className="fixedItems">
-                                <AddItem onClick={() => push("panelSection", undefined)} />
-                                {/* <SubmitButton postDashData={postDashData} disabled={submitting || pristine} /> */}
+                                {/*  Add item button */}
+                                <Button
+                                    type="button"
+                                    icon="pi pi-plus"
+                                    onClick={() => push("panelSection", undefined)}
+                                />
                                 <Button
                                     label="SAVE"
                                     type="submit"

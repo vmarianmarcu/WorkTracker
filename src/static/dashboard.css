@@ -59,10 +59,6 @@
     position: fixed;
     display: inline-flex;
 }
-.addButton{
-    float: left;
-    padding-top: 2%;
-}
 .deleteButton{
     padding-top: 7px;
     float: right;
