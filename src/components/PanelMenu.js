@@ -14,12 +14,12 @@ class PAnelMenu extends Component {
                   },
                   {
                    label:'Project',
-                   icon:'pi pi-fw pi-bars',
+                   icon:'pi pi-folder-open',
                    url:'/projects'
                 },
                 {
                    label:'Details',
-                   icon:'pi pi-fw pi-file',
+                   icon:'pi pi-info-circle',
                    url:'/details'
                 },
                 {
@@ -33,7 +33,7 @@ class PAnelMenu extends Component {
                    url:'/events'
                 },
                 {  label: 'Sign Out', 
-                   icon: 'pi pi-fw pi-power-off',
+                   icon: 'pi pi-sign-out',
                    url: '/login'
                 }
             ]

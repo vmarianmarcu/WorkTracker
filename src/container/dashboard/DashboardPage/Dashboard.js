@@ -6,7 +6,7 @@ import 'static/dashboard.css';
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
 import postCurrentDasboardData from '../actions/actions';
-import DashboardForm from './components/DashboardForm'
+import DashboardForm from './components/DashboardForm';
 
 class Dashboard extends Component {
 

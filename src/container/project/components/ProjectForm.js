@@ -1,0 +1,98 @@
+import React from 'react';
+import { Form } from 'react-final-form';
+import arrayMutators from 'final-form-arrays';
+import { FieldArray } from 'react-final-form-arrays';
+import { Field } from 'react-final-form';
+import Button from 'components/Button';
+import InputField from 'components/InputField';
+import { Card } from 'primereact/card';
+import { ScrollPanel } from 'primereact/scrollpanel';
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const onSubmit = async values => {
+    await sleep(300);
+    window.alert(JSON.stringify(values, 0, 2));
+};
+
+const ProjectForm = () => (
+    <div className="project-form">
+        <Form
+            onSubmit={onSubmit}
+            mutators={{
+                ...arrayMutators
+            }}
+            render={({
+                handleSubmit,
+                form: {
+                    mutators: { push, pop }
+                }, // injected from final-form-arrays above
+                pristine,
+                form,
+                submitting,
+                values
+            }) => {
+                return (
+                    <div className="new-project-section">
+                        <Card title="New" subTitle="Project" className="card-comonent">
+                            <form onSubmit={handleSubmit}>
+                                <div className="project-buttons">
+                                    <Button
+                                        label="Add"
+                                        type="button"
+                                        icon="pi pi-plus"
+                                        onClick={() => push("projects", undefined)}
+                                    />
+                                    <Button
+                                        label="SAVE"
+                                        type="submit"
+                                        icon="pi pi-check"
+                                        disabled={submitting || pristine}
+                                    />
+                                    <Button
+                                        label="Reset"
+                                        type="button"
+                                        icon="pi pi-undo"
+                                        onClick={form.reset}
+                                        disabled={submitting || pristine}
+                                    />
+                                </div>
+                                <div className="project-array">
+                                    <ScrollPanel className="scroll-panel">
+                                        <FieldArray
+                                            name="projects"
+                                        // initialValue={[{ project: "test"  }]}
+                                        >
+                                            {({ fields }) =>
+                                                fields.map((name, index) => (
+                                                    <div className="project-fields" key={name}>
+                                                        {/* <label>Project {index + 1}</label> */}
+                                                        <InputField
+                                                            id="float-input"
+                                                            type="text"
+                                                            name={`${name}.add`}
+                                                            index={index}
+                                                            required
+                                                        />
+                                                        <span
+                                                            onClick={() => fields.remove(index)}
+                                                            style={{ cursor: 'pointer' }}
+                                                        >
+                                                            <i className="pi pi-times" style={{ 'fontSize': '2em', 'color':'red' }}></i>
+                                                        </span>
+                                                    </div>
+                                                ))
+                                            }
+                                        </FieldArray>
+                                    </ScrollPanel>
+                                </div>
+                            </form>
+                        </Card>
+                    </div>
+                )
+            }}
+        />
+    </div>
+)
+
+export default ProjectForm;

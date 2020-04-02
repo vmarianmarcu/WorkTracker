@@ -7,8 +7,9 @@ import 'static/login.css';
 const LoginForm = ({ handleSubmit, handleChange, submitted, password, loggingIn, email }) => (
     <div className='containerLogin'>
         <form name="form" onSubmit={handleSubmit}>
-            <h3>Sign in</h3>
+            <h3> Sign in </h3>
             <div className={'form-group' + (submitted && !email ? ' has-error' : '')} >
+                <i className="pi pi-envelope" style={{ 'fontSize': '1.5em' }}></i>
                 <Input type="email"
                     id="email"
                     className="form-control"
@@ -24,6 +25,7 @@ const LoginForm = ({ handleSubmit, handleChange, submitted, password, loggingIn,
                 }
             </div>
             <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
+                <i className="pi pi-key" style={{ 'fontSize': '1.5em' }}></i>
                 <Input type="password"
                     id="password"
                     className="form-control"

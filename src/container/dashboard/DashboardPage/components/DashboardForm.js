@@ -5,6 +5,7 @@ import PanelSection from './PanelSection';
 import arrayMutators from 'final-form-arrays';
 import { FieldArray } from 'react-final-form-arrays';
 import Button from 'components/Button';
+import { ScrollPanel } from 'primereact/scrollpanel';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -38,16 +39,18 @@ const DashboardForm = ({ dash, projects, dashboardPost, postDashData }) => (
                         <div className="contentSectin">
                             <div className="workDateAndTime">
                                 <Datepicker value={dash.date} />
-                                <FieldArray
-                                    name="panelSection"
-                                // initialValue={[{}]}
-                                >
-                                    {({ fields }) =>
-                                        fields.map((name, index) => (
-                                            <PanelSection name={name} index={index} projects={projects} dash={dash} onClick={() => pop("panelSection")} />
-                                        ))
-                                    }
-                                </FieldArray>
+                                <ScrollPanel className="workDateAndTime-scrollPanel">
+                                    <FieldArray
+                                        name="panelSection"
+                                    // initialValue={[{}]}
+                                    >
+                                        {({ fields }) =>
+                                            fields.map((name, index) => (
+                                                <PanelSection name={name} index={index} projects={projects} dash={dash} onClick={() => pop("panelSection")} />
+                                            ))
+                                        }
+                                    </FieldArray>
+                                </ScrollPanel>
                             </div>
                             <div className="fixedItems">
                                 {/*  Add item button */}
@@ -59,11 +62,13 @@ const DashboardForm = ({ dash, projects, dashboardPost, postDashData }) => (
                                 <Button
                                     label="SAVE"
                                     type="submit"
+                                    icon="pi pi-check"
                                     disabled={submitting || pristine}
                                 />
                                 <Button
                                     label="Reset"
                                     type="button"
+                                    icon="pi pi-undo"
                                     onClick={form.reset}
                                     disabled={submitting || pristine}
                                 />

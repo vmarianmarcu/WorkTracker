@@ -2,86 +2,111 @@
     padding: 1rem;
     border-radius: 5px;
 }
+
 .calendar {
-   padding-left: 40px;
-   padding-top: 5px;
+    padding-left: 40px;
+    padding-top: 5px;
 }
-.datepicker{
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+.datepicker {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
+
 .dropdown {
     padding-top: 5px;
- }
-.arrivalTime{
+}
+
+.arrivalTime {
     padding-top: 15px;
 }
+
 .workDateAndTime {
     display: inline-block;
 }
+
 .dropdownAndPause {
-    display: inline-flex; 
+    display: inline-flex;
 }
+
 .dropdown {
     float: left;
 }
+
 .pause {
     float: right;
     padding-top: 5px;
     padding-left: 15px;
 }
+
 .inputMask {
     text-align: center;
 }
+
 .departureTime {
     padding-left: 15px;
     padding-top: 15px;
 }
+
 .timeSection {
-    display: flex;  
-} 
+    display: flex;
+}
+
 .textarea {
     padding-top: 20px;
 }
-.dynamicContent{
+
+.dynamicContent {
     display: block;
     align-items: center;
     justify-content: center;
-
 }
-.panel{
+
+.panel {
     margin-top: 0.5em;
     padding-left: 70px;
 }
-.fixedItems{
+
+.fixedItems {
     padding-top: 2%;
     padding-left: 5%;
     position: fixed;
     display: inline-flex;
 }
-.deleteButton{
+
+.deleteButton {
     padding-top: 7px;
     float: right;
 }
-.contentSectin{
+
+.contentSectin {
     padding-top: 3%;
 }
-.p-button{
+
+.p-button {
     position: fixed;
 }
-.datepicker{
+
+.datepicker {
     position: fixed;
 }
-.panelSection{
+
+.panelSection {
     padding-left: 350px;
 }
-.workDateAndTime{
+
+.workDateAndTime {
     padding-top: 2%;
     padding-left: 4%;
+}
+
+.workDateAndTime-scrollPanel {
+    width: auto;
+    height: 535px;
 }
 
 @media only screen and (max-width: 500px) {
     .workDateAndTime {
         display: block;
     }
-  }
+}

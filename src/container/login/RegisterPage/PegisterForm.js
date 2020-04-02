@@ -53,6 +53,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="firstName">
                                 {({ input, meta }) => (
                                     <div>
+                                        <i className="pi pi-user-edit" style={{'fontSize': '1.5em'}}></i>
                                         <InputText
                                             {...input}
                                             type="text"
@@ -75,6 +76,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="lastName">
                                 {({ input, meta }) => (
                                     <div>
+                                        <i className="pi pi-user-edit" style={{'fontSize': '1.5em'}}></i>
                                         <InputText
                                             {...input}
                                             type="text"
@@ -99,6 +101,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="email">
                                 {({ input, meta }) => (
                                     <div>
+                                        <i className="pi pi-envelope" style={{'fontSize': '1.5em'}}></i>
                                         <InputText
                                             {...input}
                                             type="email"
@@ -123,6 +126,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="password">
                                 {({ input, meta }) => (
                                     <div>
+                                        <i className="pi pi-key" style={{'fontSize': '1.5em'}}></i>
                                         <InputText
                                             {...input}
                                             type="password"
@@ -146,6 +150,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="confirm">
                                 {({ input, meta }) => (
                                     <div>
+                                        <i className="pi pi-key" style={{'fontSize': '1.5em'}}></i>
                                         <InputText
                                             {...input}
                                             type="password"
