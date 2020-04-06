@@ -72,7 +72,7 @@ const DashboardForm = ({ dash, projects, dashboardPost, postDashData }) => (
                                     onClick={form.reset}
                                     disabled={submitting || pristine}
                                 />
-                                {dashboardPost}
+                                {postDashData}
                             </div>
                         </div>
                     </form>

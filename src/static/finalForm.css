@@ -1,0 +1,42 @@
+.form-position {
+    padding-left: 5%;
+}
+
+.card-comonent {
+    width: 34%;
+}
+
+.content-button {
+    margin-left: 8%;
+}
+
+.form-array {
+    padding-left: 25%;
+    /* width: auto; */
+    /* padding-top: 5%; */
+}
+
+.form-fields {
+    padding-top: 10%;
+    display: inline-flex;
+}
+
+.scroll-panel {
+    width: auto;
+    height: 300px;
+}
+
+.form-buttons {
+    padding-top: 5%;
+    padding-left: 12%;
+    padding-bottom: 8%;
+    display: inline-flex;
+}
+
+.new-form-section {
+    padding-top: 8%;
+}
+
+.input-text-container {
+    padding-top: 11%;
+}

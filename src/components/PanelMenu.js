@@ -25,7 +25,7 @@ class PAnelMenu extends Component {
                 {
                    label:'Users',
                    icon:'pi pi-fw pi-users',
-                   url:''
+                   url:'/users'
                 },
                 {
                    label:'Events',

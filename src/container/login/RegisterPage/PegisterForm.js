@@ -15,7 +15,7 @@ const onSubmit = async values => {
 
 
 
-const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange }) => (
+const RegisterForm = ({ user, registering }) => (
     <div className='containerRegister'>
         <h3>Sign up</h3>
         <Form
@@ -53,7 +53,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="firstName">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-user-edit" style={{'fontSize': '1.5em'}}></i>
+                                        <i className="pi pi-user-edit" style={{ 'fontSize': '1.5em' }}></i>
                                         <InputText
                                             {...input}
                                             type="text"
@@ -76,7 +76,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="lastName">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-user-edit" style={{'fontSize': '1.5em'}}></i>
+                                        <i className="pi pi-user-edit" style={{ 'fontSize': '1.5em' }}></i>
                                         <InputText
                                             {...input}
                                             type="text"
@@ -101,7 +101,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="email">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-envelope" style={{'fontSize': '1.5em'}}></i>
+                                        <i className="pi pi-envelope" style={{ 'fontSize': '1.5em' }}></i>
                                         <InputText
                                             {...input}
                                             type="email"
@@ -126,7 +126,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="password">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-key" style={{'fontSize': '1.5em'}}></i>
+                                        <i className="pi pi-key" style={{ 'fontSize': '1.5em' }}></i>
                                         <InputText
                                             {...input}
                                             type="password"
@@ -150,7 +150,7 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                             <Field name="confirm">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-key" style={{'fontSize': '1.5em'}}></i>
+                                        <i className="pi pi-key" style={{ 'fontSize': '1.5em' }}></i>
                                         <InputText
                                             {...input}
                                             type="password"
@@ -165,14 +165,11 @@ const RegisterForm = ({ submitted, user, registering, handleSubmit, handleChange
                                 )}
                             </Field>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group-link">
                             <Button type="submit" label="SIGN UP" disabled={submitting || pristine} />
                             {registering}
 
                             <p className="linkToRegister"> Already have an account? <Link to="login">Sign in</Link></p>
-                        </div>
-                        <div className="form-group">
-                            <Button type="button" label="Reset" onClick={form.reset} disabled={submitting || pristine} />
                         </div>
                     </form>
                 )}

@@ -6,6 +6,7 @@ import Dashboard from 'container/dashboard/DashboardPage/Dashboard';
 import ProjectPage  from 'container/project/ProjectPage';
 import DetailsPage from 'container/details/DetailsPage';
 import EventPage from 'container/events/EventPage';
+import UsersPage from 'container/users/UserPage';
 
 // The css dependencies for PrimePeact components
 import 'primereact/resources/themes/nova-light/theme.css';
@@ -50,6 +51,7 @@ class App extends Component {
               <PrivateRoute path="/dashboard" component={Dashboard} />
               <Route path="/projects" component={ProjectPage} />
               <Route path="/details" component={DetailsPage} />
+              <Route path="/users" component={UsersPage} />
               <Route path="/events" component={EventPage} />
               <Redirect from="*" to="/" />
             </Switch>

@@ -5,7 +5,7 @@ import { Field } from 'react-final-form';
 class InputField extends Component {
 
     render() {
-        const { input, id, index, placeholder, onChange, type, className, name, value, ...rest } = this.props;
+        const { input, id, index, placeholder, onChange, type, className, name, labelName, value, ...rest } = this.props;
         return (
             <div className="input-text-container">
                 <span className="p-float-label">
@@ -20,7 +20,7 @@ class InputField extends Component {
                         placeholder={placeholder}
                         onChange={event => input.onChange(event)}
                     />
-                    <label htmlFor={id}>{`Project Name ${index + 1}`}</label>
+                    <label htmlFor={id}>{`${labelName} ${index + 1}`}</label>
                 </span>
             </div>
         );

@@ -2,11 +2,11 @@ import React from 'react';
 import { Form } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
 import { FieldArray } from 'react-final-form-arrays';
-import { Field } from 'react-final-form';
 import Button from 'components/Button';
 import InputField from 'components/InputField';
 import { Card } from 'primereact/card';
 import { ScrollPanel } from 'primereact/scrollpanel';
+import 'static/finalForm.css';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -16,7 +16,7 @@ const onSubmit = async values => {
 };
 
 const ProjectForm = () => (
-    <div className="project-form">
+    <div className="form-position">
         <Form
             onSubmit={onSubmit}
             mutators={{
@@ -33,10 +33,10 @@ const ProjectForm = () => (
                 values
             }) => {
                 return (
-                    <div className="new-project-section">
+                    <div className="new-form-section">
                         <Card title="New" subTitle="Project" className="card-comonent">
                             <form onSubmit={handleSubmit}>
-                                <div className="project-buttons">
+                                <div className="form-buttons">
                                     <Button
                                         label="Add"
                                         type="button"
@@ -57,7 +57,7 @@ const ProjectForm = () => (
                                         disabled={submitting || pristine}
                                     />
                                 </div>
-                                <div className="project-array">
+                                <div className="form-array">
                                     <ScrollPanel className="scroll-panel">
                                         <FieldArray
                                             name="projects"
@@ -65,12 +65,13 @@ const ProjectForm = () => (
                                         >
                                             {({ fields }) =>
                                                 fields.map((name, index) => (
-                                                    <div className="project-fields" key={name}>
+                                                    <div className="form-fields" key={name}>
                                                         {/* <label>Project {index + 1}</label> */}
                                                         <InputField
                                                             id="float-input"
                                                             type="text"
                                                             name={`${name}.add`}
+                                                            labelName="Project name"
                                                             index={index}
                                                             required
                                                         />

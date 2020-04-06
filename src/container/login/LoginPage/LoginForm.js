@@ -40,7 +40,7 @@ const LoginForm = ({ handleSubmit, handleChange, submitted, password, loggingIn,
                 }
             </div>
 
-            <div className="form-group">
+            <div className="form-group-link">
                 <Button type="submit" label="SIGN IN" />
 
                 <p className="linkToRegister"> Don't have an account? <Link to="register">Sign Up</Link></p>
