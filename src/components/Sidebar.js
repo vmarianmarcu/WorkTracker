@@ -17,15 +17,15 @@ class SIdebar extends Component {
         return (
             <div>
 
-                <div className="sideBar">
+                <div className="slidebar">
                     <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({ visibleLeft: false })}>
-                        <div className="sidebarTitle">
+                        <div className="slidebar-title">
                             <h1>Work Tracker</h1>
                         </div>
                         <br />
                         <PanelMenu />
                     </Sidebar>
-                    <div className="showSlidebarButton">
+                    <div className="show-slidebar-button">
                         <Button icon="pi pi-bars pi" label="Show" onClick={(e) => this.setState({ visibleLeft: true })} />
                     </div>
                 </div>

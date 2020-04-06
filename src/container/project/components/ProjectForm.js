@@ -34,7 +34,7 @@ const ProjectForm = () => (
             }) => {
                 return (
                     <div className="new-form-section">
-                        <Card title="New" subTitle="Project" className="card-comonent">
+                        <Card title="New" subTitle="Project" className="card-component">
                             <form onSubmit={handleSubmit}>
                                 <div className="form-buttons">
                                     <Button

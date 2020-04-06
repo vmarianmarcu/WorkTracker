@@ -5,8 +5,8 @@ import { FieldArray } from 'react-final-form-arrays';
 import Button from 'components/Button';
 import InputField from 'components/InputField';
 import { ScrollPanel } from 'primereact/scrollpanel';
-import { Card } from 'primereact/card';
 import 'static/finalForm.css';
+import { Panel } from 'primereact/panel';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -34,7 +34,7 @@ const UsersForm = () => (
             }) => {
                 return (
                     <div className="new-form-section">
-                        <Card title="New" subTitle="User" className="card-comonent">
+                        <Panel header={`Add User`} toggleable={true}>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-buttons">
                                     <Button
@@ -119,7 +119,7 @@ const UsersForm = () => (
                                     </ScrollPanel>
                                 </div>
                             </form>
-                        </Card>
+                        </Panel>
                     </div>
                 )
             }}

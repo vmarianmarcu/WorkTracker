@@ -10,9 +10,15 @@ const Users = (props) => {
     return (
         <div>
             <Sidebar />
-            <UsersForm />
-            <UserList />
-        </div>
+            <div className="p-grid">
+                <div className="p-col-5">
+                    <UserList />
+                </div>
+                <div className="p-col-5">
+                    <UsersForm />
+                </div>
+            </div>
+        </div >
     );
 }
 export default Users;
