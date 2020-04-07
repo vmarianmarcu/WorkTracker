@@ -7,7 +7,7 @@ class InputField extends Component {
     render() {
         const { input, id, index, placeholder, onChange, type, className, name, labelName, value, ...rest } = this.props;
         return (
-            <div className="input-text-container">
+            <div className="input-text-field-container">
                 <span className="p-float-label">
                     <InputText
                         {...input}
