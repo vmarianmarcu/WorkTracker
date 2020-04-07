@@ -4,7 +4,7 @@ import arrayMutators from 'final-form-arrays';
 import { FieldArray } from 'react-final-form-arrays';
 import Button from 'components/Button';
 import InputField from 'components/InputField';
-import { Card } from 'primereact/card';
+import { Panel } from 'primereact/panel';
 import { ScrollPanel } from 'primereact/scrollpanel';
 import 'static/finalForm.css';
 
@@ -34,7 +34,7 @@ const ProjectForm = () => (
             }) => {
                 return (
                     <div className="new-form-section">
-                        <Card title="New" subTitle="Project" className="card-component">
+                        <Panel header={`Add Project`} toggleable={true}>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-buttons">
                                     <Button
@@ -88,7 +88,7 @@ const ProjectForm = () => (
                                     </ScrollPanel>
                                 </div>
                             </form>
-                        </Card>
+                        </Panel>
                     </div>
                 )
             }}

@@ -22,6 +22,7 @@ class SIdebar extends Component {
                         <div className="slidebar-title">
                             <h1>Work Tracker</h1>
                         </div>
+                        <hr />
                         <br />
                         <PanelMenu />
                     </Sidebar>

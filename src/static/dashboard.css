@@ -1,5 +1,4 @@
 .containerDashboard {
-    padding: 1rem;
     border-radius: 5px;
 }
 
@@ -92,17 +91,17 @@
 }
 
 .panelSection {
-    padding-left: 350px;
+    margin-left: 350px;
 }
 
 .workDateAndTime {
-    padding-top: 2%;
-    padding-left: 4%;
+    padding-top: 1%;
+    padding-left: 10%;
 }
 
 .workDateAndTime-scrollPanel {
     width: auto;
-    height: 535px;
+    height: 520px;
 }
 
 @media only screen and (max-width: 500px) {

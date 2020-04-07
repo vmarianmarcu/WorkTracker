@@ -19,7 +19,8 @@ body {
 }
 
 .slidebar {
-    margin-top: 2%;
+    margin-left: 1%;
+    margin-top: .6%;
 }
 
 .slidebar-title {
@@ -36,6 +37,43 @@ body {
 .p-panel {
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+footer {
+    background: white;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    transition: 200ms;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer:hover {
+    box-shadow: 0 0 2rem gray;
+}
+
+header {
+    height: 54px;
+    display: block;
+    color: red;
+    background:  white;
+    text-transform: uppercase;
+}
+
+hr {
+    /* margin-top: 2.1%; */
+    border-top: 2px solid  #757575;
+    width: 100%;
 }
 
 @import '~@fullcalendar/core/main.css';

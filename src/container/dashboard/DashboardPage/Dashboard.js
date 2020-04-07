@@ -7,6 +7,8 @@ import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
 import postCurrentDasboardData from '../actions/actions';
 import DashboardForm from './components/DashboardForm';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 
 class Dashboard extends Component {
 
@@ -35,8 +37,11 @@ class Dashboard extends Component {
 
         return (
             <div className='containerDashboard'>
+                <Header />
+                <hr />
                 <Sidebar />
                 <DashboardForm dash={dash} projects={projects} dashboardPost={dashboardPost} postDashData={postDashData} />
+                <Footer />
             </div>
         );
     }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Panel } from 'primereact/panel';
 import ListBox from 'components/ListBox';
-import DeleteUser from './DeleteUser';
+import DeleteButton from 'components/DeleteButton';
 
 const UserList = () => (
     <div className="user-list-content">
         <Panel header={`User list`} toggleable={true}>
             <ListBox />
-            <DeleteUser />
+            <DeleteButton />
         </Panel>
     </div>
 )

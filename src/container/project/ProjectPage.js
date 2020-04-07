@@ -4,6 +4,9 @@ import 'static/projects.css';
 import Sidebar from 'components/Sidebar';
 import { loadProjects } from 'data/actions';
 import ProjectForm from './components/ProjectForm';
+import ProjectList from './components/ProjectsList';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 
 class Projects extends Component {
 
@@ -16,9 +19,18 @@ class Projects extends Component {
 
         return (
             <div>
+                <Header />
+                <hr />
                 <Sidebar />
-                <ProjectForm />
-                {/* <ProjectList projects={projects} /> */}
+                <div className="p-grid">
+                    <div className="p-col-5">
+                        <ProjectList />
+                    </div>
+                    <div className="p-col-5">
+                        <ProjectForm />
+                    </div>
+                </div>
+                <Footer />
             </div>
         );
     }
