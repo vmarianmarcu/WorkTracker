@@ -57,7 +57,7 @@ const UsersForm = () => (
                                         disabled={submitting || pristine}
                                     />
                                 </div>
-                                <div className="form-array">
+                                <div className="form-array-users">
                                     <ScrollPanel className="scroll-panel">
                                         <FieldArray
                                             name="users"
@@ -65,7 +65,7 @@ const UsersForm = () => (
                                         >
                                             {({ fields }) =>
                                                 fields.map((name, index) => (
-                                                    <div className="form-fields" key={name}>
+                                                    <div className="form-users-fields" key={name}>
                                                         <label>User {index + 1}</label>
                                                         <span>
                                                             <InputField

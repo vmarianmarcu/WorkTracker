@@ -57,7 +57,7 @@ const ProjectForm = () => (
                                         disabled={submitting || pristine}
                                     />
                                 </div>
-                                <div className="form-array">
+                                <div className="form-array-projects">
                                     <ScrollPanel className="scroll-panel">
                                         <FieldArray
                                             name="projects"
@@ -65,7 +65,7 @@ const ProjectForm = () => (
                                         >
                                             {({ fields }) =>
                                                 fields.map((name, index) => (
-                                                    <div className="form-fields" key={name}>
+                                                    <div className="form-projects-fields" key={name}>
                                                         {/* <label>Project {index + 1}</label> */}
                                                         <InputField
                                                             id="float-input"
@@ -75,7 +75,7 @@ const ProjectForm = () => (
                                                             index={index}
                                                             required
                                                         />
-                                                        <span
+                                                        <span className="remove-fields-button"
                                                             onClick={() => fields.remove(index)}
                                                             style={{ cursor: 'pointer' }}
                                                         >

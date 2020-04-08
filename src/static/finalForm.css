@@ -10,15 +10,21 @@
     margin-left: 8%;
 }
 
-.form-array {
-    margin-left: 16%;
-    /* width: auto; */
-    /* padding-top: 5%; */
+.form-array-projects {
+    margin-left: 26%;
 }
 
-.form-fields {
-    padding-top: 10%;
+.form-array-users {
+    margin-left: 20%;
+}
+
+.form-projects-fields {
     display: inline-flex;
+}
+
+.form-users-fields {
+    display: inline-flex;
+    margin-top: 10%;
 }
 
 .scroll-panel {
