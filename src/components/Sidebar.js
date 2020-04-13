@@ -34,4 +34,5 @@ class SIdebar extends Component {
         )
     }
 }
+
 export default SIdebar;

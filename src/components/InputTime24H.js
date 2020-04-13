@@ -22,4 +22,5 @@ class InputTime extends Component {
         );
     }
 }
+
 export default props => <Field component={InputTime} {...props} />;

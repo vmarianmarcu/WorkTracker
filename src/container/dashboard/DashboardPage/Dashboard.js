@@ -5,7 +5,7 @@ import Sidebar from 'components/Sidebar';
 import 'static/dashboard.css';
 import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
-import postCurrentDasboardData from '../actions/actions';
+import { postCurrentDasboardData } from '../../../data/actions';
 import DashboardForm from './components/DashboardForm';
 import Footer from 'components/Footer';
 import Header from 'components/Header';

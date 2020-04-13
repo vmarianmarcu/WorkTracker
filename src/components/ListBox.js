@@ -8,4 +8,5 @@ const ListBoxComponent = ({ value, options, optionLabel, onChange }) => {
         </div>
     )
 }
+
 export default ListBoxComponent;

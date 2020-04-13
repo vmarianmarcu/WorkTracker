@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import {InputMask} from 'primereact/inputmask';
+import { InputMask } from 'primereact/inputmask';
 import { Field } from 'react-final-form';
 
 class InputMaskield extends Component {
-   
+
     render() {
         const { input, placeholder, onChange, type, className, name, value, ...rest } = this.props;
-        return(
+        return (
             <div className="input-text-container">
-               <span className="p-float-label">
+                <span className="p-float-label">
                     <InputMask
                         {...input}
                         {...rest}
-                        type={type} 
+                        type={type}
                         mask="99:99"
-                        className={className} 
+                        className={className}
                         value={input.value}
-                        name={input.name} 
-                        placeholder={placeholder} 
+                        name={input.name}
+                        placeholder={placeholder}
                         onChange={event => input.onChange(event)}
                     />
                 </span>
@@ -25,4 +25,5 @@ class InputMaskield extends Component {
         );
     }
 }
+
 export default props => <Field component={InputMaskield} {...props} />;

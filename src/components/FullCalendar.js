@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {FullCalendar} from 'primereact/fullcalendar';
+import React, { Component } from 'react';
+import { FullCalendar } from 'primereact/fullcalendar';
 // import {EventService} from '../service/EventService';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -37,7 +37,7 @@ class FUllCalendar extends Component {
         return (
             <div>
                 <div className="fullCalendar">
-                    <FullCalendar  events={this.state.events} options={this.state.options} />
+                    <FullCalendar events={this.state.events} options={this.state.options} />
                 </div>
             </div>
         );

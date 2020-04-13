@@ -26,8 +26,5 @@ class Datepicker extends Component {
         )
     }
 }
-// export default CAlendar;
+
 export default props => <Field component={Datepicker} {...props} />;
-
-
-

@@ -22,5 +22,5 @@ class DRopdown extends Component {
         );
     }
 }
-// export default DRopdown;
+
 export default props => <Field component={DRopdown} {...props} />;

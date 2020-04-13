@@ -26,4 +26,5 @@ class InputField extends Component {
         );
     }
 }
+
 export default props => <Field component={InputField} {...props} />;

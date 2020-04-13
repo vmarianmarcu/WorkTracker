@@ -10,4 +10,5 @@ const DeleteButton = ({ index, onClick }) => (
         onClick={onClick}
     />
 )
+
 export default DeleteButton;
