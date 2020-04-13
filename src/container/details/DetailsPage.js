@@ -1,20 +1,19 @@
 import React from 'react';
-import Table from 'components/Table';
 import Sidebar from 'components/Sidebar';
-import FlexGridDemo from 'components/FlexGrid';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 import 'static/details.css';
 
-const Details = (props) => {  
-        console.log(props);
-             
-        return (
-            <div>
-                {/* <Sidebar /> */}
-                <FlexGridDemo />
-                <form>
-                    {/* <Table /> */}
-                </form>
-            </div>
-        );
-    }
+const Details = (props) => {
+    console.log(props);
+
+    return (
+        <div className='containerDashboard'>
+            <Header />
+            <hr />
+            <Sidebar />
+            <Footer />
+        </div>
+    );
+}
 export default Details;

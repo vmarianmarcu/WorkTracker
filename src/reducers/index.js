@@ -5,7 +5,9 @@ import { authentication } from 'reducers/authentication.reducer';
 import { registration } from 'reducers/registration.reducer';
 import { users } from 'reducers/user.reducer';
 import { projects } from 'reducers/project.reducer';
-import { dashboard } from 'reducers/dashboard.reducer'
+import { dashboard } from 'reducers/dashboard.reducer';
+import { apiReducer } from 'api/reducers';
+import { apiReducerParam } from 'api/reducers'
 
 const rootReducer = combineReducers({
    authentication,
@@ -13,7 +15,9 @@ const rootReducer = combineReducers({
    users,
    alert,
    projects,
-   dashboard
+   dashboard,
+   // apiReducer,
+   // apiReducerParam
 });
 
 export default rootReducer;

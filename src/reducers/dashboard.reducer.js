@@ -2,7 +2,7 @@ import {
   ACTION_DASHBOARD_REQUESTING,
   ACTION_DASHBOARD_SUCCESS,
   ACTION_DASHBOARD_FAIL
- } from 'container/dashboard/constants/dashboard.constants';
+ } from 'data/constants';
 
 export function dashboard(state = {}, action) {
     switch (action.type) {
