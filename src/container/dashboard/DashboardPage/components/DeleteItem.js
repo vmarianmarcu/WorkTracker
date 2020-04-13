@@ -11,4 +11,5 @@ const DeleteItem = ({ index, onClick }) => (
         />
     </div>
 )
+
 export default DeleteItem;

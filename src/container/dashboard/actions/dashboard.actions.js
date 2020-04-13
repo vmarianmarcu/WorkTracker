@@ -23,9 +23,9 @@ function postAllFromDashboard(dash) {
                     dispatch(alertActions.error(error.toString()));
                 }
             );
-        };
+    };
 
-    function request(dash) { return { type: dashboardConstants.DASHBOARD_REQUEST , dash } }
+    function request(dash) { return { type: dashboardConstants.DASHBOARD_REQUEST, dash } }
     function success(dash) { return { type: dashboardConstants.DASHBOARD_SUCCESS, dash } }
     function failure(error) { return { type: dashboardConstants.DASHBOARD_FAILURE, error } }
 }

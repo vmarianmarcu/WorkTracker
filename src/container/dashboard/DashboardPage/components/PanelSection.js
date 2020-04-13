@@ -21,4 +21,5 @@ const PanelSection = ({ index, name, projects, dash, onClick }) => (
         }
     </div>
 )
+
 export default PanelSection;

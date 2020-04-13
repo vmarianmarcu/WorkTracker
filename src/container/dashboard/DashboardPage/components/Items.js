@@ -41,4 +41,5 @@ const Item = ({ name, index, item, projects }) => (
         </div>
     </div>
 )
+
 export default Item;

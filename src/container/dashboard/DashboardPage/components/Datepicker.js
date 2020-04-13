@@ -11,4 +11,5 @@ const Datepicker = ({ value }) => (
         />
     </div>
 )
+
 export default Datepicker;
