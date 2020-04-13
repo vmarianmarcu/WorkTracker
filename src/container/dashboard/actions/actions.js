@@ -1,4 +1,4 @@
-import { makeGetApiAction, makePostApiAction, makePutApiAction, makeDeleteApiAction } from 'api/index';
+import { makePostApiAction } from 'api/index';
 
 import {
     ACTION_DASHBOARD_REQUESTING,

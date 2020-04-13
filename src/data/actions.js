@@ -1,4 +1,4 @@
-import { makeGetApiAction, makePostApiAction, makePutApiAction, makeDeleteApiAction } from 'api';
+import { makeGetApiAction } from 'api';
 import { PROJECTS } from 'config';
 
 import {
