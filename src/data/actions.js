@@ -18,7 +18,7 @@ import {
 
 export const getCurrentUsers = () => makeGetApiAction(
     [ACTION_USERS_REQUESTING, ACTION_USERS_SUCCESS, ACTION_USERS_FAIL],
-    '/registredUsers'
+    `/registredUsers`
 );
 
 export const loadProjects = () => makeGetApiAction(
