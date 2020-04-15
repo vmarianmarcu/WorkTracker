@@ -12,7 +12,11 @@ import {
 
     ACTION_DASHBOARD_REQUESTING,
     ACTION_DASHBOARD_SUCCESS,
-    ACTION_DASHBOARD_FAIL
+    ACTION_DASHBOARD_FAIL,
+
+    ACTION_ADD_PROJECT_REQUESTING,
+    ACTION_ADD_PROJECT_SUCCESS,
+    ACTION_ADD_PROJECT_FAIL
 
 } from './constants';
 
@@ -29,4 +33,9 @@ export const loadProjects = () => makeGetApiAction(
 export const postCurrentDasboardData = () => makePostApiAction(
     [ACTION_DASHBOARD_REQUESTING, ACTION_DASHBOARD_SUCCESS, ACTION_DASHBOARD_FAIL],
     '/workDetails'
+);
+
+export const postNewProject = () => makePostApiAction(
+    [ACTION_ADD_PROJECT_REQUESTING, ACTION_ADD_PROJECT_SUCCESS, ACTION_ADD_PROJECT_FAIL],
+    '/projects'
 );

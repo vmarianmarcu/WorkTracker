@@ -49,10 +49,10 @@ class App extends Component {
               <Route path="/login" component={Login} />
               <Route path="/register" component={RegisterPage} />
               <PrivateRoute path="/dashboard" component={Dashboard} />
-              <Route path="/projects" component={ProjectPage} />
-              <Route path="/details" component={DetailsPage} />
-              <Route path="/users" component={UsersPage} />
-              <Route path="/events" component={EventPage} />
+              <PrivateRoute path="/projects" component={ProjectPage} />
+              <PrivateRoute path="/details" component={DetailsPage} />
+              <PrivateRoute path="/users" component={UsersPage} />
+              <PrivateRoute path="/events" component={EventPage} />
               <Redirect from="*" to="/" />
             </Switch>
           </div>
