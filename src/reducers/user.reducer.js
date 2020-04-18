@@ -55,7 +55,7 @@ import {
   ACTION_USERS_REQUESTING,
   ACTION_USERS_SUCCESS,
   ACTION_USERS_FAIL
-} from '../container/users/constants/user.constants';
+} from 'data/constants';
 
 export function users(state = {}, action) {
   switch (action.type) {
@@ -65,7 +65,7 @@ export function users(state = {}, action) {
       };
     case ACTION_USERS_SUCCESS:
       return {
-        users:users
+        items: action.response
       };
     case ACTION_USERS_FAIL:
       return {};
