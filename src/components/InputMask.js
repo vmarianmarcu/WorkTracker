@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { InputMask } from 'primereact/inputmask';
 import { Field } from 'react-final-form';
 
-class InputMaskield extends Component {
+class InputMaskField extends Component {
 
     render() {
         const { input, placeholder, onChange, type, className, name, value, ...rest } = this.props;
@@ -25,5 +25,4 @@ class InputMaskield extends Component {
         );
     }
 }
-
-export default props => <Field component={InputMaskield} {...props} />;
+export default props => <Field component={InputMaskField} {...props} />;

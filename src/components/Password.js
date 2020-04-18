@@ -15,5 +15,4 @@ class PasswordField extends Component {
         );
     }
 }
-
 export default PasswordField;

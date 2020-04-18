@@ -22,5 +22,4 @@ class Textarea extends Component {
         );
     }
 }
-
 export default props => <Field name="textarea" component={Textarea} {...props} />;

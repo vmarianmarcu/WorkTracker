@@ -12,5 +12,4 @@ class ButtonSubmit extends Component {
         )
     }
 }
-
 export default ButtonSubmit;

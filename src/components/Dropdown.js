@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Dropdown } from 'primereact/dropdown';
 import { Field } from 'react-final-form';
 
-class DRopdown extends Component {
+class DropdownComponent extends Component {
 
     render() {
         const { input, name, options, value, ...rest } = this.props;
@@ -22,5 +22,4 @@ class DRopdown extends Component {
         );
     }
 }
-
-export default props => <Field component={DRopdown} {...props} />;
+export default props => <Field component={DropdownComponent} {...props} />;

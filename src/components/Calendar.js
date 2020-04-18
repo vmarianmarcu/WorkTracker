@@ -26,5 +26,4 @@ class Datepicker extends Component {
         )
     }
 }
-
 export default props => <Field component={Datepicker} {...props} />;

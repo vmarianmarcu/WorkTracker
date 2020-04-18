@@ -60,5 +60,4 @@ class FlexGridDemo extends Component {
         );
     }
 }
-
 export default FlexGridDemo;

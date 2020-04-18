@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PanelMenu } from 'primereact/panelmenu';
 
-class PAnelMenu extends Component {
+class MenuPanel extends Component {
 
    constructor() {
       super();
@@ -49,5 +49,4 @@ class PAnelMenu extends Component {
       );
    }
 }
-
-export default PAnelMenu;
+export default MenuPanel;

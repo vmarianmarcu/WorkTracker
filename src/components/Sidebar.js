@@ -4,7 +4,7 @@ import { Button } from 'primereact/button';
 import PanelMenu from './PanelMenu';
 import '../static/app.css';
 
-class SIdebar extends Component {
+class SidebarComponent extends Component {
 
     constructor() {
         super();
@@ -34,5 +34,4 @@ class SIdebar extends Component {
         )
     }
 }
-
-export default SIdebar;
+export default SidebarComponent;
