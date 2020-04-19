@@ -14,7 +14,7 @@ const onSubmit = async values => {
     window.alert(JSON.stringify(values, 0, 2));
 };
 
-const DashboardForm = ({ dash, projects, dashboardPost, postDashData }) => (
+const DashboardForm = ({ dash, projects, postDashData }) => (
     <div className="dashForm">
         <Form
             // onSubmit={formObj => {
@@ -64,6 +64,7 @@ const DashboardForm = ({ dash, projects, dashboardPost, postDashData }) => (
                                     type="submit"
                                     icon="pi pi-check"
                                     disabled={submitting || pristine}
+                                    onClick={ () => postDashData()}
                                 />
                                 <Button
                                     label="Reset"
@@ -72,7 +73,6 @@ const DashboardForm = ({ dash, projects, dashboardPost, postDashData }) => (
                                     onClick={form.reset}
                                     disabled={submitting || pristine}
                                 />
-                                {postDashData}
                             </div>
                         </div>
                     </form>

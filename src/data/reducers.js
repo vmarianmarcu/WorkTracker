@@ -1,4 +1,4 @@
-import projectDataReducers from './projectData/reducers';
+import projectDataReducers from './appData/reducers';
 
 
 // eslint-disable-next-line import/prefer-default-export

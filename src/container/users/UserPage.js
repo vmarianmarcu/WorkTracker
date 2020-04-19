@@ -20,25 +20,27 @@ class Users extends Component {
         this.props.fetchUsers();
     }
 
-    fetchUsers() {
-        // Where we're fetching data from
-        fetch(`http://localhost:4000/registredUsers`)
-            // We get the API response and receive data in JSON format...
-            .then(response => response.json())
-            // ...then we update the users state
-            .then(data =>
-                this.setState({
-                    users: data,
-                    isLoading: false,
-                })
-            )
-            // Catch any errors we hit and update the app
-            .catch(error => this.setState({ error, isLoading: false }));
-    }
+    // fetchUsers() {
+    //     // Where we're fetching data from
+    //     fetch(`http://localhost:4000/registredUsers`)
+    //         // We get the API response and receive data in JSON format...
+    //         .then(response => response.json())
+    //         // ...then we update the users state
+    //         .then(data =>
+    //             this.setState({
+    //                 users: data,
+    //                 isLoading: false,
+    //             })
+    //         )
+    //         // Catch any errors we hit and update the app
+    //         .catch(error => this.setState({ error, isLoading: false }));
+    // }
 
     render() {
         const { isLoading, users, error } = this.state;
+
         return (
+
             <React.Fragment>
                 <h1>Random User</h1>
                 {/* // Display a message if we encounter an error */}
@@ -46,13 +48,13 @@ class Users extends Component {
                 {/* // Here's our data check */}
                 {!isLoading ? (
                     users.map(user => {
-                        const { username, name, id, email, password } = user;
+                        // const { username, name, id, email, password } = user;
                         return (
-                            <div key={username}>
-                                <p>Name: {name}</p>
-                                <p>Id: {id.user}</p>
-                                <p>Email Address: {email.users}</p>
-                                <p>Password: {password}</p>
+                            <div key={user.id}>
+                                {/* <p>Name: {user.name}</p>
+                                <p>Id: {user.id}</p> */}
+                                <p>Email Address: {user.email}</p>
+                                <p>Password: {user.password}</p>
                                 <hr />
                             </div>
                         );
@@ -68,8 +70,8 @@ class Users extends Component {
 }
 
 function mapStateToProps(state) {
-    const { users, user } = state;
-    return { user, users };
+    const { users } = state;
+    return { users };
 }
 
 const actionCreators = {

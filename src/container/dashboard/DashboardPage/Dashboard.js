@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
 import 'static/dashboard.css';
-import dashboard from 'reducers/index';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
 import { postCurrentDasboardData } from '../../../data/actions';
 import DashboardForm from './components/DashboardForm';
@@ -32,7 +31,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { projects, dashboardPost, postDashData } = this.props;
+        const { projects, postDashData } = this.props;
         const { dash } = this.state;
 
         return (
@@ -40,7 +39,7 @@ class Dashboard extends Component {
                 <Header />
                 <hr />
                 <Sidebar />
-                <DashboardForm dash={dash} projects={projects} dashboardPost={dashboardPost} postDashData={postDashData} />
+                <DashboardForm dash={dash} projects={projects} postDashData={postDashData} />
                 <Footer />
             </div>
         );
@@ -48,9 +47,8 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps(state) {
-    const { projects, project } = state;
-    const { dashboardPost } = dashboard;
-    return { project, projects, dashboardPost };
+    const { projects } = state;
+    return { projects };
 }
 
 const actionCreators = {
