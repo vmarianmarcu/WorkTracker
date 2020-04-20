@@ -10,9 +10,9 @@ import {
     ACTION_LOAD_REGISTRED_USERS_SUCCESS,
     ACTION_LOAD_REGISTRED_USERS_FAIL,
 
-    ACTION_DASHBOARD_REQUESTING,
-    ACTION_DASHBOARD_SUCCESS,
-    ACTION_DASHBOARD_FAIL,
+    ACTION_SAVE_WORK_DETAILS_REQUESTING,
+    ACTION_SAVE_WORK_DETAILS_SUCCESS,
+    ACTION_SAVE_WORK_DETAILS_FAIL,
 
     ACTION_ADD_PROJECT_REQUESTING,
     ACTION_ADD_PROJECT_SUCCESS,
@@ -22,7 +22,7 @@ import {
 
 export const getCurrentUsers = () => makeGetApiAction(
     [ACTION_LOAD_REGISTRED_USERS_REQUESTING, ACTION_LOAD_REGISTRED_USERS_SUCCESS, ACTION_LOAD_REGISTRED_USERS_FAIL],
-    `/registredUsers`,
+    `/registredUsers`
 );
 
 export const loadProjects = () => makeGetApiAction(
@@ -30,8 +30,8 @@ export const loadProjects = () => makeGetApiAction(
     `${PROJECTS}`
 );
 
-export const postCurrentDasboardData = () => makePostApiAction(
-    [ACTION_DASHBOARD_REQUESTING, ACTION_DASHBOARD_SUCCESS, ACTION_DASHBOARD_FAIL],
+export const postWorkDetails = () => makePostApiAction(
+    [ACTION_SAVE_WORK_DETAILS_REQUESTING, ACTION_SAVE_WORK_DETAILS_SUCCESS, ACTION_SAVE_WORK_DETAILS_FAIL],
     '/workDetails'
 );
 
