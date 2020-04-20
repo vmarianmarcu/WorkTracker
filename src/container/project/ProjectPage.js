@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import 'static/projects.css';
 import Sidebar from 'components/Sidebar';
 import { loadProjects } from 'data/actions';
 import ProjectForm from './components/ProjectForm';

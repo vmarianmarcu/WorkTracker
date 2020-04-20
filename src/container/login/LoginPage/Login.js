@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import authentication from 'reducers';
 
 import { userActions } from '../actions/user.actions';
-import 'static/login.css';
 import { Form } from 'react-final-form';
 import LoginForm from './LoginForm';
 

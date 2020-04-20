@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'static/register.css';
 import { connect } from 'react-redux';
 
 import { userActions } from 'container/login/actions/user.actions';

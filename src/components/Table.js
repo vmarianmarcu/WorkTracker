@@ -2,7 +2,6 @@ import React from 'react';
 import { Component } from 'react'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-// import 'static/table.css';
 
 class DetailsTable extends Component {
 

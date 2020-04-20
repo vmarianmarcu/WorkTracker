@@ -2,7 +2,6 @@ import React from 'react';
 import Button from 'components/Button';
 import Input from 'components/Input';
 import { Link } from 'react-router-dom';
-import 'static/login.css';
 
 const LoginForm = ({ handleSubmit, handleChange, submitted, password, loggingIn, email }) => (
     <div className='containerLogin'>

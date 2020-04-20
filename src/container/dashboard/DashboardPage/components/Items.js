@@ -3,7 +3,6 @@ import InputTextarea from 'components/InputTextarea';
 import Dropdown from 'components/Dropdown';
 import InputTime from 'components/InputTime24H';
 import InputMask from 'components/InputMask';
-import 'static/dashboard.css';
 
 const Item = ({ name, index, item, projects }) => (
     <div className={`dynamicContent_${index}`} key={name} >

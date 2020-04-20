@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'components/Button';
 import { Link } from 'react-router-dom';
-import 'static/register.css';
 import { Form, Field } from "react-final-form";
 
 import { InputText } from "primereact/inputtext";

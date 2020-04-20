@@ -6,7 +6,6 @@ import Button from 'components/Button';
 import InputField from 'components/InputField';
 import { Panel } from 'primereact/panel';
 import { ScrollPanel } from 'primereact/scrollpanel';
-import 'static/finalForm.css';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 

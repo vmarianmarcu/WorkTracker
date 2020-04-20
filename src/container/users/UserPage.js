@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Sidebar from 'components/Sidebar';
-import 'static/users.css';
 import UsersForm from './components/UsersForm';
 import UserList from './components/UsersList';
 import Footer from 'components/Footer';

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
-import 'static/dashboard.css';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
 import { postWorkDetails } from 'data/actions';
 import DashboardForm from './components/DashboardForm';

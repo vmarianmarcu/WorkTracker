@@ -5,7 +5,6 @@ import { FieldArray } from 'react-final-form-arrays';
 import Button from 'components/Button';
 import InputField from 'components/InputField';
 import { ScrollPanel } from 'primereact/scrollpanel';
-import 'static/finalForm.css';
 import { Panel } from 'primereact/panel';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
