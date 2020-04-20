@@ -7,7 +7,7 @@ class Datepicker extends Component {
     render() {
         const { input, name, placeholder, value, ...rest } = this.props;
         return (
-            <div>
+            <React.Fragment>
                 <Calendar
                     {...input}
                     {...rest}
@@ -22,7 +22,7 @@ class Datepicker extends Component {
                     showIcon={false}
                     onChange={event => input.onChange(event)}
                 />
-            </div>
+            </React.Fragment>
         )
     }
 }

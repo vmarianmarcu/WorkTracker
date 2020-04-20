@@ -6,7 +6,7 @@ class Textarea extends Component {
     render() {
         const { input, name, placeholder, value, ...rest } = this.props;
         return (
-            <div>
+            <React.Fragment>
                 <InputTextarea
                     {...input}
                     {...rest}
@@ -18,7 +18,7 @@ class Textarea extends Component {
                     autoResize={true}
                     onChange={event => input.onChange(event)}
                 />
-            </div>
+            </React.Fragment>
         );
     }
 }

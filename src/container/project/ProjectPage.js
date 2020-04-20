@@ -21,7 +21,7 @@ class Projects extends Component {
     // )
 
     render() {
-        const { projects } = this.props;
+        const { projectData } = this.props;
 
         return (
             <div>
@@ -30,13 +30,13 @@ class Projects extends Component {
                 <Sidebar />
                 <div className="p-grid">
                     <div className="p-col-5">
-                        <ProjectList projects={projects} />
+                        <ProjectList projectData={projectData.payload} />
                     </div>
                     <div className="p-col-5">
                         <ProjectForm />
                     </div>
                     <div>
-                        {/* {projects.map((item, index) => (<this.RenderListItem key={item.id} item={item} />))} */}
+                        {/* {projectData.map((item, index) => (<this.RenderListItem key={item.id} item={item} />))} */}
                     </div>
                 </div>
                 <Footer />
@@ -46,8 +46,8 @@ class Projects extends Component {
 }
 
 function mapStateToProps(state) {
-    const { projects } = state;
-    return { projects };
+    const { projectData } = state;
+    return { projectData };
 }
 
 const actionCreators = {

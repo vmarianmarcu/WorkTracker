@@ -4,7 +4,7 @@ import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
 import 'static/dashboard.css';
 import { dashboardActions } from 'container/dashboard/actions/dashboard.actions';
-import { postCurrentDasboardData } from '../../../data/actions';
+import { postWorkDetails } from 'data/actions';
 import DashboardForm from './components/DashboardForm';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
@@ -31,7 +31,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { projects, postDashData } = this.props;
+        const { projects, saveWorkDetails } = this.props;
         const { dash } = this.state;
 
         return (
@@ -39,7 +39,7 @@ class Dashboard extends Component {
                 <Header />
                 <hr />
                 <Sidebar />
-                <DashboardForm dash={dash} projects={projects} postDashData={postDashData} />
+                <DashboardForm dash={dash} projects={projects} saveWorkDetails={saveWorkDetails} />
                 <Footer />
             </div>
         );
@@ -54,7 +54,7 @@ function mapStateToProps(state) {
 const actionCreators = {
     getProjects: projectActions.getAll,
     dashboard: dashboardActions.dashboard,
-    postDashData: postCurrentDasboardData
+    saveWorkDetails: postWorkDetails
 }
 
 export default connect(mapStateToProps, actionCreators)(Dashboard);

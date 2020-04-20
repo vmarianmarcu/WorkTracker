@@ -15,8 +15,7 @@ class SidebarComponent extends Component {
 
     render() {
         return (
-            <div>
-
+            <React.Fragment>
                 <div className="slidebar">
                     <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({ visibleLeft: false })}>
                         <div className="slidebar-title">
@@ -30,7 +29,7 @@ class SidebarComponent extends Component {
                         <Button icon="pi pi-bars pi" label="Show" onClick={(e) => this.setState({ visibleLeft: true })} />
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }
