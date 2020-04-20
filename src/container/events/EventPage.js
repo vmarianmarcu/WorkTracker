@@ -3,7 +3,6 @@ import FullCalendar from 'components/FullCalendar';
 // import {FullCalendar} from 'primereact/fullcalendar';
 // // import FullCalendar from '@fullcalendar/react'
 // import dayGridPlugin from '@fullcalendar/daygrid';
-import 'static/app.css';
 import 'index.css';
 import Sidebar from 'components/Sidebar';
 

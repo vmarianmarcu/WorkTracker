@@ -4,7 +4,6 @@ import { FullCalendar } from 'primereact/fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import 'static/app.css';
 import 'index.css';
 
 class FUllCalendar extends Component {
