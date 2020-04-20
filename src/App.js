@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Login from 'container/login/LoginPage/Login';
 import RegisterPage from 'container/login/RegisterPage/Register';
 
-import Dashboard from 'container/dashboard/DashboardPage/Dashboard';
+import DashboardPage from 'container/dashboard/DashboardPage';
 import ProjectPage  from 'container/project/ProjectPage';
 import DetailsPage from 'container/details/DetailsPage';
 import EventPage from 'container/events/EventPage';
@@ -48,7 +48,7 @@ class App extends Component {
               <Route exact path="/" component={Login} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={RegisterPage} />
-              <PrivateRoute path="/dashboard" component={Dashboard} />
+              <PrivateRoute path="/dashboard" component={DashboardPage} />
               <PrivateRoute path="/projects" component={ProjectPage} />
               <PrivateRoute path="/details" component={DetailsPage} />
               <PrivateRoute path="/users" component={UsersPage} />
