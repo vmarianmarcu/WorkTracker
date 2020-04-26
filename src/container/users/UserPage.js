@@ -23,7 +23,7 @@ class UserPage extends Component {
                 <Sidebar />
                 <div className="p-grid">
                     <div className="p-col-5">
-                        <UserList registredUsers={loadRegistredUsers.payload} />
+                        <UserList registredUsers={loadRegistredUsers} />
                     </div>
                     <div className="p-col-5">
                         <UsersForm />
