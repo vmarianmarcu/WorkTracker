@@ -344,3 +344,9 @@ hr {
     text-indent: -99999px;
     overflow: hidden;
 }
+
+/* Details */
+
+.row-table-content-section {
+    margin-top: 6%;
+}
