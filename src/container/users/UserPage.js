@@ -6,6 +6,7 @@ import UserList from './components/UsersList';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { getCurrentUsers } from 'data/actions';
+import { postNewUser } from 'data/actions';
 
 class UserPage extends Component {
 
@@ -14,7 +15,7 @@ class UserPage extends Component {
     }
 
     render() {
-        const { loadRegistredUsers } = this.props;
+        const { loadRegistredUsers, addUser } = this.props;
 
         return (
             <div>
@@ -26,7 +27,7 @@ class UserPage extends Component {
                         <UserList registredUsers={loadRegistredUsers.payload} />
                     </div>
                     <div className="p-col-5">
-                        <UsersForm />
+                        <UsersForm addUser={addUser} />
                     </div>
                 </div>
                 <Footer />
@@ -41,7 +42,8 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-    fetchUsers: getCurrentUsers
+    fetchUsers: getCurrentUsers,
+    addUser: postNewUser
 }
 
 export default connect(mapStateToProps, actionCreators)(UserPage);

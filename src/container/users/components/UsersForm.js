@@ -14,7 +14,7 @@ const onSubmit = async values => {
     window.alert(JSON.stringify(values, 0, 2));
 };
 
-const UsersForm = () => (
+const UsersForm = ({ addUser }) => (
     <div className="form-position">
         <Form
             onSubmit={onSubmit}
@@ -47,6 +47,8 @@ const UsersForm = () => (
                                         type="submit"
                                         icon="pi pi-check"
                                         disabled={submitting || pristine}
+                                        // onSubmit={() => addUser()}
+                                        onClick={() => addUser()}
                                     />
                                     <Button
                                         label="Reset"

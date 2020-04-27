@@ -6,6 +6,7 @@ import ProjectForm from './components/ProjectForm';
 import ProjectList from './components/ProjectsList';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import { postNewProject } from 'data/actions';
 
 class Projects extends Component {
 
@@ -20,7 +21,7 @@ class Projects extends Component {
     // )
 
     render() {
-        const { projectData } = this.props;
+        const { projectData, addProjects } = this.props;
 
         return (
             <div>
@@ -32,7 +33,7 @@ class Projects extends Component {
                         <ProjectList projectData={projectData.payload} />
                     </div>
                     <div className="p-col-5">
-                        <ProjectForm />
+                        <ProjectForm addProjects={addProjects} />
                     </div>
                     <div>
                         {/* {projectData.map((item, index) => (<this.RenderListItem key={item.id} item={item} />))} */}
@@ -50,7 +51,8 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-    getProjects: loadProjects
+    getProjects: loadProjects,
+    addProjects: postNewProject
 }
 
 export default connect(mapStateToProps, actionCreators)(Projects);
