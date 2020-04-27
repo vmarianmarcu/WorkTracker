@@ -14,7 +14,7 @@ const onSubmit = async values => {
     window.alert(JSON.stringify(values, 0, 2));
 };
 
-const ProjectForm = () => (
+const ProjectForm = ({ addProjects }) => (
     <div className="form-position">
         <Form
             onSubmit={onSubmit}
@@ -47,6 +47,7 @@ const ProjectForm = () => (
                                         type="submit"
                                         icon="pi pi-check"
                                         disabled={submitting || pristine}
+                                        onClick={() => addProjects()}
                                     />
                                     <Button
                                         label="Reset"
@@ -78,7 +79,7 @@ const ProjectForm = () => (
                                                             onClick={() => fields.remove(index)}
                                                             style={{ cursor: 'pointer' }}
                                                         >
-                                                            <i className="pi pi-times" style={{ 'fontSize': '2em', 'color':'red' }}></i>
+                                                            <i className="pi pi-times" style={{ 'fontSize': '2em', 'color': 'red' }}></i>
                                                         </span>
                                                     </div>
                                                 ))

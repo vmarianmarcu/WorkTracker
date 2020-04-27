@@ -16,7 +16,11 @@ import {
 
     ACTION_ADD_PROJECT_REQUESTING,
     ACTION_ADD_PROJECT_SUCCESS,
-    ACTION_ADD_PROJECT_FAIL
+    ACTION_ADD_PROJECT_FAIL,
+
+    ACTION_ADD_USER_REQUESTING,
+    ACTION_ADD_USER_SUCCESS,
+    ACTION_ADD_USER_FAIL
 
 } from './constants';
 
@@ -36,6 +40,11 @@ export const postWorkDetails = () => makePostApiAction(
 );
 
 export const postNewProject = () => makePostApiAction(
-    [ACTION_ADD_PROJECT_REQUESTING, ACTION_ADD_PROJECT_SUCCESS, ACTION_ADD_PROJECT_FAIL],
+    [ACTION_ADD_PROJECT_REQUESTING, ACTION_ADD_USER_SUCCESS, ACTION_ADD_USER_FAIL],
     '/projects'
+);
+
+export const postNewUser = () => makePostApiAction(
+    [ACTION_ADD_USER_REQUESTING, ACTION_ADD_PROJECT_SUCCESS, ACTION_ADD_PROJECT_FAIL],
+    '/registredUsers'
 );
