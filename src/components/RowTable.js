@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {DataTable} from 'primereact/datatable';
 import {Column} from 'primereact/column';
-import CarService from 'components/CarService';
+// import CarService from 'components/CarService';
 
 class DataTableRowGroup extends Component {
 
@@ -12,13 +12,13 @@ class DataTableRowGroup extends Component {
             expandedRows: null
         };
 
-        this.carservice = new CarService()
+        // this.carservice = new CarService()
         this.headerTemplate = this.headerTemplate.bind(this);
         this.footerTemplate = this.footerTemplate.bind(this);
     }
 
     componentDidMount() {
-        this.carservice.getCarsMedium().then(data => this.setState({cars: data}));
+        // this.carservice.getCarsMedium().then(data => this.setState({cars: data}));
     }
 
     headerTemplate(data) {
