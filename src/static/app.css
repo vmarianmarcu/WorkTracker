@@ -159,7 +159,7 @@ hr {
     display: inline-flex;
 }
 
-.deleteButton {
+.deleteItemButton {
     padding-top: 7px;
     float: right;
 }
@@ -232,6 +232,10 @@ hr {
 
 .remove-fields-button {
     margin-top: 26px;
+}
+
+.delete-project {
+    margin: auto;
 }
 
 /* Register */

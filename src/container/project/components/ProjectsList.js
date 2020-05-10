@@ -6,8 +6,8 @@ import DeleteButton from 'components/DeleteButton';
 const ProjectList = ({ projectData }) => (
     <div className="user-list-content">
         <Panel header={`Project list`} toggleable={true}>
-            <ListBox value={projectData} options={projectData} />
-            <DeleteButton />
+            <ListBox className="project-list" value={projectData} options={projectData} />
+            <DeleteButton className={`delete-project p-button-danger`}/>
         </Panel>
     </div>
 )
