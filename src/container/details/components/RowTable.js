@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {DataTable} from 'primereact/datatable';
-import {Column} from 'primereact/column';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
 // import CarService from 'components/CarService';
 
 class DataTableRowGroup extends Component {
@@ -8,7 +8,7 @@ class DataTableRowGroup extends Component {
     constructor() {
         super();
         this.state = {
-            car: null,
+            posts: [],
             expandedRows: null
         };
 
@@ -28,7 +28,7 @@ class DataTableRowGroup extends Component {
     footerTemplate(data, index) {
         return (
             <React.Fragment>
-                <td key={data.brand + '_footerTotalLabel'} colSpan="3" style={{textAlign: 'right'}}>Total Price</td>
+                <td key={data.brand + '_footerTotalLabel'} colSpan="3" style={{ textAlign: 'right' }}>Total Price</td>
                 <td key={data.brand + '_footerTotalValue'}>{this.calculateGroupTotal(data.brand)}</td>
             </React.Fragment>
         );
@@ -37,9 +37,9 @@ class DataTableRowGroup extends Component {
     calculateGroupTotal(brand) {
         let total = 0;
 
-        if(this.state.cars) {
-            for(let car of this.state.cars) {
-                if(car.brand === brand) {
+        if (this.state.cars) {
+            for (let car of this.state.cars) {
+                if (car.brand === brand) {
                     total += car.price;
                 }
             }
@@ -49,18 +49,22 @@ class DataTableRowGroup extends Component {
     }
 
     render() {
+
+        const { loadWorkDetails } = this.props;
+
         return (
             <React.Fragment>
                 <div className="row-table-content-section">
-                    <DataTable header="Work Details" value={this.state.cars} rowGroupMode="subheader" sortField="brand" sortOrder={1} groupField="brand"
+                    <DataTable header="Work Details" value={loadWorkDetails} rowGroupMode="subheader" sortField="brand" sortOrder={1} groupField="brand"
                         rowGroupHeaderTemplate={this.headerTemplate} rowGroupFooterTemplate={this.footerTemplate}
-                        expandableRowGroups={true} expandedRows={this.state.expandedRows} onRowToggle={(e) => this.setState({expandedRows:e.data})}>
+                        expandableRowGroups={true} expandedRows={this.state.expandedRows} onRowToggle={(e) => this.setState({ expandedRows: e.data })}>
                         <Column field="date" header="Date" />
                         <Column field="projectName" header="Project Name" />
                         <Column field="arrivalTime" header="Arrival Time" />
                         <Column field="departureTime" header="Departure Time" />
                         <Column field="pause" header="Pause" />
                         <Column field="comment" header="Comment" />
+                        {loadWorkDetails}
                     </DataTable>
                 </div>
             </React.Fragment>

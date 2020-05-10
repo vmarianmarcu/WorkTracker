@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Sidebar from 'components/Sidebar';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import RowTable from 'components/RowTable';
+import { loadWorkDetails } from 'data/actions';
+import RowTable from './components/RowTable';
 
-const Details = (props) => {
-    console.log(props);
+class Details extends Component {
 
-    return (
-        <div className='containerDashboard'>
-            <Header />
-            <hr />
-            <Sidebar />
-            <RowTable />
-            <Footer />
-        </div>
-    );
+    componentDidMount() {
+        this.props.fetchWorkDetails();
+    }
+
+    render() {
+
+        const { loadWorkDetails } = this.props;
+
+        return (
+            <div className='containerDashboard' >
+                <Header />
+                <hr />
+                <Sidebar />
+                <RowTable loadWorkDetails={loadWorkDetails} />
+                <Footer />
+            </div>
+        );
+    }
 }
-export default Details;
+
+function mapStateToProps(state) {
+    const { loadWorkDetails } = state;
+    return { loadWorkDetails };
+}
+
+const actionCreators = {
+    fetchWorkDetails: loadWorkDetails,
+}
+
+export default connect(mapStateToProps, actionCreators)(Details);

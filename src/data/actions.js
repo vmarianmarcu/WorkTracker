@@ -20,7 +20,11 @@ import {
 
     ACTION_ADD_USER_REQUESTING,
     ACTION_ADD_USER_SUCCESS,
-    ACTION_ADD_USER_FAIL
+    ACTION_ADD_USER_FAIL,
+
+    ACTION_LOAD_WORK_DETAILS_REQUESTING,
+    ACTION_LOAD_WORK_DETAILS_SUCCESS,
+    ACTION_LOAD_WORK_DETAILS_FAIL
 
 } from './constants';
 
@@ -36,6 +40,11 @@ export const loadProjects = () => makeGetApiAction(
 
 export const postWorkDetails = () => makePostApiAction(
     [ACTION_SAVE_WORK_DETAILS_REQUESTING, ACTION_SAVE_WORK_DETAILS_SUCCESS, ACTION_SAVE_WORK_DETAILS_FAIL],
+    '/workDetails'
+);
+
+export const loadWorkDetails =() => makeGetApiAction(
+    [ACTION_LOAD_WORK_DETAILS_REQUESTING, ACTION_LOAD_WORK_DETAILS_SUCCESS, ACTION_LOAD_WORK_DETAILS_FAIL], 
     '/workDetails'
 );
 
