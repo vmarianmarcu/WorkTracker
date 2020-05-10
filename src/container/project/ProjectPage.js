@@ -10,6 +10,13 @@ import { postNewProject } from 'data/actions';
 
 class Projects extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            project: null
+        }
+    }
+
     componentDidMount() {
         this.props.getProjects();
     }
@@ -30,7 +37,7 @@ class Projects extends Component {
                 <Sidebar />
                 <div className="p-grid">
                     <div className="p-col-5">
-                        <ProjectList projectData={projectData.payload} />
+                        <ProjectList value={this.state.project} options={projectData.payload} />
                     </div>
                     <div className="p-col-5">
                         <ProjectForm addProjects={addProjects} />
