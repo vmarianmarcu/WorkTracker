@@ -12,6 +12,13 @@ class Details extends Component {
         this.props.fetchWorkDetails();
     }
 
+   RenderListItem = (props) => (
+        <div>
+            {props.item.projects.name}
+        </div>
+    )
+
+
     render() {
 
         const { loadWorkDetails } = this.props;

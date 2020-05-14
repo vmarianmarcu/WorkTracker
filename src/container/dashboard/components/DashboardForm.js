@@ -63,6 +63,7 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                     <Button
                                         label="SAVE"
                                         type="submit"
+                                        className="p-button-success"
                                         icon="pi pi-check"
                                         disabled={submitting || pristine}
                                         onClick={() => saveWorkDetails()}

@@ -46,6 +46,7 @@ const UsersForm = ({ addUser }) => (
                                         label="SAVE"
                                         type="submit"
                                         icon="pi pi-check"
+                                        className="p-button-success"
                                         disabled={submitting || pristine}
                                         // onSubmit={() => addUser()}
                                         onClick={() => addUser()}
@@ -67,7 +68,7 @@ const UsersForm = ({ addUser }) => (
                                             {({ fields }) =>
                                                 fields.map((name, index) => (
                                                     <div className="form-users-fields" key={name}>
-                                                        <label>User {index + 1}</label>
+                                                        <label><strong> User {index + 1} </strong></label>
                                                         <span>
                                                             <InputField
                                                                 id="float-input"

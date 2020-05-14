@@ -45,6 +45,7 @@ const ProjectForm = ({ addProjects }) => (
                                     <Button
                                         label="SAVE"
                                         type="submit"
+                                        className="p-button-success"
                                         icon="pi pi-check"
                                         disabled={submitting || pristine}
                                         onClick={() => addProjects()}

@@ -8,7 +8,7 @@ const LoginForm = ({ handleSubmit, handleChange, submitted, password, loggingIn,
         <form name="form" onSubmit={handleSubmit}>
             <h3> Sign in </h3>
             <div className={'form-group' + (submitted && !email ? ' has-error' : '')} >
-                <i className="pi pi-envelope" style={{ 'fontSize': '1.5em' }}></i>
+                <i className="pi pi-envelope" style={{ 'fontSize': '1.5em' }} />
                 <Input type="email"
                     id="email"
                     className="form-control"
@@ -16,7 +16,6 @@ const LoginForm = ({ handleSubmit, handleChange, submitted, password, loggingIn,
                     value={email}
                     placeholder="Email Address*"
                     onChange={handleChange}
-
                 />
                 {
                     submitted && !email &&
@@ -38,7 +37,6 @@ const LoginForm = ({ handleSubmit, handleChange, submitted, password, loggingIn,
                     <div className="help-block">Password is required</div>
                 }
             </div>
-
             <div className="form-group-link">
                 <Button type="submit" label="SIGN IN" />
 

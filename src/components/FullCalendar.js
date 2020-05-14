@@ -4,9 +4,9 @@ import { FullCalendar } from 'primereact/fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import 'index.css';
+import { ScrollPanel } from 'primereact/scrollpanel';
 
-class FUllCalendar extends Component {
+class FullCalendarComponent extends Component {
 
     constructor() {
         super();
@@ -15,7 +15,7 @@ class FUllCalendar extends Component {
             options: {
                 plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
                 defaultView: 'dayGridMonth',
-                defaultDate: '2017-02-01',
+                defaultDate: '2020-01-01',
                 header: {
                     left: 'prev,next',
                     center: 'title',
@@ -34,12 +34,15 @@ class FUllCalendar extends Component {
     render() {
 
         return (
-            <div>
-                <div className="fullCalendar">
-                    <FullCalendar events={this.state.events} options={this.state.options} />
+            <React.Fragment>
+                <div className="full-calendar-content">
+                    <ScrollPanel className="events-scroll-panel">
+                        <FullCalendar options={this.state.options} />
+                    </ScrollPanel>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
-export default FUllCalendar;
+
+export default FullCalendarComponent;

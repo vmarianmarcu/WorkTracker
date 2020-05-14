@@ -354,3 +354,17 @@ hr {
 .row-table-content-section {
     margin-top: 6%;
 }
+
+/* Events */
+
+.full-calendar-content h2 {
+    text-align: center;
+}
+
+.events-scroll-panel {
+    background-color: white;
+    margin-top: 4%;
+    margin-left: 1%;
+    width: 98%;
+    height: 520px;
+}

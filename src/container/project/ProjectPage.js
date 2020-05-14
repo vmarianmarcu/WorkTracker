@@ -27,6 +27,12 @@ class Projects extends Component {
     //     </div>
     // )
 
+    handleChange = (e) => {
+        this.setState({
+            project: e.value
+        })
+    }
+
     render() {
         const { projectData, addProjects } = this.props;
 
@@ -37,13 +43,10 @@ class Projects extends Component {
                 <Sidebar />
                 <div className="p-grid">
                     <div className="p-col-5">
-                        <ProjectList value={this.state.project} options={projectData.payload} />
+                        <ProjectList value={this.state.project} onChange={this.handleChange} options={projectData.payload} />
                     </div>
                     <div className="p-col-5">
                         <ProjectForm addProjects={addProjects} />
-                    </div>
-                    <div>
-                        {/* {projectData.map((item, index) => (<this.RenderListItem key={item.id} item={item} />))} */}
                     </div>
                 </div>
                 <Footer />
