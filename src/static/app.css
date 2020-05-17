@@ -288,9 +288,9 @@ hr {
     width: 34%;
 } */
 
-.content-button {
+/* .content-button {
     margin-left: 8%;
-}
+} */
 
 .form-array-projects {
     margin-left: 26%;
@@ -367,4 +367,13 @@ hr {
     margin-left: 1%;
     width: 98%;
     height: 520px;
+}
+
+.add-event-btn {
+    float: right;
+    margin-right: 2.2%;
+}
+
+.footer-button {
+    display: inline-flex;
 }

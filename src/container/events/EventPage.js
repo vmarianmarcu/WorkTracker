@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import FullCalendar from 'components/FullCalendar';
 import Sidebar from 'components/Sidebar';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import Calendar from './components/Calendar';
+import AddEvent from './components/AddEvent';
 
 class EventPage extends Component {
     state = {}
@@ -12,7 +13,8 @@ class EventPage extends Component {
                 <Header />
                 <hr />
                 <Sidebar />
-                <FullCalendar />
+                <AddEvent />
+                <Calendar />
                 <Footer />
             </div>
         );
