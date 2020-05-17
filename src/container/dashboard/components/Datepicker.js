@@ -6,9 +6,14 @@ const Datepicker = ({ value }) => (
         <Calendar id="calendar"
             name="date"
             value={value}
-            placeholder="Date"
+            placeholder={`Date`}
+            touchUI={false}
+            inline={true}
+            yearNavigator={true}
+            yearRange={`2020:2035`}
+            monthNavigator={true}
+            showIcon={false}
         />
     </div>
 )
-
 export default Datepicker;

@@ -9,14 +9,14 @@ class EventPage extends Component {
     state = {}
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <Header />
                 <hr />
                 <Sidebar />
                 <AddEvent />
                 <Calendar />
                 <Footer />
-            </div>
+            </React.Fragment>
         );
     }
 }

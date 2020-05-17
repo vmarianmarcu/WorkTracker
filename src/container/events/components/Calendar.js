@@ -17,7 +17,7 @@ class CalendarComponent extends Component {
                 {
                     title: 'Event title',
                     start: '2020-01-01',
-                    end: '2020-01-03'
+                    end: '2020-01-04'
                 }
             ],
             options: {

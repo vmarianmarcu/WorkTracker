@@ -11,7 +11,8 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-    window.alert(JSON.stringify(values, 0, 2));
+    // window.alert(JSON.stringify(values, 0, 2));
+    console.log("New users: ", values)
 };
 
 const UsersForm = ({ addUser }) => (
@@ -128,5 +129,4 @@ const UsersForm = ({ addUser }) => (
         />
     </div>
 )
-
 export default UsersForm;

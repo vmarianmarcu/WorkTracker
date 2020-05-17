@@ -5,21 +5,21 @@ import { Field } from 'react-final-form';
 class Datepicker extends Component {
 
     render() {
-        const { input, name, placeholder, value, ...rest } = this.props;
+        const { input, name, placeholder, value, inline, yearNavigator, monthNavigator, showIcon, touchUI, yearRange, ...rest } = this.props;
         return (
             <React.Fragment>
                 <Calendar
                     {...input}
                     {...rest}
-                    touchUI={false}
-                    monthNavigator={true}
-                    yearNavigator={true}
-                    yearRange="2020:2035"
-                    inline={true}
+                    touchUI={touchUI}
+                    monthNavigator={monthNavigator}
+                    yearNavigator={yearNavigator}
+                    yearRange={yearRange}
+                    inline={inline}
                     placeholder={placeholder}
                     name={input.name}
                     value={input.value}
-                    showIcon={false}
+                    showIcon={showIcon}
                     onChange={event => input.onChange(event)}
                 />
             </React.Fragment>
