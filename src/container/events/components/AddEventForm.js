@@ -26,66 +26,82 @@ const AddEvent = ({ dateStart, dateEnd, hourStart, hourEnd }) => (
         }) => {
             return (
                 <form onSubmit={handleSubmit}>
-                    <Input
-                        id="start-event-date"
-                        type="text"
-                        className="event-title"
-                        name={`Event Title`}
-                        labelName="Event Title"
-                        required
-                    />
-                    <Calendar
-                        id="end-event-date"
-                        name={`dateStart`}
-                        value={dateStart}
-                        placeholder={`Date Start`}
-                        touchUI={false}
-                        inline={false}
-                        yearNavigator={true}
-                        yearRange={`2020:2035`}
-                        monthNavigator={true}
-                        showIcon={true}
-                    />
-                    <Calendar
-                        id="calendar"
-                        name={`dateEnd`}
-                        value={dateEnd}
-                        placeholder={`Date End`}
-                        touchUI={false}
-                        inline={false}
-                        yearNavigator={true}
-                        yearRange={`2020:2035`}
-                        monthNavigator={true}
-                        showIcon={true}
-                    />
-                    <InputTime
-                        name={`hourStart`}
-                        value={hourStart}
-                        placeholder={`Hour Start`}
-                        required
-                    />
-                    <InputTime
-                        name={`hourEnd`}
-                        value={hourEnd}
-                        placeholder={`Hour End`}
-                        required
-                    />
-                    <Button
-                        label="SAVE"
-                        type="submit"
-                        className="p-button-success"
-                        icon="pi pi-check"
-                        disabled={submitting || pristine}
-                    // onClick={() => addProjects()}
-                    />
-                    <Button
-                        label="Reset"
-                        type="button"
-                        icon="pi pi-undo"
-                        onClick={form.reset}
-                        disabled={submitting || pristine}
-                    />
-                </form>
+                    <div class="p-grid">
+                        <div class="p-col-6 p-offset-3">
+                            <Input
+                                id="start-event-date"
+                                type="text"
+                                className="event-title"
+                                name={`Event Title`}
+                                labelName="Event Title"
+                                required
+                            />
+                        </div>
+                        <div class="p-col-6 p-offset-3">
+                            <Calendar
+                                id="end-event-date"
+                                name={`dateStart`}
+                                value={dateStart}
+                                placeholder={`Date Start`}
+                                touchUI={false}
+                                inline={false}
+                                yearNavigator={true}
+                                yearRange={`2020:2035`}
+                                monthNavigator={true}
+                                showIcon={true}
+                            />
+                        </div>
+                        <div class="p-col-6 p-offset-3">
+                            <Calendar
+                                id="calendar"
+                                name={`dateEnd`}
+                                value={dateEnd}
+                                placeholder={`Date End`}
+                                touchUI={false}
+                                inline={false}
+                                yearNavigator={true}
+                                yearRange={`2020:2035`}
+                                monthNavigator={true}
+                                showIcon={true}
+                            />
+                        </div>
+                        <div class="p-col-6 p-offset-3">
+                            <InputTime
+                                name={`hourStart`}
+                                value={hourStart}
+                                placeholder={`Hour Start`}
+                                required
+                            />
+                        </div>
+                        <div class="p-col-6 p-offset-3">
+                            <InputTime
+                                name={`hourEnd`}
+                                value={hourEnd}
+                                placeholder={`Hour End`}
+                                required
+                            />
+                        </div>
+                        <div class="p-col-4 p-offset-2">
+                            <Button
+                                label="SAVE"
+                                type="submit"
+                                className="p-button-success"
+                                icon="pi pi-check"
+                                disabled={submitting || pristine}
+                            // onClick={() => addProjects()}
+                            />
+                        </div>
+                        <div class="p-col-4">
+                            <Button
+                                label="Reset"
+                                type="button"
+                                icon="pi pi-undo"
+                                onClick={form.reset}
+                                disabled={submitting || pristine}
+                            />
+                        </div>
+                    </div>
+                </form >
             )
         }}
     />
