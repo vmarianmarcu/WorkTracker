@@ -12,7 +12,7 @@ import UsersPage from 'container/users/UserPage';
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import 'static/primeflex.css';
+import "primeflex/primeflex.css";
 
 
 import {Router, Route, Switch, Redirect } from 'react-router-dom';
