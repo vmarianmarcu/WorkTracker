@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 // import {EventService} from '../service/EventService';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -42,7 +42,7 @@ class CalendarComponent extends Component {
     render() {
 
         return (
-            <React.Fragment>
+            <Fragment>
                 <div className="full-calendar-content">
                     <ScrollPanel className="events-scroll-panel">
                         <EventsCalendar options={this.state.options}
@@ -50,7 +50,7 @@ class CalendarComponent extends Component {
                         />
                     </ScrollPanel>
                 </div>
-            </React.Fragment>
+            </Fragment>
         );
     }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Sidebar from 'components/Sidebar';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
@@ -9,13 +9,13 @@ class EventPage extends Component {
     state = {}
     render() {
         return (
-            <React.Fragment>
+            <Fragment>
                 <Header />
                 <Sidebar />
                 <AddEvent />
                 <Calendar />
                 <Footer />
-            </React.Fragment>
+            </Fragment>
         );
     }
 }

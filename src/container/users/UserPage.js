@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Sidebar from 'components/Sidebar';
 import UsersForm from './components/UsersForm';
@@ -9,7 +9,7 @@ import { getCurrentUsers } from 'data/actions';
 import { postNewUser } from 'data/actions';
 
 class UserPage extends Component {
-  
+
     componentDidMount() {
         this.props.fetchUsers();
     }
@@ -18,7 +18,7 @@ class UserPage extends Component {
         const { loadRegistredUsers, addUser } = this.props;
 
         return (
-            <div>
+            <Fragment>
                 <Header />
                 <Sidebar />
                 <div className="p-grid">
@@ -30,7 +30,7 @@ class UserPage extends Component {
                     </div>
                 </div>
                 <Footer />
-            </div >
+            </Fragment>
         );
     }
 }

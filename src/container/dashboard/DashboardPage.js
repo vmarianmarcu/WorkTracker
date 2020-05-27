@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
@@ -33,12 +33,12 @@ class Dashboard extends Component {
         const { dash } = this.state;
 
         return (
-            <div className='containerDashboard'>
+            <Fragment>
                 <Header />
                 <Sidebar />
                 <DashboardForm dash={dash} projects={projects} saveWorkDetails={saveWorkDetails} />
                 <Footer />
-            </div>
+            </Fragment>
         );
     }
 }

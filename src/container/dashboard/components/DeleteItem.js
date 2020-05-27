@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Button from 'components/Button';
 
 const DeleteItem = ({ index, onClick }) => (
-    <div>
+    <Fragment>
         <Button key={index}
             className={`deleteItemButton p-button-danger`}
             type="button"
             icon="pi pi-times"
             onClick={onClick}
         />
-    </div>
+    </Fragment>
 )
 
 export default DeleteItem;

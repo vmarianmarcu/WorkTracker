@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Sidebar from 'components/Sidebar';
 import Footer from 'components/Footer';
@@ -12,7 +12,7 @@ class Details extends Component {
         this.props.fetchWorkDetails();
     }
 
-   RenderListItem = (props) => (
+    RenderListItem = (props) => (
         <div>
             {props.item.projects.name}
         </div>
@@ -24,12 +24,12 @@ class Details extends Component {
         const { loadWorkDetails } = this.props;
 
         return (
-            <div className='containerDashboard' >
+            <Fragment>
                 <Header />
                 <Sidebar />
                 <RowTable loadWorkDetails={loadWorkDetails} />
                 <Footer />
-            </div>
+            </Fragment>
         );
     }
 }

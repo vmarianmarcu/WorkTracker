@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Dialog } from 'primereact/dialog';
 import Button from 'components/Button';
 import AddEventForm from './AddEventForm';
@@ -61,7 +61,7 @@ class AddEvents extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <Fragment>
                 <div className="add-event-btn">
                     <Button
                         label="Add Event"
@@ -78,7 +78,7 @@ class AddEvents extends Component {
                         hourEnd={this.state.hourEnd}
                     />
                 </Dialog>
-            </React.Fragment>
+            </Fragment>
         )
     }
 }

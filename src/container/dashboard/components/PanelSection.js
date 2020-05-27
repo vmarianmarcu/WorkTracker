@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Panel } from 'primereact/panel';
 import Items from './Items';
 import DeleteItem from './DeleteItem';
 
 const PanelSection = ({ index, name, projects, dash, onClick }) => (
-    <div className="panelSection">
-        {
-            dash.map((item) =>
-                <div className="panel">
-                    <div>
-                        <Panel header={`Project ${index + 1}`} toggleable={true}>
-                            <Items name={name} index={index} item={item} projects={projects} />
-                            <DeleteItem onClick={onClick} />
-                            <br />
-                            <br />
-                        </Panel>
+    <Fragment>
+        <div className="panelSection">
+            {
+                dash.map((item) =>
+                    <div className="panel">
+                        <div>
+                            <Panel header={`Project ${index + 1}`} toggleable={true}>
+                                <Items name={name} index={index} item={item} projects={projects} />
+                                <DeleteItem onClick={onClick} />
+                                <br />
+                                <br />
+                            </Panel>
+                        </div>
                     </div>
-                </div>
-            )
-        }
-    </div>
+                )
+            }
+        </div>
+    </Fragment>
 )
 
 export default PanelSection;
