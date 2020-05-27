@@ -35,7 +35,6 @@ class Dashboard extends Component {
         return (
             <div className='containerDashboard'>
                 <Header />
-                <hr />
                 <Sidebar />
                 <DashboardForm dash={dash} projects={projects} saveWorkDetails={saveWorkDetails} />
                 <Footer />

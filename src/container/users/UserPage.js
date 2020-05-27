@@ -9,7 +9,7 @@ import { getCurrentUsers } from 'data/actions';
 import { postNewUser } from 'data/actions';
 
 class UserPage extends Component {
-
+  
     componentDidMount() {
         this.props.fetchUsers();
     }
@@ -20,7 +20,6 @@ class UserPage extends Component {
         return (
             <div>
                 <Header />
-                <hr />
                 <Sidebar />
                 <div className="p-grid">
                     <div className="p-col-5">

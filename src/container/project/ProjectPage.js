@@ -39,7 +39,6 @@ class Projects extends Component {
         return (
             <div>
                 <Header />
-                <hr />
                 <Sidebar />
                 <div className="p-grid">
                     <div className="p-col-5">

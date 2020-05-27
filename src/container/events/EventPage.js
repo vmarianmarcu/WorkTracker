@@ -11,7 +11,6 @@ class EventPage extends Component {
         return (
             <React.Fragment>
                 <Header />
-                <hr />
                 <Sidebar />
                 <AddEvent />
                 <Calendar />
