@@ -26,7 +26,6 @@ class Details extends Component {
         return (
             <div className='containerDashboard' >
                 <Header />
-                <hr />
                 <Sidebar />
                 <RowTable loadWorkDetails={loadWorkDetails} />
                 <Footer />
