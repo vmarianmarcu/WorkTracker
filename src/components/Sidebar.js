@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
 import PanelMenu from './PanelMenu';
@@ -15,7 +15,7 @@ class SidebarComponent extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <Fragment>
                 <div className="slidebar">
                     <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={(e) => this.setState({ visibleLeft: false })}>
                         <div className="slidebar-title">
@@ -29,7 +29,7 @@ class SidebarComponent extends Component {
                         <Button icon="pi pi-bars pi" label="Show" onClick={(e) => this.setState({ visibleLeft: true })} />
                     </div>
                 </div>
-            </React.Fragment>
+            </Fragment>
         )
     }
 }

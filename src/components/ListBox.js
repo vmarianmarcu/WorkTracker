@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ListBox } from 'primereact/listbox';
 
 const ListBoxComponent = ({ className, label, value, filter, filterPlaceholder, options, optionLabel, onChange }) => {
     return (
-        <React.Fragment>
+        <Fragment>
             <ListBox className={className} label={label} value={value} filter={filter} filterPlaceholder={filterPlaceholder} options={options} optionLabel={optionLabel} onChange={onChange} style={{ width: '15em' }} listStyle={{ maxHeight: '250px' }} />
-        </React.Fragment>
+        </Fragment>
     )
 }
 export default ListBoxComponent;

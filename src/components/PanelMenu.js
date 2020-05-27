@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { PanelMenu } from 'primereact/panelmenu';
 
 class MenuPanel extends Component {
@@ -43,9 +43,9 @@ class MenuPanel extends Component {
 
    render() {
       return (
-         <div className="panelMenu">
+         <Fragment>
             <PanelMenu model={this.state.items} />
-         </div>
+         </Fragment>
       );
    }
 }
