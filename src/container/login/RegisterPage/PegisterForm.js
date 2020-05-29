@@ -14,25 +14,25 @@ const onSubmit = async values => {
 
 
 
-const RegisterForm = ({ user, registering }) => (
+const RegisterForm = ({ registering }) => (
     <div className='containerRegister'>
         <h3>Sign up</h3>
         <Form
             onSubmit={onSubmit}
             validate={values => {
                 const errors = {}
-                // if (!values.firstName) {
-                //     errors.firstName = 'Required'
-                // }
-                // if (!values.lastName) {
-                //     errors.lastName = 'Required'
-                // }
-                // if (!values.email) {
-                //     errors.email = 'Required'
-                // }
-                // if (!values.password) {
-                //     errors.password = 'Required'
-                // }
+                if (!values.firstName) {
+                    errors.firstName = 'Required'
+                }
+                if (!values.lastName) {
+                    errors.lastName = 'Required'
+                }
+                if (!values.email) {
+                    errors.email = 'Required'
+                }
+                if (!values.password) {
+                    errors.password = 'Required'
+                }
                 if (!values.confirm) {
                     errors.confirm = 'Required'
                 } else if (values.confirm !== values.password) {
@@ -61,10 +61,6 @@ const RegisterForm = ({ user, registering }) => (
                                             name={input.name}
                                             required
                                             onChange={event => input.onChange(event)}
-                                        // id="firstName"
-                                        // className="form-control"
-                                        // name="firstName"
-                                        // value={user.firstName}
                                         />
                                         {meta.error && meta.touched && <span>{meta.error}</span>}
                                     </div>
@@ -84,12 +80,6 @@ const RegisterForm = ({ user, registering }) => (
                                             name={input.name}
                                             required
                                             onChange={event => input.onChange(event)}
-                                        // id="lastName"
-                                        // className="form-control"
-                                        // name="lastName"
-                                        // value={user.lastName}
-                                        // placeholder="LastName*"
-                                        // onChange={handleChange}
                                         />
                                         {meta.error && meta.touched && <span>{meta.error}</span>}
                                     </div>
@@ -109,12 +99,6 @@ const RegisterForm = ({ user, registering }) => (
                                             name={input.name}
                                             required
                                             onChange={event => input.onChange(event)}
-                                        // id="email"
-                                        // className="form-control"
-                                        // name="email"
-                                        // value={user.email}
-                                        // placeholder="Email Address*"
-                                        // onChange={handleChange}
                                         />
                                         {meta.error && meta.touched && <span>{meta.error}</span>}
                                     </div>
@@ -134,11 +118,6 @@ const RegisterForm = ({ user, registering }) => (
                                             name={input.name}
                                             required
                                             onChange={event => input.onChange(event)}
-                                        // className="form-control"
-                                        // name="password"
-                                        // value={user.password}
-                                        // placeholder="Password*"
-                                        // onChange={handleChange}
                                         />
                                         {meta.error && meta.touched && <span>{meta.error}</span>}
                                     </div>

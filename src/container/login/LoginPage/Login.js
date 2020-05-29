@@ -50,7 +50,7 @@ class Login extends Component {
             <Form
                 onSubmit={this.handleSubmit}
                 render={props => (
-                    <LoginForm {...{ submitted, password, email, loggingIn, ...props }} onSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+                    <LoginForm {...{ submitted, password, email, loggingIn, ...props }} onSubmit={this.handleSubmit} handleChange={this.handleChange} />
                 )}
             />
         );

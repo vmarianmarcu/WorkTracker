@@ -10,6 +10,7 @@ class AddEvents extends Component {
         this.state = {
             displayMaximizable: false,
             position: 'left',
+            eventTitle: null,
             dateStart: null,
             dateEnd: null,
             hourStart: null,
@@ -72,6 +73,7 @@ class AddEvents extends Component {
                 <Dialog header="Add Event" visible={this.state.displayMaximizable} style={{ width: '50vw' }}
                     onHide={() => this.onHide('displayMaximizable')} maximizable blockScroll footer={this.renderFooter('displayMaximizable')}>
                     <AddEventForm
+                        eventTitle={this.state.eventTitle}
                         dateStart={this.state.dateStart}
                         dateEnd={this.state.dateEnd}
                         hourStart={this.state.hourStart}

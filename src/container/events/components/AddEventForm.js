@@ -13,7 +13,7 @@ const onSubmit = async values => {
     console.log("Valori: ", values)
 }
 
-const AddEvent = ({ dateStart, dateEnd, hourStart, hourEnd }) => (
+const AddEvent = ({ eventTitle, dateStart, dateEnd, hourStart, hourEnd }) => (
     <Form
         onSubmit={onSubmit}
         // initialValues={{}}
@@ -31,6 +31,7 @@ const AddEvent = ({ dateStart, dateEnd, hourStart, hourEnd }) => (
                             <Input
                                 id="start-event-date"
                                 type="text"
+                                value={eventTitle}
                                 className="event-title"
                                 name={`Event Title`}
                                 labelName="Event Title"

@@ -16,9 +16,7 @@ import "primeflex/primeflex.css";
 
 
 import {Router, Route, Switch, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { history } from 'helpers';
-import { alertActions } from 'actions';
 import { PrivateRoute } from 'components/PrivateRoute';
 
 import './static/app.css'
@@ -26,22 +24,9 @@ import './static/app.css'
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-
-    history.listen((location, action) => {
-        // clear alert on location change
-        this.props.clearAlerts();
-    });
-}
-
   render() {
-    const { alert } = this.props;
     return (
       <div className="container">
-         {  alert.message &&
-              <div className={`alert ${alert.type}`}>{alert.message}</div>
-          }
         <Router history={history}>
           <div className="App">
             <Switch>
@@ -62,13 +47,4 @@ class App extends Component {
   }
 }
 
-function mapState(state) {
-  const { alert } = state;
-  return { alert };
-}
-
-const actionCreators = {
-  clearAlerts: alertActions.clear
-};
-
-export default connect(mapState, actionCreators) (App);
+export default App;
