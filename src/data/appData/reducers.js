@@ -27,5 +27,6 @@ export const loadWorkDetails = apiReducer([ACTION_LOAD_WORK_DETAILS_REQUESTING, 
 export default {
     projectData,
     loadRegistredUsers,
-    workDetails
+    workDetails,
+    loadWorkDetails
 };
