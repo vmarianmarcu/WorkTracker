@@ -11,60 +11,60 @@ class DataTableRowGroup extends Component {
     constructor() {
         super();
         this.state = {
-            cars: [],
-            selectedCar: null,
-            car: null,
+            registeredWorkDetails: [],
+            selectedWorkRecord: null,
+            workRecord: null,
             displayDialog: false
         };
 
         this.onSave = this.onSave.bind(this);
         this.onDelete = this.onDelete.bind(this);
-        this.onCarSelect = this.onCarSelect.bind(this);
+        this.onWorkRecordSelect = this.onWorkRecordSelect.bind(this);
         this.addNew = this.addNew.bind(this);
     }
 
     onSave() {
-        let cars = [...this.state.cars];
-        if (this.newCar)
-            cars.push(this.state.car);
+        let registeredWorkDetails = [...this.state.registeredWorkDetails];
+        if (this.newWorkRecord)
+            registeredWorkDetails.push(this.state.workRecord);
         else
-            cars[this.findSelectedCarIndex()] = this.state.car;
+            registeredWorkDetails[this.findSelectedWorkRecordIndex()] = this.state.workRecord;
 
-        this.setState({ cars: cars, selectedCar: null, car: null, displayDialog: false });
+        this.setState({ registeredWorkDetails: registeredWorkDetails, selectedWorkRecord: null, workRecord: null, displayDialog: false });
     }
 
     onDelete() {
-        let index = this.findSelectedCarIndex();
+        let index = this.findSelectedWorkRecordIndex();
         this.setState({
-            cars: this.state.cars.filter((val, i) => i !== index),
-            selectedCar: null,
-            car: null,
+            registeredWorkDetails: this.state.registeredWorkDetails.filter((val, i) => i !== index),
+            selectedWorkRecord: null,
+            workRecord: null,
             displayDialog: false
         });
     }
 
-    findSelectedCarIndex() {
-        return this.state.cars.indexOf(this.state.selectedCar);
+    findSelectedWorkRecordIndex() {
+        return this.state.registeredWorkDetails.indexOf(this.state.selectedWorkRecord);
     }
 
     updateProperty(property, value) {
-        let car = this.state.car;
-        car[property] = value;
-        this.setState({ car: car });
+        let workRecord = this.state.workRecord;
+        workRecord[property] = value;
+        this.setState({ workRecord: workRecord });
     }
 
-    onCarSelect(e) {
-        this.newCar = false;
+    onWorkRecordSelect(e) {
+        this.newWorkRecord = false;
         this.setState({
             displayDialog: true,
-            car: Object.assign({}, e.data)
+            workRecord: Object.assign({}, e.data)
         });
     }
 
     addNew() {
-        this.newCar = true;
+        this.newWorkRecord = true;
         this.setState({
-            car: { date: '', projectName: '', arrivalTime: '', departureTime: '', pause: '', comment: '' },
+            workRecord: { date: '', projectName: '', arrivalTime: '', departureTime: '', pause: '', comment: '' },
             displayDialog: true
         });
     }
@@ -87,8 +87,8 @@ class DataTableRowGroup extends Component {
         return (
             <div className="row-table-content-section">
                 <DataTable header={header} footer={footer} value={loadWorkDetails.payload} scrollable={true} scrollHeight="380px"
-                    lazy={true} paginator={false} rows={50} selectionMode="single" selection={this.state.selectedCar}
-                    onSelectionChange={e => this.setState({ selectedCar: e.value })} onRowSelect={this.onCarSelect} >
+                    lazy={true} paginator={false} rows={50} selectionMode="single" selection={this.state.selectedWorkRecord}
+                    onSelectionChange={e => this.setState({ selectedWorkRecord: e.value })} onRowSelect={this.onWorkRecordSelect} >
                     <Column field="date" header="Date" sortable={false} />
                     <Column field="projectName" header="Project Name" sortable={false} />
                     <Column field="arrivalTime" header="Arrival Time" sortable={false} />
@@ -100,7 +100,7 @@ class DataTableRowGroup extends Component {
                 <Dialog visible={this.state.displayDialog} style={{ width: '300px' }} header="Work Details" modal={true} footer={dialogFooter}
                     onHide={() => this.setState({ displayDialog: false })} blockScroll={false} >
                     {
-                        this.state.car &&
+                        this.state.workRecord &&
 
                         <div className="p-grid p-fluid">
                             <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="date">Date</label></div>
@@ -108,7 +108,7 @@ class DataTableRowGroup extends Component {
                                 <InputText
                                     id="date"
                                     onChange={(e) => { this.updateProperty('date', e.target.value) }}
-                                    value={this.state.car.date}
+                                    value={this.state.workRecord.date}
                                 />
                             </div>
 
@@ -117,7 +117,7 @@ class DataTableRowGroup extends Component {
                                 <InputText
                                     id="projectName"
                                     onChange={(e) => { this.updateProperty('projectName', e.target.value) }}
-                                    value={this.state.car.projectName}
+                                    value={this.state.workRecord.projectName}
                                 />
                             </div>
 
@@ -126,7 +126,7 @@ class DataTableRowGroup extends Component {
                                 <InputText
                                     id="arrivalTime"
                                     onChange={(e) => { this.updateProperty('arrivalTime', e.target.value) }}
-                                    value={this.state.car.arrivalTime}
+                                    value={this.state.workRecord.arrivalTime}
                                 />
                             </div>
 
@@ -135,7 +135,7 @@ class DataTableRowGroup extends Component {
                                 <InputText
                                     id="departureTime"
                                     onChange={(e) => { this.updateProperty('departureTime', e.target.value) }}
-                                    value={this.state.car.departureTime}
+                                    value={this.state.workRecord.departureTime}
                                 />
                             </div>
 
@@ -144,7 +144,7 @@ class DataTableRowGroup extends Component {
                                 <InputText
                                     id="pause"
                                     onChange={(e) => { this.updateProperty('pause', e.target.value) }}
-                                    value={this.state.car.pause}
+                                    value={this.state.workRecord.pause}
                                 />
                             </div>
 
@@ -153,7 +153,7 @@ class DataTableRowGroup extends Component {
                                 <InputText
                                     id="comment"
                                     onChange={(e) => { this.updateProperty('comment', e.target.value) }}
-                                    value={this.state.car.comment}
+                                    value={this.state.workRecord.comment}
                                 />
                             </div>
                         </div>

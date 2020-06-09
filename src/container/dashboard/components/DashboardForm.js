@@ -18,9 +18,6 @@ const onSubmit = async values => {
 const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
     <div className="dashForm">
         <Form
-            // onSubmit={formObj => {
-            //     console.log(formObj);
-            // }}
             onSubmit={onSubmit}
             mutators={{
                 ...arrayMutators
@@ -44,11 +41,17 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                     <ScrollPanel className="workDateAndTime-scrollPanel">
                                         <FieldArray
                                             name="panelSection"
-                                        // initialValue={[{}]}
+                                            // initialValue={[{}]}
                                         >
                                             {({ fields }) =>
                                                 fields.map((name, index) => (
-                                                    <PanelSection name={name} index={index} projects={projects} dash={dash} onClick={() => pop("panelSection")} />
+                                                    <PanelSection
+                                                        name={name}
+                                                        index={index}
+                                                        projects={projects}
+                                                        dash={dash}
+                                                        onClick={() => pop("panelSection")}
+                                                    />
                                                 ))
                                             }
                                         </FieldArray>
