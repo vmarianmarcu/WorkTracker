@@ -2,18 +2,17 @@ import React from 'react';
 import { Form } from 'react-final-form';
 import Input from 'components/InputFloatingLabel';
 import Calendar from 'components/Calendar';
-import InputTime from 'components/InputTime24H';
+// import InputTime from 'components/InputTime24H';
 import Button from 'components/Button';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const onSubmit = async values => {
     await sleep(300)
-    window.alert(JSON.stringify(values, 0, 2))
     console.log("Valori: ", values)
 }
 
-const AddEvent = ({ eventTitle, dateStart, dateEnd, hourStart, hourEnd }) => (
+const AddEvent = ({ title, start, end, addEvent /*, hourStart, hourEnd */ }) => (
     <Form
         onSubmit={onSubmit}
         // initialValues={{}}
@@ -26,24 +25,25 @@ const AddEvent = ({ eventTitle, dateStart, dateEnd, hourStart, hourEnd }) => (
         }) => {
             return (
                 <form onSubmit={handleSubmit}>
-                    <div class="p-grid">
-                        <div class="p-col-6 p-offset-3">
+                    <div className="p-grid">
+                        <div className="p-col-6 p-offset-2">
                             <Input
                                 id="start-event-date"
                                 type="text"
-                                value={eventTitle}
+                                value={title}
                                 className="event-title"
                                 name={`Event Title`}
                                 labelName="Event Title"
                                 required
                             />
                         </div>
-                        <div class="p-col-6 p-offset-3">
+                        <div className="p-col-6 p-offset-2">
                             <Calendar
                                 id="end-event-date"
-                                name={`dateStart`}
-                                value={dateStart}
+                                name={`start`}
+                                value={start}
                                 placeholder={`Date Start`}
+                                dateFormat={`yy-mm-dd`}
                                 touchUI={false}
                                 inline={false}
                                 yearNavigator={true}
@@ -52,12 +52,13 @@ const AddEvent = ({ eventTitle, dateStart, dateEnd, hourStart, hourEnd }) => (
                                 showIcon={true}
                             />
                         </div>
-                        <div class="p-col-6 p-offset-3">
+                        <div className="p-col-6 p-offset-2">
                             <Calendar
                                 id="calendar"
-                                name={`dateEnd`}
-                                value={dateEnd}
+                                name={`end`}
+                                value={end}
                                 placeholder={`Date End`}
+                                dateFormat={`yy-mm-dd`}
                                 touchUI={false}
                                 inline={false}
                                 yearNavigator={true}
@@ -66,7 +67,7 @@ const AddEvent = ({ eventTitle, dateStart, dateEnd, hourStart, hourEnd }) => (
                                 showIcon={true}
                             />
                         </div>
-                        <div class="p-col-6 p-offset-3">
+                        {/* <div className="p-col-6 p-offset-2">
                             <InputTime
                                 name={`hourStart`}
                                 value={hourStart}
@@ -74,25 +75,25 @@ const AddEvent = ({ eventTitle, dateStart, dateEnd, hourStart, hourEnd }) => (
                                 required
                             />
                         </div>
-                        <div class="p-col-6 p-offset-3">
+                        <div className="p-col-6 p-offset-2">
                             <InputTime
                                 name={`hourEnd`}
                                 value={hourEnd}
                                 placeholder={`Hour End`}
                                 required
                             />
-                        </div>
-                        <div class="p-col-4 p-offset-2">
+                        </div> */}
+                        <div className="p-col-4 p-offset-2">
                             <Button
                                 label="SAVE"
                                 type="submit"
                                 className="p-button-success"
                                 icon="pi pi-check"
                                 disabled={submitting || pristine}
-                            // onClick={() => addProjects()}
+                                onClick={() => addEvent()}
                             />
                         </div>
-                        <div class="p-col-4">
+                        <div className="p-col-4">
                             <Button
                                 label="Reset"
                                 type="button"

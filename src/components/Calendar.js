@@ -2,11 +2,12 @@ import React, { Fragment } from 'react';
 import { Calendar } from 'primereact/calendar';
 import { Field } from 'react-final-form';
 
-const Datepicker = ({ input, name, placeholder, value, inline, yearNavigator, monthNavigator, showIcon, touchUI, yearRange, ...rest }) => (
+const Datepicker = ({ input, name, placeholder, value, dateFormat, inline, yearNavigator, monthNavigator, showIcon, touchUI, yearRange, ...rest }) => (
     < Fragment >
         <Calendar
             {...input}
             {...rest}
+            dateFormat={dateFormat}
             touchUI={touchUI}
             monthNavigator={monthNavigator}
             yearNavigator={yearNavigator}

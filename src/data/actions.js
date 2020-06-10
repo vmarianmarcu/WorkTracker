@@ -1,5 +1,5 @@
 import { makePostApiAction, makeGetApiAction } from 'api';
-import { PROJECTS } from 'config';
+import { PROJECTS, REGISTRED_USERS, WORK_DETAILS, EVENTS } from 'config';
 
 import {
     ACTION_LOAD_PROJECTS_REQUESTING,
@@ -24,13 +24,21 @@ import {
 
     ACTION_LOAD_WORK_DETAILS_REQUESTING,
     ACTION_LOAD_WORK_DETAILS_SUCCESS,
-    ACTION_LOAD_WORK_DETAILS_FAIL
+    ACTION_LOAD_WORK_DETAILS_FAIL,
+
+    ACTION_LOAD_EVENTS_REQUESTING,
+    ACTION_LOAD_EVENTS_SUCCESS,
+    ACTION_LOAD_EVENTS_FAIL,
+
+    ACTION_ADD_EVENT_REQUESTING,
+    ACTION_ADD_EVENT_SUCCESS,
+    ACTION_ADD_EVENT_FAIL
 
 } from './constants';
 
 export const getCurrentUsers = () => makeGetApiAction(
     [ACTION_LOAD_REGISTRED_USERS_REQUESTING, ACTION_LOAD_REGISTRED_USERS_SUCCESS, ACTION_LOAD_REGISTRED_USERS_FAIL],
-    `/registredUsers`
+    `${REGISTRED_USERS}`
 );
 
 export const loadProjects = () => makeGetApiAction(
@@ -40,20 +48,31 @@ export const loadProjects = () => makeGetApiAction(
 
 export const postWorkDetails = () => makePostApiAction(
     [ACTION_SAVE_WORK_DETAILS_REQUESTING, ACTION_SAVE_WORK_DETAILS_SUCCESS, ACTION_SAVE_WORK_DETAILS_FAIL],
-    '/workDetails'
+    `${WORK_DETAILS}`
 );
 
-export const loadWorkDetails =() => makeGetApiAction(
-    [ACTION_LOAD_WORK_DETAILS_REQUESTING, ACTION_LOAD_WORK_DETAILS_SUCCESS, ACTION_LOAD_WORK_DETAILS_FAIL], 
-    '/workDetails'
+export const loadWorkDetails = () => makeGetApiAction(
+    [ACTION_LOAD_WORK_DETAILS_REQUESTING, ACTION_LOAD_WORK_DETAILS_SUCCESS, ACTION_LOAD_WORK_DETAILS_FAIL],
+    `${WORK_DETAILS}`
 );
 
 export const postNewProject = () => makePostApiAction(
     [ACTION_ADD_PROJECT_REQUESTING, ACTION_ADD_USER_SUCCESS, ACTION_ADD_USER_FAIL],
-    '/projects'
+    `${PROJECTS}`
 );
 
 export const postNewUser = () => makePostApiAction(
     [ACTION_ADD_USER_REQUESTING, ACTION_ADD_PROJECT_SUCCESS, ACTION_ADD_PROJECT_FAIL],
-    '/registredUsers'
+    `${REGISTRED_USERS}`
 );
+
+export const loadEvents = () => makeGetApiAction(
+    [ACTION_LOAD_EVENTS_REQUESTING, ACTION_LOAD_EVENTS_SUCCESS, ACTION_LOAD_EVENTS_FAIL],
+    `${EVENTS}`
+);
+
+export const postNewEvent = () => makePostApiAction(
+    [ACTION_ADD_EVENT_REQUESTING, ACTION_ADD_EVENT_SUCCESS, ACTION_ADD_EVENT_FAIL],
+    `${EVENTS}`
+    );
+

@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-// import {EventService} from '../service/EventService';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -11,19 +10,15 @@ class CalendarComponent extends Component {
     constructor() {
         super();
         this.state = {
-            events: [
-                { title: 'event 1', date: '2020-01-17' },
-                { title: 'event 2', date: '2020-01-12' },
-                {
-                    title: 'Event title',
-                    start: '2020-01-01',
-                    end: '2020-01-04'
-                }
-            ],
+            events: [],
             options: {
                 plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
                 defaultView: 'dayGridMonth',
                 defaultDate: '2020-01-01',
+                navLinks: true,
+                weekends: true,
+                // weekNumbersWithinDays: true,
+                // weekNumbers: true,
                 header: {
                     left: 'prev, next, today',
                     center: 'title',
@@ -32,21 +27,19 @@ class CalendarComponent extends Component {
                 editable: true
             }
         };
-        // this.eventService = new EventService();
-    }
-
-    componentDidMount() {
-        // this.eventService.getEvents().then(data => this.setState({events: data}));
     }
 
     render() {
+
+        const { loadEvents } = this.props;
 
         return (
             <Fragment>
                 <div className="full-calendar-content">
                     <ScrollPanel className="events-scroll-panel">
-                        <EventsCalendar options={this.state.options}
-                            events={this.state.events}
+                        <EventsCalendar
+                            options={this.state.options}
+                            events={loadEvents.payload}
                         />
                     </ScrollPanel>
                 </div>

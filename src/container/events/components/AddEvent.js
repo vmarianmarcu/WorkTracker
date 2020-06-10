@@ -10,11 +10,11 @@ class AddEvents extends Component {
         this.state = {
             displayMaximizable: false,
             position: 'left',
-            eventTitle: null,
-            dateStart: null,
-            dateEnd: null,
-            hourStart: null,
-            hourEnd: null
+            title: null,
+            start: null,
+            end: null,
+            // hourStart: null,
+            // hourEnd: null
         };
 
         this.onClick = this.onClick.bind(this);
@@ -61,6 +61,9 @@ class AddEvents extends Component {
     }
 
     render() {
+
+        const { addEvent } = this.props;
+
         return (
             <Fragment>
                 <div className="add-event-btn">
@@ -70,14 +73,15 @@ class AddEvents extends Component {
                         onClick={() => this.onClick('displayMaximizable')}
                     />
                 </div>
-                <Dialog header="Add Event" visible={this.state.displayMaximizable} style={{ width: '50vw' }}
+                <Dialog header="Add Event" visible={this.state.displayMaximizable} style={{ width: '30vw' }}
                     onHide={() => this.onHide('displayMaximizable')} maximizable blockScroll footer={this.renderFooter('displayMaximizable')}>
                     <AddEventForm
-                        eventTitle={this.state.eventTitle}
-                        dateStart={this.state.dateStart}
-                        dateEnd={this.state.dateEnd}
-                        hourStart={this.state.hourStart}
-                        hourEnd={this.state.hourEnd}
+                        eventTitle={this.state.title}
+                        dateStart={this.state.start}
+                        dateEnd={this.state.end}
+                        addEvent={addEvent}
+                    // hourStart={this.state.hourStart}
+                    // hourEnd={this.state.hourEnd}
                     />
                 </Dialog>
             </Fragment>
