@@ -30,12 +30,15 @@ const ProjectForm = ({ addProjects }) => (
                 pristine,
                 form,
                 submitting,
+                reset,
                 values
             }) => {
                 return (
                     <div className="new-form-section">
                         <Panel header={`Add Project`} toggleable={true}>
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={() => {
+                                handleSubmit(values).then(reset);
+                            }}>
                                 <div className="form-buttons">
                                     <Button
                                         label="Add"

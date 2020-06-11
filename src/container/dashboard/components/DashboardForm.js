@@ -30,18 +30,21 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                 pristine,
                 form,
                 submitting,
+                reset,
                 values
             }) => {
                 return (
                     <React.Fragment>
-                        <form name="form" onSubmit={handleSubmit}>
+                        <form name="form" onSubmit={() => {
+                            handleSubmit(values).then(reset);
+                        }}>
                             <div className="contentSectin">
                                 <div className="workDateAndTime">
                                     <Datepicker value={dash.date} />
                                     <ScrollPanel className="workDateAndTime-scrollPanel">
                                         <FieldArray
                                             name="panelSection"
-                                            // initialValue={[{}]}
+                                        // initialValue={[{}]}
                                         >
                                             {({ fields }) =>
                                                 fields.map((name, index) => (

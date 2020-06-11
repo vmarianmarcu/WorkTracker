@@ -21,10 +21,13 @@ const AddEvent = ({ title, start, end, addEvent /*, hourStart, hourEnd */ }) => 
             submitting,
             pristine,
             form,
+            reset,
             values
         }) => {
             return (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={() => {
+                    handleSubmit(values).then(reset);
+                }}>
                     <div className="p-grid">
                         <div className="p-col-6 p-offset-2">
                             <Input
