@@ -13,8 +13,8 @@ const Item = ({ name, index, item, projects }) => (
                     {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
                     <Dropdown
                         name={`${name}.projectName`}
-                        value={item.projectName}
-                        options={projects.items}
+                        // value={}
+                        options={projects}
                         required
                     />
                 </div>

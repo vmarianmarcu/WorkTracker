@@ -36,9 +36,12 @@ const UsersForm = ({ addUser }) => (
                 return (
                     <div className="new-form-section">
                         <Panel header={`Add User`} toggleable={true}>
-                            <form onSubmit={() => {
+                            <form onSubmit={
+                                handleSubmit
+                            }>
+                                {/* <form onSubmit={() => {
                                 handleSubmit(values).then(reset);
-                            }}>
+                            }}> */}
                                 <div className="form-buttons">
                                     <Button
                                         label="Add"
@@ -75,7 +78,7 @@ const UsersForm = ({ addUser }) => (
                                                         <label><strong> User {index + 1} </strong></label>
                                                         <span>
                                                             <InputField
-                                                                id="float-input"
+                                                                // id="float-input"
                                                                 type="text"
                                                                 className="first-name"
                                                                 name={`${name}.firstName`}
@@ -84,7 +87,7 @@ const UsersForm = ({ addUser }) => (
                                                                 required
                                                             />
                                                             <InputField
-                                                                id="float-input"
+                                                                // id="float-input"
                                                                 type="text"
                                                                 className="last-name"
                                                                 name={`${name}.lastName`}
@@ -93,7 +96,7 @@ const UsersForm = ({ addUser }) => (
                                                                 required
                                                             />
                                                             <InputField
-                                                                id="float-input"
+                                                                // id="float-input"
                                                                 type="email"
                                                                 className="email"
                                                                 name={`${name}.email`}
@@ -102,7 +105,7 @@ const UsersForm = ({ addUser }) => (
                                                                 required
                                                             />
                                                             <InputField
-                                                                id="float-input"
+                                                                // id="float-input"
                                                                 type="password"
                                                                 className="password"
                                                                 name={`${name}.password`}

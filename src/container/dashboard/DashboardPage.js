@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { projectActions } from 'container/project/actions/project.actions';
 import Sidebar from 'components/Sidebar';
 import { postWorkDetails } from 'data/actions';
 import DashboardForm from './components/DashboardForm';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import { loadProjects } from 'data/actions';
 
 class Dashboard extends Component {
 
@@ -20,8 +20,8 @@ class Dashboard extends Component {
                 pause: "00:30",
                 date: "",
                 comment: "",
-            }]
-        };
+            }],
+        }
     }
 
     componentDidMount() {
@@ -29,14 +29,14 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { projects, saveWorkDetails } = this.props;
+        const { projectData, saveWorkDetails } = this.props;
         const { dash } = this.state;
 
         return (
             <Fragment>
                 <Header />
                 <Sidebar />
-                <DashboardForm dash={dash} projects={projects} saveWorkDetails={saveWorkDetails} />
+                <DashboardForm dash={dash} saveWorkDetails={saveWorkDetails} projects={projectData.payload} />
                 <Footer />
             </Fragment>
         );
@@ -44,12 +44,12 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps(state) {
-    const { projects } = state;
-    return { projects };
+    const { projectData } = state;
+    return { projectData };
 }
 
 const actionCreators = {
-    getProjects: projectActions.getAll,
+    getProjects: loadProjects,
     saveWorkDetails: postWorkDetails
 }
 

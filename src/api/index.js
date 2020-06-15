@@ -19,7 +19,7 @@ export const VALID_KEYS = [
     'headers',
     'credentials'
 ];
-
+// headers: { 'Content-Type': 'application/json' },
 export const VALID_METHODS = [
     'GET',
     'HEAD',

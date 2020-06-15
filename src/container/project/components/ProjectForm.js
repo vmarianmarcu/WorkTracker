@@ -36,9 +36,12 @@ const ProjectForm = ({ addProjects }) => (
                 return (
                     <div className="new-form-section">
                         <Panel header={`Add Project`} toggleable={true}>
-                            <form onSubmit={() => {
+                            <form name="form" onSubmit={
+                                handleSubmit
+                            }>
+                                {/* <form onSubmit={() => {
                                 handleSubmit(values).then(reset);
-                            }}>
+                            }}> */}
                                 <div className="form-buttons">
                                     <Button
                                         label="Add"

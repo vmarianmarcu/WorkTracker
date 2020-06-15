@@ -35,9 +35,12 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
             }) => {
                 return (
                     <React.Fragment>
-                        <form name="form" onSubmit={() => {
-                            handleSubmit(values).then(reset);
-                        }}>
+                        <form name="form" onSubmit={
+                            handleSubmit
+                        }>
+                            {/* onSubmit={() => {
+                              handleSubmit(values).then(reset);
+                             }}> */}
                             <div className="contentSectin">
                                 <div className="workDateAndTime">
                                     <Datepicker value={dash.date} />
