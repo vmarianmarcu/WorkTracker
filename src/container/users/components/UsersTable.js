@@ -4,67 +4,69 @@ import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
-import ProjectForm from './ProjectForm';
+import UserForm from './UsersForm';
 
-const DataProjectTable = ({ projectData, addProjects }) => {
+const DataUserTable = ({ registredUsers, addUser }) => {
 
-    const [projects, setProjects] = useState([]);
-    const [selectedProject, setSelectedProject] = useState(null);
-    const [project, setProject] = useState(null);
+    const [users, setUsers] = useState([]);
+    const [selectedUser, setSelectedUser] = useState(null);
+    const [user, setUser] = useState(null);
     const [displayDialog, setDisplayDialog] = useState(false);
 
-    let newProject = false;
+    let newUser = false;
 
     useEffect(() => {
-        // carservice.getCarsSmall().then(data => setCars(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    }, []);
 
     const onSave = () => {
-        let _projects = [...projects];
-        if (newProject)
-            _projects.push(project);
+        let _users = [...users];
+        if (newUser)
+            _users.push(user)
         else
-            _projects[findSelectedProjectIndex()] = project;
+            _users[findSelectedUserIndex()] = user
 
-        setProjects(projects);
-        setSelectedProject(null);
-        setProject(null);
+        setUsers(users);
+        setSelectedUser(null);
+        setUser(null);
         setDisplayDialog(false);
-    };
 
-    const onDelete = () => {
-        let index = findSelectedProjectIndex();
-
-        setProjects(projects.filter((val, i) => i !== index));
-        setSelectedProject(null);
-        setProject(null);
-        setDisplayDialog(false);
-    };
-
-    const findSelectedProjectIndex = () => {
-        return projects.indexOf(selectedProject);
-    };
-
-    const updateProperty = (property, value) => {
-        project[property] = value;
-        setProject(project);
     }
 
-    const onProjectSelect = (e) => {
-        newProject = false;
+    const onDelete = () => {
+        let index = findSelectedUserIndex();
 
-        setProject(Object.assign({}, e.data));
+        setUsers(users.filter((val, i) => i !== index));
+        setSelectedUser(null);
+        setUser(null);
+        setDisplayDialog(false);
+
+    }
+
+    const findSelectedUserIndex = () => {
+        return users.indexOf(selectedUser)
+    }
+
+    const updateProperty = (property, value) => {
+        user[property] = value;
+        setUser(user);
+    }
+
+    const onUserSelect = (e) => {
+        newUser = false;
+
+        setUser(Object.assign({}, e.data));
         setDisplayDialog(true);
-    };
+    }
 
     const addNew = () => {
-        newProject = true;
+        newUser = true;
 
-        setProject({ projectName: '' });
+        setUser({ firstName: '', lastName: '', email: '', password: '' });
         setDisplayDialog(true);
-    };
+    }
 
-    const header = <div className="p-clearfix" style={{ lineHeight: '1.87em' }}>Projects</div>;
+    const header = <div className="p-clearfix" style={{ lineHeight: '1.87em' }}>Users</div>;
 
     const footer = <div className="p-clearfix" style={{ width: '100%' }}>
         <Button style={{ float: 'left' }} label="Add" icon="pi pi-plus" onClick={addNew} />
@@ -78,42 +80,46 @@ const DataProjectTable = ({ projectData, addProjects }) => {
     return (
         <Fragment>
             <DataTable
-                // value={projects}
-                value={projectData.payload}
+                // value={users}
+                value={registredUsers.payload}
                 paginator={true}
-                rows={15}
+                rows={13}
                 header={header}
                 footer={footer}
                 selectionMode="single"
-                selection={selectedProject}
-                onSelectionChange={e => setSelectedProject(e.value)}
-                onRowSelect={onProjectSelect}
+                selection={selectedUser}
+                onSelectionChange={e => setSelectedUser(e.value)}
+                onRowSelect={onUserSelect}
             >
-                <Column field="projectName" header="Project Name" sortable={true} />
+                <Column field="firstName" header="First Name" sortable={true} />
+                <Column field="lastName" header="Last Name" sortable={true} />
+                <Column field="email" header="Email" sortable={true} />
+                <Column field="password" header="password" sortable={true} />
             </DataTable>
 
             <Dialog
                 visible={displayDialog}
                 style={{ width: '400px' }}
-                header="Project Details"
+                header="User Details"
                 modal={true}
                 footer={dialogFooter}
                 onHide={() => setDisplayDialog(false)}
                 blockScroll={false}
             >
                 {
-                    project &&
+                    user &&
 
                     <div className="p-grid p-fluid">
                         {/* <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="projectName">Project Name</label></div> */}
                         <div className="p-col-8" style={{ padding: '.5em' }}>
                             {/* <InputText id="projectName" onChange={(e) => { updateProperty('projectName', e.target.value) }} value={project.projectName} /> */}
-                            <ProjectForm addProjects={addProjects} />
+                            <UserForm addUser={addUser} />
                         </div>
                     </div>
                 }
+
             </Dialog>
         </Fragment>
     );
 }
-export default DataProjectTable;
+export default DataUserTable;

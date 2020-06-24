@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Sidebar from 'components/Sidebar';
-import UsersForm from './components/UsersForm';
-import UserList from './components/UsersList';
+import UsersTable from './components/UsersTable'
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { getCurrentUsers } from 'data/actions';
@@ -21,14 +20,7 @@ class UserPage extends Component {
             <Fragment>
                 <Header />
                 <Sidebar />
-                <div className="p-grid">
-                    <div className="p-col-5">
-                        <UserList registredUsers={loadRegistredUsers} />
-                    </div>
-                    <div className="p-col-5">
-                        <UsersForm addUser={addUser} />
-                    </div>
-                </div>
+                <UsersTable registredUsers={loadRegistredUsers} addUser={addUser} />
                 <Footer />
             </Fragment>
         );
