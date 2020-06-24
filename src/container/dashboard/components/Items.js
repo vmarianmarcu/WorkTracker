@@ -9,8 +9,8 @@ const Item = ({ name, index, item, projects }) => (
         <div className="dropdownAndPause">
             <span>
                 <div className="dropdown">
-                    {projects.pending && <em>Loading users...</em>}
-                    {projects.error && <span className="text-danger">ERROR: {projects.error}</span>}
+                    {/* {projects.pending && <em>Loading users...</em>}
+                    {projects.error && <span className="text-danger">ERROR: {projects.error}</span>} */}
                     <Dropdown
                         name={`${name}.projectName`}
                         // value={}

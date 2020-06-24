@@ -57,12 +57,12 @@ export const loadWorkDetails = () => makeGetApiAction(
 );
 
 export const postNewProject = () => makePostApiAction(
-    [ACTION_ADD_PROJECT_REQUESTING, ACTION_ADD_USER_SUCCESS, ACTION_ADD_USER_FAIL],
+    [ACTION_ADD_PROJECT_REQUESTING, ACTION_ADD_PROJECT_SUCCESS, ACTION_ADD_PROJECT_FAIL],
     `${PROJECTS}`
 );
 
 export const postNewUser = () => makePostApiAction(
-    [ACTION_ADD_USER_REQUESTING, ACTION_ADD_PROJECT_SUCCESS, ACTION_ADD_PROJECT_FAIL],
+    [ACTION_ADD_USER_REQUESTING, ACTION_ADD_USER_SUCCESS, ACTION_ADD_USER_FAIL],
     `${REGISTRED_USERS}`
 );
 
@@ -74,5 +74,5 @@ export const loadEvents = () => makeGetApiAction(
 export const postNewEvent = () => makePostApiAction(
     [ACTION_ADD_EVENT_REQUESTING, ACTION_ADD_EVENT_SUCCESS, ACTION_ADD_EVENT_FAIL],
     `${EVENTS}`
-    );
+);
 
