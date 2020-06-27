@@ -97,9 +97,24 @@ const DataUserTable = ({ registredUsers }) => {
                     user &&
 
                     <div className="p-grid p-fluid">
-                        {/* <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="projectName">Project Name</label></div> */}
+                        <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="firstName">First Name</label></div>
                         <div className="p-col-8" style={{ padding: '.5em' }}>
-                            {/* <InputText id="projectName" onChange={(e) => { updateProperty('projectName', e.target.value) }} value={project.projectName} /> */}
+                            <InputText id="firstName" onChange={(e) => { updateProperty('firstName', e.target.value) }} value={user.firstName} />
+                        </div>
+
+                        <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="lastName">Last Name</label></div>
+                        <div className="p-col-8" style={{ padding: '.5em' }}>
+                            <InputText id="lastName" onChange={(e) => { updateProperty('lastName', e.target.value) }} value={user.lastName} />
+                        </div>
+
+                        <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="email">Email</label></div>
+                        <div className="p-col-8" style={{ padding: '.5em' }}>
+                            <InputText id="email" onChange={(e) => { updateProperty('email', e.target.value) }} value={user.email} />
+                        </div>
+
+                        <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="password">Password</label></div>
+                        <div className="p-col-8" style={{ padding: '.5em' }}>
+                            <InputText id="password" onChange={(e) => { updateProperty('password', e.target.value) }} value={user.password} />
                         </div>
                     </div>
                 }
