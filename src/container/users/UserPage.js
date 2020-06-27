@@ -6,6 +6,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { getCurrentUsers } from 'data/actions';
 import { postNewUser } from 'data/actions';
+import AddUser from './components/AddUser';
 
 class UserPage extends Component {
 
@@ -20,7 +21,8 @@ class UserPage extends Component {
             <Fragment>
                 <Header />
                 <Sidebar />
-                <UsersTable registredUsers={loadRegistredUsers} addUser={addUser} />
+                <AddUser addUser={addUser} />
+                <UsersTable registredUsers={loadRegistredUsers} />
                 <Footer />
             </Fragment>
         );

@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Dialog } from 'primereact/dialog';
 import Button from 'components/Button';
-import ProjectForm from './ProjectForm';
+import UsersForm from './UsersForm';
 
-class AddProjectComp extends Component {
+class AddUserComp extends Component {
 
     constructor() {
         super();
@@ -52,19 +52,19 @@ class AddProjectComp extends Component {
 
     render() {
 
-        const { addProjects } = this.props;
+        const { addUser } = this.props;
 
         return (
             <Fragment>
                 <div className="add-btn">
                     <Button
-                        label="Add project"
+                        label="Add User"
                         icon="pi pi-external-link"
                         onClick={() => this.onClick('displayMaximizable')}
                     />
                 </div>
                 <Dialog
-                    header="Add Project"
+                    header="Add User"
                     visible={this.state.displayMaximizable}
                     style={{ width: '30vw' }}
                     onHide={() => this.onHide('displayMaximizable')}
@@ -72,11 +72,11 @@ class AddProjectComp extends Component {
                     blockScroll
                     footer={this.renderFooter('displayMaximizable')}
                 >
-                    <ProjectForm addProjects={addProjects} />
+                    <UsersForm addUser={addUser} />
                 </Dialog>
             </Fragment>
         )
     }
 }
 
-export default AddProjectComp;
+export default AddUserComp;

@@ -46,12 +46,7 @@ class AddEvents extends Component {
         return (
             <div className="footer-button">
                 <Button
-                    label="Yes"
-                    icon="pi pi-check"
-                    onClick={() => this.onHide(name)}
-                />
-                <Button
-                    label="No"
+                    label="Close"
                     icon="pi pi-times"
                     onClick={() => this.onHide(name)}
                     className="p-button-secondary"
