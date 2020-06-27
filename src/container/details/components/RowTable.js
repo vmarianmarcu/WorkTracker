@@ -85,8 +85,8 @@ class DataTableRowGroup extends Component {
         </div>;
 
         return (
-            <div className="row-table-content-section">
-                <DataTable header={header} footer={footer} value={loadWorkDetails.payload} scrollable={true} scrollHeight="380px"
+            <div className="table-section">
+                <DataTable header={header} footer={footer} value={loadWorkDetails.payload} scrollable={true} scrollHeight="450px"
                     lazy={true} paginator={false} rows={50} selectionMode="single" selection={this.state.selectedWorkRecord}
                     onSelectionChange={e => this.setState({ selectedWorkRecord: e.value })} onRowSelect={this.onWorkRecordSelect} >
                     <Column field="date" header="Date" sortable={false} />

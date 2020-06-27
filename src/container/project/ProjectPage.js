@@ -6,6 +6,7 @@ import ProjectTable from './components/ProjectTable';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { postNewProject } from 'data/actions';
+import AddProject from './components/AddProject';
 
 class Projects extends Component {
 
@@ -20,7 +21,8 @@ class Projects extends Component {
             <div>
                 <Header />
                 <Sidebar />
-                <ProjectTable projectData={projectData} addProjects={addProjects} />
+                <AddProject addProjects={addProjects} />
+                <ProjectTable projectData={projectData} />
                 <Footer />
             </div>
         );

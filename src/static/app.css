@@ -343,7 +343,7 @@ hr {
 
 /* Details */
 
-.row-table-content-section {
+.details-table-section {
     margin-top: 6%;
 }
 
@@ -361,11 +361,17 @@ hr {
     height: 520px;
 }
 
-.add-event-btn {
+.footer-button {
+    display: inline-flex;
+}
+
+/* All */
+
+.add-btn {
     float: right;
     margin-right: 2.2%;
 }
 
-.footer-button {
-    display: inline-flex;
+.table-section {
+    margin-top: 4%;
 }

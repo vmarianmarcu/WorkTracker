@@ -1,20 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { Dialog } from 'primereact/dialog';
 import Button from 'components/Button';
-import AddEventForm from './AddEventForm';
+import ProjectForm from './ProjectForm';
 
-class AddEvents extends Component {
+class AddProjectComp extends Component {
 
     constructor() {
         super();
         this.state = {
             displayMaximizable: false,
-            position: 'left',
-            title: null,
-            start: null,
-            end: null,
-            // hourStart: null,
-            // hourEnd: null
+            position: 'left'
         };
 
         this.onClick = this.onClick.bind(this);
@@ -62,31 +57,31 @@ class AddEvents extends Component {
 
     render() {
 
-        const { addEvent } = this.props;
+        const { addProjects } = this.props;
 
         return (
             <Fragment>
                 <div className="add-btn">
                     <Button
-                        label="Add Event"
+                        label="Add project"
                         icon="pi pi-external-link"
                         onClick={() => this.onClick('displayMaximizable')}
                     />
                 </div>
-                <Dialog header="Add Event" visible={this.state.displayMaximizable} style={{ width: '30vw' }}
-                    onHide={() => this.onHide('displayMaximizable')} maximizable blockScroll footer={this.renderFooter('displayMaximizable')}>
-                    <AddEventForm
-                        eventTitle={this.state.title}
-                        dateStart={this.state.start}
-                        dateEnd={this.state.end}
-                        addEvent={addEvent}
-                    // hourStart={this.state.hourStart}
-                    // hourEnd={this.state.hourEnd}
-                    />
+                <Dialog
+                    header="Add Project"
+                    visible={this.state.displayMaximizable}
+                    style={{ width: '30vw' }}
+                    onHide={() => this.onHide('displayMaximizable')}
+                    maximizable
+                    blockScroll
+                    footer={this.renderFooter('displayMaximizable')}
+                >
+                    <ProjectForm addProjects={addProjects} />
                 </Dialog>
             </Fragment>
         )
     }
 }
 
-export default AddEvents;
+export default AddProjectComp;
