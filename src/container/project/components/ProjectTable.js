@@ -3,7 +3,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
-import InputText from 'components/Input';
+import Input from 'components/Input';
 
 const DataProjectTable = ({ projectData, addProjects }) => {
 
@@ -62,6 +62,7 @@ const DataProjectTable = ({ projectData, addProjects }) => {
     return (
         <div className="table-section">
             <DataTable
+                // value={projects}
                 value={projectData.payload}
                 paginator={true}
                 rows={13}
@@ -89,7 +90,7 @@ const DataProjectTable = ({ projectData, addProjects }) => {
                     <div className="p-grid p-fluid">
                         <div className="p-col-4"><label htmlFor="projectName">Project Name</label></div>
                         <div className="p-col-8">
-                            <InputText
+                            <Input
                                 id="projectName"
                                 type="text"
                                 onChange={(e) => { updateProperty('projectName', e.target.value) }}

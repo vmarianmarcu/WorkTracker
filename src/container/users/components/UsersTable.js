@@ -3,7 +3,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
-import { InputText } from 'primereact/inputtext';
+import Input from 'components/Input';
 
 const DataUserTable = ({ registredUsers }) => {
 
@@ -95,22 +95,42 @@ const DataUserTable = ({ registredUsers }) => {
                     <div className="p-grid p-fluid">
                         <div className="p-col-4"><label htmlFor="firstName">First Name</label></div>
                         <div className="p-col-8">
-                            <InputText id="firstName" onChange={(e) => { updateProperty('firstName', e.target.value) }} value={user.firstName} />
+                            <Input
+                                id="firstName"
+                                type="text"
+                                onChange={(e) => { updateProperty('firstName', e.target.value) }}
+                                value={user.firstName}
+                            />
                         </div>
 
                         <div className="p-col-4"><label htmlFor="lastName">Last Name</label></div>
                         <div className="p-col-8">
-                            <InputText id="lastName" onChange={(e) => { updateProperty('lastName', e.target.value) }} value={user.lastName} />
+                            <Input
+                                type="text"
+                                id="lastName"
+                                onChange={(e) => { updateProperty('lastName', e.target.value) }}
+                                value={user.lastName}
+                            />
                         </div>
 
                         <div className="p-col-4"><label htmlFor="email">Email</label></div>
                         <div className="p-col-8">
-                            <InputText id="email" onChange={(e) => { updateProperty('email', e.target.value) }} value={user.email} />
+                            <Input
+                                id="email"
+                                type="email"
+                                onChange={(e) => { updateProperty('email', e.target.value) }}
+                                value={user.email}
+                            />
                         </div>
 
                         <div className="p-col-4"><label htmlFor="password">Password</label></div>
                         <div className="p-col-8">
-                            <InputText id="password" onChange={(e) => { updateProperty('password', e.target.value) }} value={user.password} />
+                            <Input
+                                id="password"
+                                type="password"
+                                onChange={(e) => { updateProperty('password', e.target.value) }}
+                                value={user.password}
+                            />
                         </div>
                     </div>
                 }

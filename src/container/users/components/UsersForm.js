@@ -10,7 +10,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-    // window.alert(JSON.stringify(values, 0, 2));
     console.log("New users: ", values)
 };
 
@@ -76,7 +75,6 @@ const UsersForm = ({ addUser }) => (
                                                     <label><strong> User {index + 1} </strong></label>
                                                     <span>
                                                         <InputField
-                                                            // id="float-input"
                                                             type="text"
                                                             className="first-name"
                                                             name={`${name}.firstName`}
@@ -85,7 +83,6 @@ const UsersForm = ({ addUser }) => (
                                                             required
                                                         />
                                                         <InputField
-                                                            // id="float-input"
                                                             type="text"
                                                             className="last-name"
                                                             name={`${name}.lastName`}
@@ -94,7 +91,6 @@ const UsersForm = ({ addUser }) => (
                                                             required
                                                         />
                                                         <InputField
-                                                            // id="float-input"
                                                             type="email"
                                                             className="email"
                                                             name={`${name}.email`}
@@ -103,7 +99,6 @@ const UsersForm = ({ addUser }) => (
                                                             required
                                                         />
                                                         <InputField
-                                                            // id="float-input"
                                                             type="password"
                                                             className="password"
                                                             name={`${name}.password`}
