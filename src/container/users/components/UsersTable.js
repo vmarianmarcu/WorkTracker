@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
@@ -13,10 +13,6 @@ const DataUserTable = ({ registredUsers }) => {
     const [displayDialog, setDisplayDialog] = useState(false);
 
     let newUser = false;
-
-    useEffect(() => {
-
-    }, []);
 
     const onSave = () => {
         let _users = [...users];
