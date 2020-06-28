@@ -18,7 +18,11 @@ import {
 
     ACTION_LOAD_EVENTS_REQUESTING,
     ACTION_LOAD_EVENTS_SUCCESS,
-    ACTION_LOAD_EVENTS_FAIL
+    ACTION_LOAD_EVENTS_FAIL,
+
+    ACTION_LOAD_FREEDAYS_REQUESTING,
+    ACTION_LOAD_FREEDAYS_SUCCESS,
+    ACTION_LOAD_FREEDAYS_FAIL
 
 } from '../constants';
 
@@ -27,11 +31,13 @@ export const loadRegistredUsers = apiReducer([ACTION_LOAD_REGISTRED_USERS_REQUES
 export const workDetails = apiReducer([ACTION_SAVE_WORK_DETAILS_REQUESTING, ACTION_SAVE_WORK_DETAILS_SUCCESS, ACTION_SAVE_WORK_DETAILS_FAIL]);
 export const loadWorkDetails = apiReducer([ACTION_LOAD_WORK_DETAILS_REQUESTING, ACTION_LOAD_WORK_DETAILS_SUCCESS, ACTION_LOAD_WORK_DETAILS_FAIL]);
 export const loadEvents = apiReducer([ACTION_LOAD_EVENTS_REQUESTING, ACTION_LOAD_EVENTS_SUCCESS, ACTION_LOAD_EVENTS_FAIL]);
+export const loadFreeDays = apiReducer([ACTION_LOAD_FREEDAYS_REQUESTING, ACTION_LOAD_FREEDAYS_SUCCESS, ACTION_LOAD_FREEDAYS_FAIL]);
 
 export default {
     projectData,
     loadRegistredUsers,
     workDetails,
     loadWorkDetails,
-    loadEvents
+    loadEvents,
+    loadFreeDays
 };

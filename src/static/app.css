@@ -386,3 +386,11 @@ hr {
     font-size: 2em;
     color: red;
 }
+
+#wrapperEvent {
+    position: relative;
+}
+
+#firstDiv, #secondDiv {
+    position: absolute;
+}

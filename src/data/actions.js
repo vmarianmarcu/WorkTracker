@@ -1,5 +1,5 @@
 import { makePostApiAction, makeGetApiAction } from 'api';
-import { PROJECTS, REGISTRED_USERS, WORK_DETAILS, EVENTS } from 'config';
+import { PROJECTS, REGISTRED_USERS, WORK_DETAILS, EVENTS, FREEDAYS } from 'config';
 
 import {
     ACTION_LOAD_PROJECTS_REQUESTING,
@@ -32,7 +32,11 @@ import {
 
     ACTION_ADD_EVENT_REQUESTING,
     ACTION_ADD_EVENT_SUCCESS,
-    ACTION_ADD_EVENT_FAIL
+    ACTION_ADD_EVENT_FAIL,
+
+    ACTION_LOAD_FREEDAYS_REQUESTING,
+    ACTION_LOAD_FREEDAYS_SUCCESS,
+    ACTION_LOAD_FREEDAYS_FAIL
 
 } from './constants';
 
@@ -74,5 +78,10 @@ export const loadEvents = () => makeGetApiAction(
 export const postNewEvent = () => makePostApiAction(
     [ACTION_ADD_EVENT_REQUESTING, ACTION_ADD_EVENT_SUCCESS, ACTION_ADD_EVENT_FAIL],
     `${EVENTS}`
+);
+
+export const loadFreeDays = () => makeGetApiAction(
+    [ACTION_LOAD_FREEDAYS_REQUESTING, ACTION_LOAD_FREEDAYS_SUCCESS, ACTION_LOAD_FREEDAYS_FAIL],
+    `${FREEDAYS}`
 );
 

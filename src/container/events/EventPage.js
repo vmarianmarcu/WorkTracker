@@ -2,28 +2,39 @@ import React, { Component, Fragment } from 'react';
 import Sidebar from 'components/Sidebar';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import Calendar from './components/Calendar';
+import EventsCalendar from './components/EventsCalendar';
 import AddEvent from './components/AddEvent';
+import FreeDaysCalendar from './components/FreeDaysCalendar';
 import { connect } from 'react-redux';
 import { loadEvents } from 'data/actions';
 import { postNewEvent } from 'data/actions';
+import { loadFreeDays } from 'data/actions';
 
 class EventPage extends Component {
 
     componentDidMount() {
         this.props.fetchEvents();
+        this.props.fetchFreeDays()
     }
 
     render() {
 
-        const { loadEvents, addEvent } = this.props;
+        const { loadEvents, addEvent, loadFreeDays } = this.props;
 
         return (
             <Fragment>
                 <Header />
                 <Sidebar />
                 <AddEvent addEvent={addEvent} />
-                <Calendar loadEvents={loadEvents} />
+                <div id='wrapperEvent'>
+                    <div id='firstDiv'>
+                        <EventsCalendar loadEvents={loadEvents} />
+                    </div>
+
+                    <div id='secondDiv'>
+                        <FreeDaysCalendar loadFreeDays={loadFreeDays} />
+                    </div>
+                </div>
                 <Footer />
             </Fragment>
         );
@@ -31,12 +42,13 @@ class EventPage extends Component {
 }
 
 function mapStateToProps(state) {
-    const { loadEvents } = state;
-    return { loadEvents };
+    const { loadEvents, loadFreeDays } = state;
+    return { loadEvents, loadFreeDays };
 }
 
 const actionCreators = {
     fetchEvents: loadEvents,
+    fetchFreeDays: loadFreeDays,
     addEvent: postNewEvent
 }
 
