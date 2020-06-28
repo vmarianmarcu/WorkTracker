@@ -227,7 +227,9 @@ hr {
 /* Projects */
 
 .remove-fields-button {
-    margin-top: 26px;
+    margin-top: 22px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .delete-project {
@@ -378,4 +380,9 @@ hr {
 
 .dialog-width {
     width: 400px;
+}
+
+#delete-icon {
+    font-size: 2em;
+    color: red;
 }

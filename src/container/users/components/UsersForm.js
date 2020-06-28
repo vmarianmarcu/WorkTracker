@@ -114,10 +114,10 @@ const UsersForm = ({ addUser }) => (
                                                     </span>
 
                                                     <span
+                                                        className="remove-fields-button"
                                                         onClick={() => fields.remove(index)}
-                                                        style={{ cursor: 'pointer' }}
                                                     >
-                                                        <i className="pi pi-times" style={{ 'fontSize': '2em', 'color': 'red' }}></i>
+                                                        <i id="delete-icon" className="pi pi-times" ></i>
                                                     </span>
                                                 </div>
                                             ))

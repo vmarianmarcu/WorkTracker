@@ -54,7 +54,7 @@ const DataUserTable = ({ registredUsers }) => {
         setDisplayDialog(true);
     }
 
-    const header = <div className="p-clearfix" style={{ lineHeight: '1.87em' }}>Users</div>;
+    const header = <div className="p-clearfix">Users</div>;
 
     const dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
         <Button label="Delete" icon="pi pi-times" onClick={onDelete} />
@@ -93,23 +93,23 @@ const DataUserTable = ({ registredUsers }) => {
                     user &&
 
                     <div className="p-grid p-fluid">
-                        <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="firstName">First Name</label></div>
-                        <div className="p-col-8" style={{ padding: '.5em' }}>
+                        <div className="p-col-4"><label htmlFor="firstName">First Name</label></div>
+                        <div className="p-col-8">
                             <InputText id="firstName" onChange={(e) => { updateProperty('firstName', e.target.value) }} value={user.firstName} />
                         </div>
 
-                        <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="lastName">Last Name</label></div>
-                        <div className="p-col-8" style={{ padding: '.5em' }}>
+                        <div className="p-col-4"><label htmlFor="lastName">Last Name</label></div>
+                        <div className="p-col-8">
                             <InputText id="lastName" onChange={(e) => { updateProperty('lastName', e.target.value) }} value={user.lastName} />
                         </div>
 
-                        <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="email">Email</label></div>
-                        <div className="p-col-8" style={{ padding: '.5em' }}>
+                        <div className="p-col-4"><label htmlFor="email">Email</label></div>
+                        <div className="p-col-8">
                             <InputText id="email" onChange={(e) => { updateProperty('email', e.target.value) }} value={user.email} />
                         </div>
 
-                        <div className="p-col-4" style={{ padding: '.75em' }}><label htmlFor="password">Password</label></div>
-                        <div className="p-col-8" style={{ padding: '.5em' }}>
+                        <div className="p-col-4"><label htmlFor="password">Password</label></div>
+                        <div className="p-col-8">
                             <InputText id="password" onChange={(e) => { updateProperty('password', e.target.value) }} value={user.password} />
                         </div>
                     </div>

@@ -10,7 +10,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-    // window.alert(JSON.stringify(values, 0, 2));
     console.log("Projects: ", values)
 };
 
@@ -81,11 +80,11 @@ const ProjectForm = ({ addProjects }) => (
                                                         index={index}
                                                         required
                                                     />
-                                                    <span className="remove-fields-button"
+                                                    <span
+                                                        className="remove-fields-button"
                                                         onClick={() => fields.remove(index)}
-                                                        style={{ cursor: 'pointer' }}
                                                     >
-                                                        <i className="pi pi-times" style={{ 'fontSize': '2em', 'color': 'red' }}></i>
+                                                        <i id="delete-icon" className="pi pi-times"></i>
                                                     </span>
                                                 </div>
                                             ))

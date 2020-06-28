@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { InputText } from "primereact/inputtext";
-import { Field } from 'react-final-form';
 
 class InputField extends Component {
 
     render() {
-        const { placeholder, onChange, type, className, name, value } = this.props;
+        const { placeholder, onChange, type, className, name, value, required } = this.props;
         return (
             <div className="input-text-container">
                 <span className="p-float-label">
@@ -16,6 +15,7 @@ class InputField extends Component {
                         value={value}
                         placeholder={placeholder}
                         onChange={onChange}
+                        required={required}
                     />
                 </span>
             </div>
@@ -23,4 +23,3 @@ class InputField extends Component {
     }
 }
 export default InputField;
-// export default props => <Field component={InputField} {...props} />;
