@@ -66,7 +66,7 @@ class AddProjectComp extends Component {
                 <Dialog
                     header="Add Project"
                     visible={this.state.displayMaximizable}
-                    style={{ width: '30vw' }}
+                    className={`dialog-width`}
                     onHide={() => this.onHide('displayMaximizable')}
                     maximizable
                     blockScroll

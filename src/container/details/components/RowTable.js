@@ -80,15 +80,34 @@ class DataTableRowGroup extends Component {
         </div>;
 
         let dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
-            <Button label="Delete" icon="pi pi-times" onClick={this.onDelete} />
-            <Button label="Save" icon="pi pi-check" onClick={this.onSave} />
+            <Button
+                label="Delete"
+                icon="pi pi-times"
+                onClick={this.onDelete}
+            />
+            <Button
+                label="Save"
+                icon="pi pi-check"
+                onClick={this.onSave}
+            />
         </div>;
 
         return (
             <div className="table-section">
-                <DataTable header={header} footer={footer} value={loadWorkDetails.payload} scrollable={true} scrollHeight="450px"
-                    lazy={true} paginator={false} rows={50} selectionMode="single" selection={this.state.selectedWorkRecord}
-                    onSelectionChange={e => this.setState({ selectedWorkRecord: e.value })} onRowSelect={this.onWorkRecordSelect} >
+                <DataTable
+                    header={header}
+                    footer={footer}
+                    value={loadWorkDetails.payload}
+                    scrollable={true}
+                    scrollHeight="450px"
+                    lazy={true}
+                    paginator={false}
+                    rows={50}
+                    selectionMode="single"
+                    selection={this.state.selectedWorkRecord}
+                    onSelectionChange={e => this.setState({ selectedWorkRecord: e.value })}
+                    onRowSelect={this.onWorkRecordSelect}
+                >
                     <Column field="date" header="Date" sortable={false} />
                     <Column field="projectName" header="Project Name" sortable={false} />
                     <Column field="arrivalTime" header="Arrival Time" sortable={false} />
@@ -97,8 +116,14 @@ class DataTableRowGroup extends Component {
                     <Column field="comment" header="Comment" sortable={false} />
                 </DataTable>
 
-                <Dialog visible={this.state.displayDialog} style={{ width: '300px' }} header="Work Details" modal={true} footer={dialogFooter}
-                    onHide={() => this.setState({ displayDialog: false })} blockScroll={false} >
+                <Dialog
+                    visible={this.state.displayDialog}
+                    className={`dialog-width`}
+                    header="Work Details"
+                    modal={true} footer={dialogFooter}
+                    onHide={() => this.setState({ displayDialog: false })}
+                    blockScroll={false}
+                >
                     {
                         this.state.workRecord &&
 

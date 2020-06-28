@@ -86,7 +86,7 @@ const DataUserTable = ({ registredUsers }) => {
 
             <Dialog
                 visible={displayDialog}
-                style={{ width: '400px' }}
+                className={`dialog-width`}
                 header="User Details"
                 modal={true}
                 footer={dialogFooter}

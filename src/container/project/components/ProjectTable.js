@@ -14,10 +14,6 @@ const DataProjectTable = ({ projectData, addProjects }) => {
 
     let newProject = false;
 
-    useEffect(() => {
-        // carservice.getCarsSmall().then(data => setCars(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
     const onSave = () => {
         let _projects = [...projects];
         if (newProject)
@@ -81,7 +77,7 @@ const DataProjectTable = ({ projectData, addProjects }) => {
 
             <Dialog
                 visible={displayDialog}
-                style={{ width: '400px' }}
+                className={`dialog-width`}
                 header="Project Details"
                 modal={true}
                 footer={dialogFooter}

@@ -66,7 +66,7 @@ class AddUserComp extends Component {
                 <Dialog
                     header="Add User"
                     visible={this.state.displayMaximizable}
-                    style={{ width: '30vw' }}
+                    className={`dialog-width`}
                     onHide={() => this.onHide('displayMaximizable')}
                     maximizable
                     blockScroll

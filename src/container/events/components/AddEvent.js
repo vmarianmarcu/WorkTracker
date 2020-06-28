@@ -68,8 +68,15 @@ class AddEvents extends Component {
                         onClick={() => this.onClick('displayMaximizable')}
                     />
                 </div>
-                <Dialog header="Add Event" visible={this.state.displayMaximizable} style={{ width: '30vw' }}
-                    onHide={() => this.onHide('displayMaximizable')} maximizable blockScroll footer={this.renderFooter('displayMaximizable')}>
+                <Dialog
+                    header="Add Event"
+                    visible={this.state.displayMaximizable}
+                    className={`dialog-width`}
+                    onHide={() => this.onHide('displayMaximizable')}
+                    maximizable
+                    blockScroll
+                    footer={this.renderFooter('displayMaximizable')}
+                >
                     <AddEventForm
                         eventTitle={this.state.title}
                         dateStart={this.state.start}

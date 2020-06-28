@@ -375,3 +375,7 @@ hr {
 .table-section {
     margin-top: 4%;
 }
+
+.dialog-width {
+    width: 400px;
+}
