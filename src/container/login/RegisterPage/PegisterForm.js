@@ -9,12 +9,10 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-    window.alert(JSON.stringify(values, 0, 2));
+    console.log(values);
 };
 
-
-
-const RegisterForm = ({ registering }) => (
+const RegisterForm = ({ registerUser }) => (
     <div className='containerRegister'>
         <h3>Sign up</h3>
         <Form
@@ -144,8 +142,11 @@ const RegisterForm = ({ registering }) => (
                             </Field>
                         </div>
                         <div className="form-group-link">
-                            <Button type="submit" label="SIGN UP" disabled={submitting || pristine} />
-                            {registering}
+                            <Button
+                                type="submit"
+                                label="SIGN UP"
+                                disabled={submitting || pristine}
+                                onClick={() => registerUser()} />
 
                             <p className="linkToRegister"> Already have an account? <Link to="login">Sign in</Link></p>
                         </div>

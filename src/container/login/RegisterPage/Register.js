@@ -1,41 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import { userActions } from 'container/login/actions/user.actions';
-import registration from 'reducers/index';
+// import { userActions } from 'container/login/actions/user.actions';
+// import registration from 'reducers/index';
+import { registerUser } from 'data/actions';
 import RegisterForm from 'container/login/RegisterPage/PegisterForm';
 
 class Register extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            user: {
-                firstName: '',
-                lastName: '',
-                email: '',
-                password: ''
-            }
-        };
-    }
-
     render() {
-        const { registering } = this.props;
-        const { user, submitted } = this.state;
+        const { registerUser } = this.props;
         return (
-            <RegisterForm {...{ submitted, user, registering }} />
+            <Fragment>
+                <RegisterForm registerUser={registerUser} />
+            </Fragment>
         );
     }
 }
 
-function mapState(state) {
-    const { registering } = registration;
-    return { registering };
+function mapStateToProps(state) {
+    // const { registering } = registration;
+    // return { registering };
 }
 
 const actionsCreators = {
-    register: userActions.register
+    registerUser: registerUser
 }
 
-export default connect(mapState, actionsCreators)(Register);
+export default connect(mapStateToProps, actionsCreators)(Register);
