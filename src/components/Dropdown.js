@@ -15,7 +15,7 @@ const DropdownComponent = ({ id, input, name, placeholder, options, value, label
             optionLabel="name"
             onChange={event => input.onChange(event)}
         />
-        <label htmlFor="float-input">{labelName}</label>
+        <label htmlFor="float-dropdown">{labelName}</label>
     </Fragment>
 )
 export default props => <Field component={DropdownComponent} {...props} />;

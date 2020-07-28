@@ -36,7 +36,11 @@ class Dashboard extends Component {
             <Fragment>
                 <Header />
                 <Sidebar />
-                <DashboardForm dash={dash} saveWorkDetails={saveWorkDetails} projects={projectData.payload} />
+                <DashboardForm
+                    dash={dash}
+                    saveWorkDetails={saveWorkDetails}
+                    projects={projectData.payload}
+                />
                 <Footer />
             </Fragment>
         );

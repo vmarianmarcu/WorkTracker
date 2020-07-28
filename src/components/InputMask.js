@@ -16,7 +16,7 @@ const InputMaskField = ({ id, input, mask, placeholder, onChange, type, classNam
             placeholder={placeholder}
             onChange={event => input.onChange(event)}
         />
-        <label htmlFor="float-input">{labelName}</label>
+        <label htmlFor="float-mask">{labelName}</label>
     </Fragment>
 )
 export default props => <Field component={InputMaskField} {...props} />;

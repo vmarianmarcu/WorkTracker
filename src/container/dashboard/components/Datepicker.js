@@ -2,8 +2,9 @@ import React from 'react';
 import Calendar from 'components/Calendar';
 
 const Datepicker = ({ value }) => (
-    <div className="datepicker">
-        <Calendar id="calendar"
+    <div>
+        <Calendar
+            className="datepicker"
             name="date"
             value={value}
             placeholder={`Date`}

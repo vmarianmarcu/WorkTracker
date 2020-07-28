@@ -41,53 +41,71 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                             {/* onSubmit={() => {
                               handleSubmit(values).then(reset);
                              }}> */}
-                            <div className="contentSectin">
-                                <div className="workDateAndTime">
-                                    <Datepicker value={dash.date} />
-                                    <ScrollPanel className="workDateAndTime-scrollPanel">
-                                        <FieldArray
-                                            name="panelSection"
-                                            // initialValue={[{}]}
-                                        >
-                                            {({ fields }) =>
-                                                fields.map((name, index) => (
-                                                    <PanelSection
-                                                        name={name}
-                                                        index={index}
-                                                        projects={projects}
-                                                        dash={dash}
-                                                        onClick={() => pop("panelSection")}
+                            <div className="p-grid">
+                                <div className="p-col-12">
+                                    <div className="workAndTime">
+                                        <div className="p-col-4">
+                                            <Datepicker value={dash.date} />
+                                        </div>
+
+                                        <div className="p-col-4">
+                                            <ScrollPanel >
+                                                <FieldArray
+                                                    name="panelSection"
+                                                // initialValue={[{}]}
+                                                >
+                                                    {({ fields }) =>
+                                                        fields.map((name, index) => (
+                                                            <PanelSection
+                                                                name={name}
+                                                                index={index}
+                                                                projects={projects}
+                                                                dash={dash}
+                                                                onClick={() => pop("panelSection")}
+                                                            />
+                                                        ))
+                                                    }
+                                                </FieldArray>
+                                            </ScrollPanel>
+                                        </div>
+
+                                        <div className="p-col-4">
+                                            <div className="p-grid">
+                                                <div className="p-col-2">
+                                                    <Button
+                                                        type="button"
+                                                        icon="pi pi-plus"
+                                                        onClick={() => push("panelSection", undefined)}
                                                     />
-                                                ))
-                                            }
-                                        </FieldArray>
-                                    </ScrollPanel>
-                                </div>
-                                <div className="fixedItems">
-                                    {/*  Add item button */}
-                                    <Button
-                                        type="button"
-                                        icon="pi pi-plus"
-                                        onClick={() => push("panelSection", undefined)}
-                                    />
-                                    <Button
-                                        label="SAVE"
-                                        type="submit"
-                                        className="p-button-success"
-                                        icon="pi pi-check"
-                                        disabled={submitting || pristine}
-                                        onClick={() => saveWorkDetails()}
-                                    />
-                                    <Button
-                                        label="Reset"
-                                        type="button"
-                                        icon="pi pi-undo"
-                                        onClick={form.reset}
-                                        disabled={submitting || pristine}
-                                    />
+                                                </div>
+
+                                                <div className="p-col-3">
+                                                    <Button
+                                                        label="SAVE"
+                                                        type="submit"
+                                                        className="p-button-success"
+                                                        icon="pi pi-check"
+                                                        disabled={submitting || pristine}
+                                                        onClick={() => saveWorkDetails()}
+                                                    />
+                                                </div>
+                                                <div className="p-col-7">
+                                                    <Button
+                                                        label="Reset"
+                                                        type="button"
+                                                        icon="pi pi-undo"
+                                                        onClick={form.reset}
+                                                        disabled={submitting || pristine}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
+
+
                     </React.Fragment>
                 );
             }}

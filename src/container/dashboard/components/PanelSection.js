@@ -5,22 +5,16 @@ import DeleteItem from './DeleteItem';
 
 const PanelSection = ({ index, name, projects, dash, onClick }) => (
     <Fragment>
-        <div className="panelSection">
-            {
-                dash.map((item) =>
-                    <div className="panel">
-                        <div>
-                            <Panel header={`Project ${index + 1}`} toggleable={true}>
-                                <Items name={name} index={index} item={item} projects={projects} />
-                                <DeleteItem onClick={onClick} />
-                                <br />
-                                <br />
-                            </Panel>
-                        </div>
-                    </div>
-                )
-            }
-        </div>
+        {
+            dash.map((item) =>
+                <div>
+                    <Panel header={`Project ${index + 1}`} toggleable={true}>
+                        <Items name={name} index={index} item={item} projects={projects} />
+                        <DeleteItem onClick={onClick} />
+                    </Panel>
+                </div>
+            )
+        }
     </Fragment>
 )
 
