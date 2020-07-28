@@ -394,3 +394,28 @@ hr {
 #firstDiv, #secondDiv {
     position: absolute;
 }
+
+/* Work item */
+
+.work-record {
+    margin-top: 20px;
+    margin-left: 50px;
+    height: 300px;
+    width: 1400px;
+    background-color: rgb(181, 184, 179);
+}
+
+.dateAndTotal {
+    border: solid red 2px;
+}
+
+.totalDayHours {
+    float: right;
+    margin-right: 100px;
+}
+.details-project-name{
+    float: left;
+}
+.work-dey-details{
+    float: right;
+}

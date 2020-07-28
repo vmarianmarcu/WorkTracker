@@ -4,7 +4,8 @@ import Sidebar from 'components/Sidebar';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { loadWorkDetails } from 'data/actions';
-import RowTable from './components/RowTable';
+import DetailsTabele from './components/DetailsTable';
+import WorkRecord from './components/WorkRecord';
 
 class Details extends Component {
 
@@ -20,7 +21,8 @@ class Details extends Component {
             <Fragment>
                 <Header />
                 <Sidebar />
-                <RowTable loadWorkDetails={loadWorkDetails} />
+                <DetailsTabele loadWorkDetails={loadWorkDetails} />
+                <WorkRecord />
                 <Footer />
             </Fragment>
         );

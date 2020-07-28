@@ -47,7 +47,7 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                     <ScrollPanel className="workDateAndTime-scrollPanel">
                                         <FieldArray
                                             name="panelSection"
-                                        // initialValue={[{}]}
+                                            // initialValue={[{}]}
                                         >
                                             {({ fields }) =>
                                                 fields.map((name, index) => (
