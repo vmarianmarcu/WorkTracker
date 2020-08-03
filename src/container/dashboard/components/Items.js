@@ -6,10 +6,9 @@ import InputMask from 'components/InputMask';
 
 const Item = ({ name, index, item, projects }) => (
     <div className={`dynamicContent_${index}`} key={name} >
-
         <div className="p-grid">
             <div className="p-col-6">
-                <span className="p-float-label">
+                <span className="p-float-label details-field">
                     <Dropdown
                         id="float-dropdown"
                         name={`${name}.projectName`}
@@ -21,7 +20,7 @@ const Item = ({ name, index, item, projects }) => (
                 </span>
             </div>
             <div className="p-col-6">
-                <span className="p-float-label">
+                <span className="p-float-label details-field">
                     <InputMask
                         id="float-mask"
                         className="inputMask"
@@ -38,7 +37,7 @@ const Item = ({ name, index, item, projects }) => (
 
         <div className="p-grid">
             <div className="p-col-6">
-                <span className="p-float-label">
+                <span className="p-float-label details-field">
                     <InputTime
                         id="float-input-time"
                         name={`${name}.arrivalTime`}
@@ -49,7 +48,7 @@ const Item = ({ name, index, item, projects }) => (
                 </span>
             </div>
             <div className="p-col-6">
-                <span className="p-float-label">
+                <span className="p-float-label details-field">
                     <InputTime
                         id="float-input-time"
                         name={`${name}.departureTime`}
@@ -63,13 +62,13 @@ const Item = ({ name, index, item, projects }) => (
 
         <div className="p-grid">
             <div className="p-col-12">
-                <span className="p-float-label">
+                <span className="p-float-label details-field">
                     <InputTextarea
                         id="float-input"
                         name={`${name}.textArea`}
                         value={item.comment}
                         rows={1}
-                        cols={47}
+                        cols={49}
                         labelName="Comment"
                         required
                     />

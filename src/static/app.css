@@ -249,7 +249,7 @@ hr {
     padding-top: 11%;
 }
 
-.p-grid {
+.workAndTime {
     padding-top: 6%;
     padding-left: 10%;
 }
@@ -317,7 +317,7 @@ hr {
     position: absolute;
 }
 
-/* Work item */
+/* Dashboard Work item */
 
 .work-record {
     margin-top: 20px;
@@ -342,4 +342,18 @@ hr {
 
 .work-dey-details {
     float: right;
+}
+
+.details-panel {
+    height: 500px;
+}
+
+.details-work-section {
+    width: 430px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.details-field {
+    margin-top: 15px;
 }

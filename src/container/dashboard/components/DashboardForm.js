@@ -47,9 +47,8 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                         <div className="p-col-4">
                                             <Datepicker value={dash.date} />
                                         </div>
-
-                                        <div className="p-col-4">
-                                            <ScrollPanel >
+                                        <div className="p-col-6">
+                                            <ScrollPanel className="details-panel">
                                                 <FieldArray
                                                     name="panelSection"
                                                 // initialValue={[{}]}
@@ -69,9 +68,9 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                             </ScrollPanel>
                                         </div>
 
-                                        <div className="p-col-4">
+                                        <div className="p-col-2">
                                             <div className="p-grid">
-                                                <div className="p-col-2">
+                                                <div className="p-col-3">
                                                     <Button
                                                         type="button"
                                                         icon="pi pi-plus"
@@ -79,7 +78,7 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                                     />
                                                 </div>
 
-                                                <div className="p-col-3">
+                                                <div className="p-col-7">
                                                     <Button
                                                         label="SAVE"
                                                         type="submit"
@@ -89,7 +88,7 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                                         onClick={() => saveWorkDetails()}
                                                     />
                                                 </div>
-                                                <div className="p-col-7">
+                                                <div className="p-col-2">
                                                     <Button
                                                         label="Reset"
                                                         type="button"
@@ -104,8 +103,6 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                 </div>
                             </div>
                         </form>
-
-
                     </React.Fragment>
                 );
             }}
