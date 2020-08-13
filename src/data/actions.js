@@ -40,19 +40,13 @@ import {
 
     ACTION_REGISTER_USER_REQUEST,
     ACTION_REGISTER_USER_SUCCESS,
-    ACTION_REGISTER_USER_FAILURE
+    ACTION_REGISTER_USER_FAIL,
+
+    ACTION_ADD_FREE_DAY_REQUEST,
+    ACTION_ADD_FREE_DAY_SUCCESS,
+    ACTION_ADD_FREE_DAY_FAIL
 
 } from './constants';
-
-export const getCurrentUsers = () => makeGetApiAction(
-    [ACTION_LOAD_REGISTRED_USERS_REQUESTING, ACTION_LOAD_REGISTRED_USERS_SUCCESS, ACTION_LOAD_REGISTRED_USERS_FAIL],
-    `${REGISTRED_USERS}`
-);
-
-export const loadProjects = () => makeGetApiAction(
-    [ACTION_LOAD_PROJECTS_REQUESTING, ACTION_LOAD_PROJECTS_SUCCESS, ACTION_LOAD_PROJECTS_FAIL],
-    `${PROJECTS}`
-);
 
 export const postWorkDetails = () => makePostApiAction(
     [ACTION_SAVE_WORK_DETAILS_REQUESTING, ACTION_SAVE_WORK_DETAILS_SUCCESS, ACTION_SAVE_WORK_DETAILS_FAIL],
@@ -64,15 +58,37 @@ export const loadWorkDetails = () => makeGetApiAction(
     `${WORK_DETAILS}`
 );
 
+// Projects
+
+export const loadProjects = () => makeGetApiAction(
+    [ACTION_LOAD_PROJECTS_REQUESTING, ACTION_LOAD_PROJECTS_SUCCESS, ACTION_LOAD_PROJECTS_FAIL],
+    `${PROJECTS}`
+);
+
 export const postNewProject = () => makePostApiAction(
     [ACTION_ADD_PROJECT_REQUESTING, ACTION_ADD_PROJECT_SUCCESS, ACTION_ADD_PROJECT_FAIL],
     `${PROJECTS}`
+);
+
+// Users
+
+export const getCurrentUsers = () => makeGetApiAction(
+    [ACTION_LOAD_REGISTRED_USERS_REQUESTING, ACTION_LOAD_REGISTRED_USERS_SUCCESS, ACTION_LOAD_REGISTRED_USERS_FAIL],
+    `${REGISTRED_USERS}`
 );
 
 export const postNewUser = () => makePostApiAction(
     [ACTION_ADD_USER_REQUESTING, ACTION_ADD_USER_SUCCESS, ACTION_ADD_USER_FAIL],
     `${REGISTRED_USERS}`
 );
+
+
+export const registerUser = () => makePostApiAction(
+    [ACTION_REGISTER_USER_REQUEST, ACTION_REGISTER_USER_SUCCESS, ACTION_REGISTER_USER_FAIL],
+    `${REGISTRED_USERS}`
+)
+
+// Events
 
 export const loadEvents = () => makeGetApiAction(
     [ACTION_LOAD_EVENTS_REQUESTING, ACTION_LOAD_EVENTS_SUCCESS, ACTION_LOAD_EVENTS_FAIL],
@@ -89,7 +105,9 @@ export const loadFreeDays = () => makeGetApiAction(
     `${FREEDAYS}`
 );
 
-export const registerUser = () => makePostApiAction(
-    [ACTION_REGISTER_USER_REQUEST, ACTION_REGISTER_USER_SUCCESS, ACTION_REGISTER_USER_FAILURE],
-    `${REGISTRED_USERS}`
-)
+export const postFreeDays = () => makePostApiAction(
+    [ACTION_ADD_FREE_DAY_REQUEST, ACTION_ADD_FREE_DAY_SUCCESS, ACTION_ADD_FREE_DAY_FAIL],
+    `${FREEDAYS}`
+);
+
+

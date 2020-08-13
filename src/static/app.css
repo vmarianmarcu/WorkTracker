@@ -289,6 +289,10 @@ hr {
     display: inline-flex;
 }
 
+.event-section {
+    border: solid grey 1px;
+}
+
 /* All */
 
 .add-btn {
@@ -313,9 +317,9 @@ hr {
     position: relative;
 }
 
-#firstDiv, #secondDiv {
+/* #firstDiv, #secondDiv {
     position: absolute;
-}
+} */
 
 /* Dashboard Work item */
 
@@ -354,6 +358,6 @@ hr {
     margin-bottom: 30px;
 }
 
-.details-field {
+.field-margin {
     margin-top: 15px;
 }

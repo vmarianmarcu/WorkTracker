@@ -37,4 +37,3 @@ const WorkRecord = () => {
     );
 }
 export default WorkRecord;
-

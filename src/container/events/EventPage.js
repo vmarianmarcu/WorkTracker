@@ -4,10 +4,12 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import EventsCalendar from './components/EventsCalendar';
 import AddEvent from './components/AddEvent';
+import AddFreeDay from './components/AddFreeDay';
 import FreeDaysCalendar from './components/FreeDaysCalendar';
 import { connect } from 'react-redux';
 import { loadEvents } from 'data/actions';
 import { postNewEvent } from 'data/actions';
+import { postFreeDays } from 'data/actions';
 import { loadFreeDays } from 'data/actions';
 
 class EventPage extends Component {
@@ -19,13 +21,16 @@ class EventPage extends Component {
 
     render() {
 
-        const { loadEvents, addEvent, loadFreeDays } = this.props;
+        const { loadEvents, addEvent, loadFreeDays, addFreeDays } = this.props;
 
         return (
             <Fragment>
                 <Header />
                 <Sidebar />
                 <AddEvent addEvent={addEvent} />
+                <AddFreeDay addFreeDays={addFreeDays} />
+
+
                 <div id='wrapperEvent'>
                     <div id='firstDiv'>
                         <EventsCalendar loadEvents={loadEvents} />
@@ -49,7 +54,8 @@ function mapStateToProps(state) {
 const actionCreators = {
     fetchEvents: loadEvents,
     fetchFreeDays: loadFreeDays,
-    addEvent: postNewEvent
+    addEvent: postNewEvent,
+    addFreeDays: postFreeDays
 }
 
 export default connect(mapStateToProps, actionCreators)(EventPage);

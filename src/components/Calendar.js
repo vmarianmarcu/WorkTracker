@@ -2,11 +2,12 @@ import React, { Fragment } from 'react';
 import { Calendar } from 'primereact/calendar';
 import { Field } from 'react-final-form';
 
-const Datepicker = ({ input, name, placeholder, value, dateFormat, inline, yearNavigator, monthNavigator, showIcon, touchUI, yearRange, ...rest }) => (
-    < Fragment >
+const Datepicker = ({ id, input, name, placeholder, value, dateFormat, inline, yearNavigator, monthNavigator, showIcon, touchUI, yearRange, labelName, ...rest }) => (
+    < Fragment>
         <Calendar
             {...input}
             {...rest}
+            id={id}
             dateFormat={dateFormat}
             touchUI={touchUI}
             monthNavigator={monthNavigator}
@@ -19,6 +20,7 @@ const Datepicker = ({ input, name, placeholder, value, dateFormat, inline, yearN
             showIcon={showIcon}
             onChange={event => input.onChange(event)}
         />
+        <label htmlFor="float-calendar">{labelName}</label>
     </Fragment >
 )
 export default props => <Field component={Datepicker} {...props} />;

@@ -44,34 +44,38 @@ const AddEvent = ({ title, start, end, addEvent /*, hourStart, hourEnd */ }) => 
                             />
                         </div>
                         <div className="p-col-6 p-offset-2">
-                            <Calendar
-                                id="end-event-date"
-                                name={`start`}
-                                value={start}
-                                placeholder={`Date Start`}
-                                dateFormat={`yy-mm-dd`}
-                                touchUI={false}
-                                inline={false}
-                                yearNavigator={true}
-                                yearRange={`2020:2035`}
-                                monthNavigator={true}
-                                showIcon={true}
-                            />
+                            <span className="p-float-label field-margin">
+                                <Calendar
+                                    id="float-calendar"
+                                    name={`event start`}
+                                    value={start}
+                                    labelName={`Date Start`}
+                                    dateFormat={`yy-mm-dd`}
+                                    touchUI={false}
+                                    inline={false}
+                                    yearNavigator={true}
+                                    yearRange={`2020:2035`}
+                                    monthNavigator={true}
+                                    showIcon={true}
+                                />
+                            </span>
                         </div>
                         <div className="p-col-6 p-offset-2">
-                            <Calendar
-                                id="calendar"
-                                name={`end`}
-                                value={end}
-                                placeholder={`Date End`}
-                                dateFormat={`yy-mm-dd`}
-                                touchUI={false}
-                                inline={false}
-                                yearNavigator={true}
-                                yearRange={`2020:2035`}
-                                monthNavigator={true}
-                                showIcon={true}
-                            />
+                            <span className="p-float-label field-margin">
+                                <Calendar
+                                    id="float-calendar"
+                                    name={`event end`}
+                                    value={end}
+                                    labelName={`Date End`}
+                                    dateFormat={`yy-mm-dd`}
+                                    touchUI={false}
+                                    inline={false}
+                                    yearNavigator={true}
+                                    yearRange={`2020:2035`}
+                                    monthNavigator={true}
+                                    showIcon={true}
+                                />
+                            </span>
                         </div>
                         {/* <div className="p-col-6 p-offset-2">
                             <InputTime
