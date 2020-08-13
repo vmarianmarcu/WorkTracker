@@ -275,6 +275,14 @@ hr {
     font-weight: bold;
 }
 
+.details-column-expender {
+    width: 3em;
+}
+
+.details-header-csv {
+    text-align: right;
+}
+
 /* Events */
 
 .full-calendar-content h2 {

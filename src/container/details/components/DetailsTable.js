@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { ColumnGroup } from 'primereact/columngroup';
@@ -14,10 +14,9 @@ const DetailsTable = ({ loadWorkDetails }) => {
     const [selectedRegistration, setSelectedRegistration] = useState(null);
     const [registration, setRegistration] = useState(null);
     const [displayDialog, setDisplayDialog] = useState(false);
-
     const [expandedRows, setExpandedRows] = useState(null);
-
     let newRegistration = false;
+    let dt = useRef(null);
 
     const onSave = () => {
         let _registrations = [...registrations];
@@ -59,13 +58,28 @@ const DetailsTable = ({ loadWorkDetails }) => {
         setDisplayDialog(true);
     }
 
-    const header = <div className="p-clearfix">Work Details</div>;
+    const onExport = () => {
+        dt.current.exportCSV();
+    };
+
+    const header = <div>
+        <div className="p-clearfix">Work Details</div>
+        <div className="details-header-csv">
+            <Button
+                type="button"
+                icon="pi pi-external-link"
+                iconPos="left"
+                label="CSV"
+                onClick={onExport}>
+            </Button>
+        </div>
+    </div>;
 
     let footerGroup = <ColumnGroup>
         <Row>
-            <Column footer="Totals:" colSpan={3} />
-            <Column footer="$506,202" />
-            <Column footer="$531,020" />
+            <Column footer="Total:" colSpan={3} />
+            <Column footer="506" />
+            <Column footer="531" />
         </Row>
     </ColumnGroup>;
 
@@ -75,7 +89,6 @@ const DetailsTable = ({ loadWorkDetails }) => {
     </div>;
 
     const rowExpansionTemplate = data => (<RowExpansionTemplate data={data} />)
-
 
     return (
         <div className="table-section">
@@ -90,13 +103,13 @@ const DetailsTable = ({ loadWorkDetails }) => {
                 selection={selectedRegistration}
                 onSelectionChange={e => setSelectedRegistration(e.value)}
                 onRowSelect={onRegistrationSelect}
-
                 expandedRows={expandedRows}
                 onRowToggle={(e) => setExpandedRows(e.data)}
                 rowExpansionTemplate={rowExpansionTemplate}
                 dataKey="date"
+                ref={dt}
             >
-                <Column expander={true} style={{ width: '3em' }} />
+                <Column expander={true} className="details-column-expender" />
                 <Column field="date" header="Date" sortable={true} filter={true} filterPlaceholder={`Search By Date`} />
                 <Column field="projectName" header="Project Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
                 <Column field="arrivalTime" header="Arrival Time" />

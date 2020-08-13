@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const rowExpansionTemplate = ({ data }) => (
     <div className="p-grid p-fluid">
         <div className="p-col-12 p-md-3">
