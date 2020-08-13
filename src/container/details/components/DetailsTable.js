@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+import { ColumnGroup } from 'primereact/columngroup';
+import { Row } from 'primereact/row';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 import Input from 'components/Input';
+import RowExpansionTemplate from './RowExpansionTemplate';
 
 const DetailsTable = ({ loadWorkDetails }) => {
 
@@ -11,6 +14,8 @@ const DetailsTable = ({ loadWorkDetails }) => {
     const [selectedRegistration, setSelectedRegistration] = useState(null);
     const [registration, setRegistration] = useState(null);
     const [displayDialog, setDisplayDialog] = useState(false);
+
+    const [expandedRows, setExpandedRows] = useState(null);
 
     let newRegistration = false;
 
@@ -56,10 +61,21 @@ const DetailsTable = ({ loadWorkDetails }) => {
 
     const header = <div className="p-clearfix">Work Details</div>;
 
+    let footerGroup = <ColumnGroup>
+        <Row>
+            <Column footer="Totals:" colSpan={3} />
+            <Column footer="$506,202" />
+            <Column footer="$531,020" />
+        </Row>
+    </ColumnGroup>;
+
     const dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
         <Button label="Delete" icon="pi pi-times" onClick={onDelete} />
         <Button label="Save" icon="pi pi-check" onClick={onSave} />
     </div>;
+
+    const rowExpansionTemplate = data => (<RowExpansionTemplate data={data} />)
+
 
     return (
         <div className="table-section">
@@ -69,11 +85,18 @@ const DetailsTable = ({ loadWorkDetails }) => {
                 paginator={true}
                 rows={13}
                 header={header}
+                footerColumnGroup={footerGroup}
                 selectionMode="single"
                 selection={selectedRegistration}
                 onSelectionChange={e => setSelectedRegistration(e.value)}
                 onRowSelect={onRegistrationSelect}
+
+                expandedRows={expandedRows}
+                onRowToggle={(e) => setExpandedRows(e.data)}
+                rowExpansionTemplate={rowExpansionTemplate}
+                dataKey="date"
             >
+                <Column expander={true} style={{ width: '3em' }} />
                 <Column field="date" header="Date" sortable={true} filter={true} filterPlaceholder={`Search By Date`} />
                 <Column field="projectName" header="Project Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
                 <Column field="arrivalTime" header="Arrival Time" />
@@ -157,7 +180,7 @@ const DetailsTable = ({ loadWorkDetails }) => {
                 }
 
             </Dialog>
-        </div>
+        </div >
     );
 }
 export default DetailsTable;
