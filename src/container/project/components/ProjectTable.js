@@ -72,7 +72,7 @@ const DataProjectTable = ({ projectData, addProjects }) => {
                 onSelectionChange={e => setSelectedProject(e.value)}
                 onRowSelect={onProjectSelect}
             >
-                <Column field="projectName" header="Project Name" sortable={true} />
+                <Column field="projectName" header="Project Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
             </DataTable>
 
             <Dialog

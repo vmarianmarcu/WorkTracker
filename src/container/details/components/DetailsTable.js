@@ -61,7 +61,6 @@ const DetailsTable = ({ loadWorkDetails }) => {
         <Button label="Save" icon="pi pi-check" onClick={onSave} />
     </div>;
 
-
     return (
         <div className="table-section">
             <DataTable
@@ -75,13 +74,13 @@ const DetailsTable = ({ loadWorkDetails }) => {
                 onSelectionChange={e => setSelectedRegistration(e.value)}
                 onRowSelect={onRegistrationSelect}
             >
-                <Column field="date" header="Date" sortable={true} />
-                <Column field="projectName" header="Project Name" sortable={true} />
-                <Column field="arrivalTime" header="Arrival Time" sortable={true} />
-                <Column field="departureTime" header="Departure Time" sortable={true} />
-                <Column field="pause" header="Pause" sortable={true} />
-                <Column field="comment" header="Comment" sortable={true} />
-                <Column field="total" header="Total" sortable="true" />
+                <Column field="date" header="Date" sortable={true} filter={true} filterPlaceholder={`Search By Date`} />
+                <Column field="projectName" header="Project Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
+                <Column field="arrivalTime" header="Arrival Time" />
+                <Column field="departureTime" header="Departure Time" />
+                <Column field="pause" header="Pause" />
+                <Column field="comment" header="Comment" />
+                <Column field="total" header="Total" />
             </DataTable>
 
             <Dialog

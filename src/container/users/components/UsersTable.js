@@ -74,10 +74,10 @@ const DataUserTable = ({ registredUsers }) => {
                 onSelectionChange={e => setSelectedUser(e.value)}
                 onRowSelect={onUserSelect}
             >
-                <Column field="firstName" header="First Name" sortable={true} />
-                <Column field="lastName" header="Last Name" sortable={true} />
-                <Column field="email" header="Email" sortable={true} />
-                <Column field="password" header="password" sortable={true} />
+                <Column field="firstName" header="First Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
+                <Column field="lastName" header="Last Name" sortable={true} filter={true} filterPlaceholder={`Search By Surname`} />
+                <Column field="email" header="Email" sortable={true} filter={true} filterPlaceholder={`Search By Email`} />
+                <Column field="password" header="password" />
             </DataTable>
 
             <Dialog
