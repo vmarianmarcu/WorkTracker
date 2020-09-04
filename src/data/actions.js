@@ -65,9 +65,9 @@ export const loadProjects = () => makeGetApiAction(
     `${PROJECTS}`
 );
 
-export const postNewProject = () => makePostApiAction(
+export const postNewProject = (project) => makePostApiAction(
     [ACTION_ADD_PROJECT_REQUESTING, ACTION_ADD_PROJECT_SUCCESS, ACTION_ADD_PROJECT_FAIL],
-    `${PROJECTS}`
+    `${PROJECTS}`, project
 );
 
 // Users

@@ -96,7 +96,7 @@ const DetailsTable = ({ loadWorkDetails }) => {
                 // value={registrations}
                 value={loadWorkDetails.payload}
                 paginator={true}
-                rows={13}
+                rows={11}
                 header={header}
                 footerColumnGroup={footerGroup}
                 selectionMode="single"

@@ -14,7 +14,8 @@ const Item = ({ name, index, item, projects }) => (
                         name={`${name}.projectName`}
                         // value={}
                         options={projects}
-                        labelName="Select a project"
+                        placeholder="Select a project"
+                        // labelName="Select a project"
                         required
                     />
                 </span>
@@ -65,6 +66,7 @@ const Item = ({ name, index, item, projects }) => (
                 <span className="p-float-label field-margin">
                     <InputTextarea
                         id="float-input"
+                        className={`comment`}
                         name={`${name}.textArea`}
                         value={item.comment}
                         rows={1}

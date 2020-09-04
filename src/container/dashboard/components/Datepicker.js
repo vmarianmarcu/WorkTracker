@@ -14,6 +14,8 @@ const Datepicker = ({ value }) => (
             yearRange={`2020:2035`}
             monthNavigator={true}
             showIcon={false}
+            showButtonBar={true}
+            required={true}
         />
     </div>
 )
