@@ -33,12 +33,19 @@ const UsersForm = ({ addUser }) => (
             }) => {
                 return (
                     <div className="new-form-section">
-                        <form onSubmit={
+                        {/* <form onSubmit={
                             handleSubmit
-                        }>
-                            {/* <form onSubmit={() => {
-                                handleSubmit(values).then(reset);
-                            }}> */}
+                        }> */}
+
+                        <form
+                            onSubmit={(event) => {
+                                const promise = handleSubmit(event);
+                                promise && promise.then(() => {
+                                    form.reset();
+                                })
+                                return promise;
+                            }}
+                        >
                             <div className="form-buttons">
                                 <Button
                                     label="Add"

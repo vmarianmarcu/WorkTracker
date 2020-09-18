@@ -33,12 +33,19 @@ const ProjectForm = ({ addProjects }) => (
             }) => {
                 return (
                     <div className="new-form-section">
-                        <form name="form" onSubmit={
+                        {/* <form name="form" onSubmit={
                             handleSubmit
                         }>
-                            {/* <form onSubmit={() => {
-                                handleSubmit(values).then(reset);
-                            }}> */}
+                             */}
+                        <form
+                            onSubmit={(event) => {
+                                const promise = handleSubmit(event);
+                                promise && promise.then(() => {
+                                    form.reset();
+                                })
+                                return promise;
+                            }}
+                        >
                             <div className="form-buttons">
                                 <Button
                                     label="Add"
