@@ -35,12 +35,27 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
             }) => {
                 return (
                     <React.Fragment>
-                        <form name="form" onSubmit={
+                        {/* <form name="form" onSubmit={
                             handleSubmit
-                        }>
-                            {/* onSubmit={() => {
-                              handleSubmit(values).then(reset);
-                             }}> */}
+                        }> */}
+
+                        {/* <form
+                            onSubmit={event => {
+                                handleSubmit(event).then(() => {
+                                    form.reset();
+                                })
+                            }}
+                        > */}
+
+                        <form
+                            onSubmit={(event) => {
+                                const promise = handleSubmit(event);
+                                promise && promise.then(() => {
+                                    form.reset();
+                                })
+                                return promise;
+                            }}
+                        >
                             <div className="p-grid">
                                 <div className="p-col-12">
                                     <div className="workAndTime">
