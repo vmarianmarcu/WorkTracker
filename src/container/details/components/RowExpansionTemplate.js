@@ -23,6 +23,7 @@ const rowExpansionTemplate = ({ data }) => (
 
                 <div className="p-md-2">Comment: </div>
                 <div className="p-md-10 detail-row">{data.comment}</div>
+                
                 <div className="p-md-2">Total: </div>
                 <div className="p-md-10 detail-row">{data.total}</div>
             </div>

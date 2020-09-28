@@ -187,6 +187,10 @@ hr {
     margin-top: 1rem;
 }
 
+#icon-size {
+    font-size: 1.5em;
+}
+
 /* Users */
 
 .user-fields {

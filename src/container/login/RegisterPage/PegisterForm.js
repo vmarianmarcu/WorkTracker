@@ -9,7 +9,21 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-    console.log(values);
+
+    fetch('http://localhost:4000/registredUsers', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+    })
+        .then(response => response.json())
+        .then(values => {
+            console.log('Success:', values);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 };
 
 const RegisterForm = ({ registerUser }) => (
@@ -45,12 +59,21 @@ const RegisterForm = ({ registerUser }) => (
                 pristine,
                 values
             }) => (
-                    <form onSubmit={handleSubmit}>
+                    <form
+                        // onSubmit={handleSubmit}
+                        onSubmit={(event) => {
+                            const promise = handleSubmit(event);
+                            promise && promise.then(() => {
+                                form.reset();
+                            })
+                            return promise;
+                        }}
+                    >
                         <div className="form-group">
                             <Field name="firstName">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-user-edit" style={{ 'fontSize': '1.5em' }}></i>
+                                        <i className="pi pi-user-edit" id="icon-size"></i>
                                         <InputText
                                             {...input}
                                             type="text"
@@ -69,7 +92,7 @@ const RegisterForm = ({ registerUser }) => (
                             <Field name="lastName">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-user-edit" style={{ 'fontSize': '1.5em' }}></i>
+                                        <i className="pi pi-user-edit" id="icon-size"></i>
                                         <InputText
                                             {...input}
                                             type="text"
@@ -88,7 +111,7 @@ const RegisterForm = ({ registerUser }) => (
                             <Field name="email">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-envelope" style={{ 'fontSize': '1.5em' }}></i>
+                                        <i className="pi pi-envelope" id="icon-size"></i>
                                         <InputText
                                             {...input}
                                             type="email"
@@ -107,7 +130,7 @@ const RegisterForm = ({ registerUser }) => (
                             <Field name="password">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-key" style={{ 'fontSize': '1.5em' }}></i>
+                                        <i className="pi pi-key" id="icon-size"></i>
                                         <InputText
                                             {...input}
                                             type="password"
@@ -126,7 +149,7 @@ const RegisterForm = ({ registerUser }) => (
                             <Field name="confirm">
                                 {({ input, meta }) => (
                                     <div>
-                                        <i className="pi pi-key" style={{ 'fontSize': '1.5em' }}></i>
+                                        <i className="pi pi-key" id="icon-size"></i>
                                         <InputText
                                             {...input}
                                             type="password"
