@@ -65,7 +65,7 @@ const DataProjectTable = ({ projectData, addProjects }) => {
                 // value={projects}
                 value={projectData.payload}
                 paginator={true}
-                rows={13}
+                rows={11}
                 header={header}
                 selectionMode="single"
                 selection={selectedProject}

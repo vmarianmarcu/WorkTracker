@@ -11,8 +11,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-    // window.alert(JSON.stringify(values, 0, 2));
-    // console.log("Work details: ", values)
 
     fetch('http://localhost:4000/workDetails', {
         method: 'POST', // or 'PUT'
@@ -52,18 +50,6 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
             }) => {
                 return (
                     <React.Fragment>
-                        {/* <form name="form" onSubmit={
-                            handleSubmit
-                        }> */}
-
-                        {/* <form
-                            onSubmit={event => {
-                                handleSubmit(event).then(() => {
-                                    form.reset();
-                                })
-                            }}
-                        > */}
-
                         <form
                             onSubmit={(event) => {
                                 const promise = handleSubmit(event);

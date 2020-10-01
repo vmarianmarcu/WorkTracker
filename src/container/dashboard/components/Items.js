@@ -3,8 +3,9 @@ import InputTextarea from 'components/InputTextarea';
 import Dropdown from 'components/Dropdown';
 import InputTime from 'components/InputTime24H';
 import InputMask from 'components/InputMask';
+import Button from 'components/Button';
 
-const Item = ({ name, index, item, projects }) => (
+const Item = ({ name, index, item, projects, onClick }) => (
     <div className={`dynamicContent_${index}`} key={name} >
         <div className="p-grid">
             <div className="p-col-6">
@@ -77,6 +78,19 @@ const Item = ({ name, index, item, projects }) => (
                 </span>
             </div>
         </div>
+
+        <div className="p-grid" id="deleteItemButton">
+            <div className="p-col-12">
+                <Button
+                    key={index}
+                    className={`deleteItemButton p-button-danger`}
+                    type="button"
+                    icon="pi pi-times"
+                    onClick={onClick}
+                />
+            </div>
+        </div>
+
     </div>
 )
 
