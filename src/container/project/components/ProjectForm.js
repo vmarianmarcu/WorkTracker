@@ -78,7 +78,6 @@ const ProjectForm = ({ addProjects }) => (
                                                         id="float-input"
                                                         type="text"
                                                         name={`${name}.add`}
-                                                        // name="name"
                                                         labelName="Project name"
                                                         index={index}
                                                         required
