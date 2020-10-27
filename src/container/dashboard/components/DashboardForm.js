@@ -11,22 +11,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-
-    fetch('http://localhost:4000/workDetails', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values, 0, 2),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-
 };
 
 
@@ -86,8 +70,8 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                             </ScrollPanel>
                                         </div>
 
-                                        <div className="p-col-2">
-                                            <div className="p-grid">
+                                        <div id="dash-buttons-group" className="p-col-2">
+                                            <div className="p-grid" >
                                                 <div className="p-col-3">
                                                     <Button
                                                         type="button"
@@ -103,7 +87,7 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                                         className="p-button-success"
                                                         icon="pi pi-check"
                                                         disabled={submitting || pristine}
-                                                        onClick={() => saveWorkDetails()}
+                                                        onClick={() => saveWorkDetails(values)}
                                                     />
                                                 </div>
                                                 <div className="p-col-2">

@@ -413,3 +413,31 @@ hr {
 .field-margin {
     margin-top: 15px;
 }
+
+/* For mobile phones: */
+
+@media only screen and (max-width: 768px) {
+    /* Dashbord items */
+    .workAndTime {
+        display: inline-block;
+        margin-top: 15%;
+        position: absolute;
+        margin-left: 7%;
+    }
+    /* Menu button */
+    .show-slidebar-button {
+        position: absolute;
+        margin-top: .50em;
+        margin-left: .50em;
+    }
+    /* Dash buttons */
+    #dash-buttons-group {
+        display: inline-flex;
+        position: relative;
+        margin-bottom: 15%;
+    }
+    /* Dashboard fields */
+    /* [class*="className"] {
+        width: 20px;
+    } */
+}

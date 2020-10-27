@@ -48,9 +48,9 @@ import {
 
 } from './constants';
 
-export const postWorkDetails = () => makePostApiAction(
+export const postWorkDetails = (workDetails) => makePostApiAction(
     [ACTION_SAVE_WORK_DETAILS_REQUESTING, ACTION_SAVE_WORK_DETAILS_SUCCESS, ACTION_SAVE_WORK_DETAILS_FAIL],
-    `${WORK_DETAILS}`
+    `${WORK_DETAILS}`, workDetails
 );
 
 export const loadWorkDetails = () => makeGetApiAction(
@@ -77,9 +77,9 @@ export const getCurrentUsers = () => makeGetApiAction(
     `${REGISTRED_USERS}`
 );
 
-export const postNewUser = () => makePostApiAction(
+export const postNewUser = (user) => makePostApiAction(
     [ACTION_ADD_USER_REQUESTING, ACTION_ADD_USER_SUCCESS, ACTION_ADD_USER_FAIL],
-    `${REGISTRED_USERS}`
+    `${REGISTRED_USERS}`, user
 );
 
 

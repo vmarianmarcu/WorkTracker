@@ -11,6 +11,7 @@ import { loadEvents } from 'data/actions';
 import { postNewEvent } from 'data/actions';
 import { postFreeDays } from 'data/actions';
 import { loadFreeDays } from 'data/actions';
+import DragTemp from './dragAndDrop/draggableTemplate';
 
 class EventPage extends Component {
 
@@ -31,7 +32,7 @@ class EventPage extends Component {
                 <AddFreeDay addFreeDays={addFreeDays} />
 
 
-                <div id='wrapperEvent'>
+                {/* <div id='wrapperEvent'>
                     <div id='firstDiv'>
                         <EventsCalendar loadEvents={loadEvents} />
                     </div>
@@ -39,7 +40,9 @@ class EventPage extends Component {
                     <div id='secondDiv'>
                         <FreeDaysCalendar loadFreeDays={loadFreeDays} />
                     </div>
-                </div>
+                </div> */}
+
+                <DragTemp />
                 <Footer />
             </Fragment>
         );

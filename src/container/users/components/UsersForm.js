@@ -10,21 +10,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-
-    fetch('http://localhost:4000/registredUsers', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-    })
-        .then(response => response.json())
-        .then(values => {
-            console.log('Success:', values);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
 };
 
 const UsersForm = ({ addUser }) => (
@@ -47,10 +32,6 @@ const UsersForm = ({ addUser }) => (
             }) => {
                 return (
                     <div className="new-form-section">
-                        {/* <form onSubmit={
-                            handleSubmit
-                        }> */}
-
                         <form
                             onSubmit={(event) => {
                                 const promise = handleSubmit(event);
@@ -73,8 +54,7 @@ const UsersForm = ({ addUser }) => (
                                     icon="pi pi-check"
                                     className="p-button-success"
                                     disabled={submitting || pristine}
-                                    // onSubmit={() => addUser()}
-                                    onClick={() => addUser()}
+                                    onClick={() => addUser(values)}
                                 />
                                 <Button
                                     label="Reset"
@@ -98,7 +78,7 @@ const UsersForm = ({ addUser }) => (
                                                         <InputField
                                                             type="text"
                                                             className="first-name"
-                                                            name={`${name}.firstName`}
+                                                            name={`${name}.first`}
                                                             labelName="FirstName"
                                                             index={index}
                                                             required

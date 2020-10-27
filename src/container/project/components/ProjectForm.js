@@ -10,21 +10,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-
-    fetch('http://localhost:4000/projects', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-    })
-        .then(response => response.json())
-        .then(values => {
-            console.log('Success:', values);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
 };
 
 const ProjectForm = ({ addProjects }) => (
@@ -47,10 +32,6 @@ const ProjectForm = ({ addProjects }) => (
             }) => {
                 return (
                     <div className="new-form-section">
-                        {/* <form name="form" onSubmit={
-                            handleSubmit
-                        }>
-                             */}
                         <form
                             onSubmit={(event) => {
                                 const promise = handleSubmit(event);
@@ -73,7 +54,7 @@ const ProjectForm = ({ addProjects }) => (
                                     className="p-button-success"
                                     icon="pi pi-check"
                                     disabled={submitting || pristine}
-                                    onClick={() => addProjects()}
+                                    onClick={() => addProjects(values)}
                                 />
                                 <Button
                                     label="Reset"
@@ -96,8 +77,8 @@ const ProjectForm = ({ addProjects }) => (
                                                     <InputField
                                                         id="float-input"
                                                         type="text"
-                                                        // name={`${name}.add`}
-                                                        name="name"
+                                                        name={`${name}.add`}
+                                                        // name="name"
                                                         labelName="Project name"
                                                         index={index}
                                                         required
