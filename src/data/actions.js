@@ -83,9 +83,9 @@ export const postNewUser = (user) => makePostApiAction(
 );
 
 
-export const registerUser = () => makePostApiAction(
+export const registerUser = (registerUser) => makePostApiAction(
     [ACTION_REGISTER_USER_REQUEST, ACTION_REGISTER_USER_SUCCESS, ACTION_REGISTER_USER_FAIL],
-    `${REGISTRED_USERS}`
+    `${REGISTRED_USERS}`, registerUser
 )
 
 // Events
@@ -95,9 +95,9 @@ export const loadEvents = () => makeGetApiAction(
     `${EVENTS}`
 );
 
-export const postNewEvent = () => makePostApiAction(
+export const postNewEvent = (newEvent) => makePostApiAction(
     [ACTION_ADD_EVENT_REQUESTING, ACTION_ADD_EVENT_SUCCESS, ACTION_ADD_EVENT_FAIL],
-    `${EVENTS}`
+    `${EVENTS}`, newEvent
 );
 
 export const loadFreeDays = () => makeGetApiAction(
@@ -105,9 +105,9 @@ export const loadFreeDays = () => makeGetApiAction(
     `${FREEDAYS}`
 );
 
-export const postFreeDays = () => makePostApiAction(
+export const postFreeDays = (freeDays) => makePostApiAction(
     [ACTION_ADD_FREE_DAY_REQUEST, ACTION_ADD_FREE_DAY_SUCCESS, ACTION_ADD_FREE_DAY_FAIL],
-    `${FREEDAYS}`
+    `${FREEDAYS}`, freeDays
 );
 
 

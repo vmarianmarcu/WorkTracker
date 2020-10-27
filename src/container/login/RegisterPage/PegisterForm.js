@@ -9,21 +9,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
     await sleep(300);
-
-    fetch('http://localhost:4000/registredUsers', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-    })
-        .then(response => response.json())
-        .then(values => {
-            console.log('Success:', values);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
 };
 
 const RegisterForm = ({ registerUser }) => (
@@ -60,7 +45,6 @@ const RegisterForm = ({ registerUser }) => (
                 values
             }) => (
                     <form
-                        // onSubmit={handleSubmit}
                         onSubmit={(event) => {
                             const promise = handleSubmit(event);
                             promise && promise.then(() => {
@@ -169,7 +153,8 @@ const RegisterForm = ({ registerUser }) => (
                                 type="submit"
                                 label="SIGN UP"
                                 disabled={submitting || pristine}
-                                onClick={() => registerUser()} />
+                                onClick={() => registerUser(values)}
+                            />
 
                             <p className="linkToRegister"> Already have an account? <Link to="login">Sign in</Link></p>
                         </div>
