@@ -67,7 +67,7 @@ const DataUserTable = ({ registredUsers }) => {
                 // value={users}
                 value={registredUsers.payload}
                 paginator={true}
-                rows={13}
+                rows={11}
                 header={header}
                 selectionMode="single"
                 selection={selectedUser}
