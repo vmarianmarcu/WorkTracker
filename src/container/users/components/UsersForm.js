@@ -1,10 +1,7 @@
 import React from 'react';
 import { Form } from 'react-final-form';
-import arrayMutators from 'final-form-arrays';
-import { FieldArray } from 'react-final-form-arrays';
 import Button from 'components/Button';
-import InputField from 'components/InputField';
-import { ScrollPanel } from 'primereact/scrollpanel';
+import InputField from 'components/InputFloatingLabel';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -16,14 +13,8 @@ const UsersForm = ({ addUser }) => (
     <div className="form-position">
         <Form
             onSubmit={onSubmit}
-            mutators={{
-                ...arrayMutators
-            }}
             render={({
                 handleSubmit,
-                form: {
-                    mutators: { push, pop }
-                }, // injected from final-form-arrays above
                 pristine,
                 form,
                 submitting,
@@ -41,13 +32,40 @@ const UsersForm = ({ addUser }) => (
                                 return promise;
                             }}
                         >
+                            <div className="form-users-fields">
+                                <label><strong> User</strong></label>
+                                <span>
+                                    <InputField
+                                        type="text"
+                                        className="first-name"
+                                        name={`first-name`}
+                                        labelName={`FirstName`}
+                                        required
+                                    />
+                                    <InputField
+                                        type="text"
+                                        className="last-name"
+                                        name={`last-name`}
+                                        labelName={`LastName`}
+                                        required
+                                    />
+                                    <InputField
+                                        type="email"
+                                        className="email"
+                                        name={`email`}
+                                        labelName={`Email Address`}
+                                        required
+                                    />
+                                    <InputField
+                                        type="password"
+                                        className="password"
+                                        name={`password`}
+                                        labelName={"Password"}
+                                        required
+                                    />
+                                </span>
+                            </div>
                             <div className="form-buttons">
-                                <Button
-                                    label="Add"
-                                    type="button"
-                                    icon="pi pi-plus"
-                                    onClick={() => push("users", undefined)}
-                                />
                                 <Button
                                     label="SAVE"
                                     type="submit"
@@ -63,63 +81,6 @@ const UsersForm = ({ addUser }) => (
                                     onClick={form.reset}
                                     disabled={submitting || pristine}
                                 />
-                            </div>
-                            <div className="form-array-users">
-                                <ScrollPanel className="scroll-panel">
-                                    <FieldArray
-                                        name="users"
-                                    // initialValue={[{ firstName: "test"  }]}
-                                    >
-                                        {({ fields }) =>
-                                            fields.map((name, index) => (
-                                                <div className="form-users-fields" key={name}>
-                                                    <label><strong> User {index + 1} </strong></label>
-                                                    <span>
-                                                        <InputField
-                                                            type="text"
-                                                            className="first-name"
-                                                            name={`${name}.first`}
-                                                            labelName="FirstName"
-                                                            index={index}
-                                                            required
-                                                        />
-                                                        <InputField
-                                                            type="text"
-                                                            className="last-name"
-                                                            name={`${name}.lastName`}
-                                                            labelName="LastName"
-                                                            index={index}
-                                                            required
-                                                        />
-                                                        <InputField
-                                                            type="email"
-                                                            className="email"
-                                                            name={`${name}.email`}
-                                                            labelName="Email Address"
-                                                            index={index}
-                                                            required
-                                                        />
-                                                        <InputField
-                                                            type="password"
-                                                            className="password"
-                                                            name={`${name}.password`}
-                                                            labelName="Password"
-                                                            index={index}
-                                                            required
-                                                        />
-                                                    </span>
-
-                                                    <span
-                                                        className="remove-fields-button"
-                                                        onClick={() => fields.remove(index)}
-                                                    >
-                                                        <i id="delete-icon" className="pi pi-times" ></i>
-                                                    </span>
-                                                </div>
-                                            ))
-                                        }
-                                    </FieldArray>
-                                </ScrollPanel>
                             </div>
                         </form>
                     </div>
