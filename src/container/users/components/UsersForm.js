@@ -38,14 +38,14 @@ const UsersForm = ({ addUser }) => (
                                     <InputField
                                         type="text"
                                         className="first-name"
-                                        name={`first-name`}
+                                        name={`firstName`}
                                         labelName={`FirstName`}
                                         required
                                     />
                                     <InputField
                                         type="text"
                                         className="last-name"
-                                        name={`last-name`}
+                                        name={`lastName`}
                                         labelName={`LastName`}
                                         required
                                     />

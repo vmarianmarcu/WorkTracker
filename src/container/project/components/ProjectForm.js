@@ -36,7 +36,7 @@ const ProjectForm = ({ addProjects }) => (
                                 <InputField
                                     id="float-input"
                                     type="text"
-                                    name="project"
+                                    name="name"
                                     labelName="Project name"
                                     required
                                 />
