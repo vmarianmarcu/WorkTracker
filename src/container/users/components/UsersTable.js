@@ -54,7 +54,12 @@ const DataUserTable = ({ registredUsers }) => {
         setDisplayDialog(true);
     }
 
-    const header = <div className="p-clearfix">Users</div>;
+    const header = (
+        <div className="table-header">
+            <div className="p-clearfix">Users</div>
+            <Button icon="pi pi-refresh" onClick={() => window.location.reload(false)} />
+        </div>
+    );
 
     const dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
         <Button label="Delete" icon="pi pi-times" onClick={onDelete} />

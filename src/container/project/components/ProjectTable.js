@@ -52,12 +52,18 @@ const DataProjectTable = ({ projectData, addProjects }) => {
         setDisplayDialog(true);
     };
 
-    const header = <div className="p-clearfix" >Projects</div>;
-
     const dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
         <Button label="Delete" icon="pi pi-times" onClick={onDelete} />
         <Button label="Save" icon="pi pi-check" onClick={onSave} />
     </div>;
+
+    const header = (
+        <div className="table-header">
+            <div className="p-clearfix" >Projects</div>
+            <Button icon="pi pi-refresh" onClick={() => window.location.reload(false)} />
+        </div>
+    );
+
 
     return (
         <div className="table-section">
