@@ -77,7 +77,6 @@ const DataUserTable = ({ registredUsers }) => {
                 <Column field="firstName" header="First Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
                 <Column field="lastName" header="Last Name" sortable={true} filter={true} filterPlaceholder={`Search By Surname`} />
                 <Column field="email" header="Email" sortable={true} filter={true} filterPlaceholder={`Search By Email`} />
-                <Column field="password" header="password" />
             </DataTable>
 
             <Dialog
