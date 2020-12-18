@@ -53,9 +53,9 @@ export const postWorkDetails = (workDetails) => makePostApiAction(
     `${WORK_DETAILS}`, workDetails
 );
 
-export const loadWorkDetails = () => makeGetApiAction(
+export const loadWorkDetails = (workDetails) => makeGetApiAction(
     [ACTION_LOAD_WORK_DETAILS_REQUESTING, ACTION_LOAD_WORK_DETAILS_SUCCESS, ACTION_LOAD_WORK_DETAILS_FAIL],
-    `${WORK_DETAILS}`
+    `${WORK_DETAILS}`, workDetails
 );
 
 // Projects
