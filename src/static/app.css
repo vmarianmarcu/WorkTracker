@@ -290,6 +290,15 @@ hr {
     text-align: right;
 }
 
+.deleteDialog {
+    width: 450px;
+}
+
+#informationTriangle {
+    font-size: 2rem;
+    color: red
+}
+
 /* Events */
 
 .full-calendar-content h2 {
