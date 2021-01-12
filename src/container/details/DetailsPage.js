@@ -5,6 +5,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { loadWorkDetails } from 'data/actions';
 import DetailsTabele from './components/DetailsTable';
+import TableTest from './components/DetailsTableTest';
 
 class Details extends Component {
 
@@ -20,7 +21,8 @@ class Details extends Component {
             <Fragment>
                 <Header />
                 <Sidebar />
-                <DetailsTabele loadWorkDetails={loadWorkDetails} />
+                {/* <DetailsTabele loadWorkDetails={loadWorkDetails} /> */}
+                <TableTest loadWorkDetails={loadWorkDetails} />
                 <Footer />
             </Fragment>
         );

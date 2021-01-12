@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
-import Input from 'components/Input';
+import EditDialog from './EditDialog';
+import DeleteDialog from 'components/dialogs/DeleteDialog';
 
 const DataProjectTable = ({ projectData, addProjects }) => {
 
+    const emptyProject = {
+        id: null
+    };
+
+    const [project, setProject] = useState(emptyProject);
     const [projects, setProjects] = useState([]);
     const [selectedProject, setSelectedProject] = useState(null);
-    const [project, setProject] = useState(null);
+    // const [project, setProject] = useState(null);
     const [displayDialog, setDisplayDialog] = useState(false);
+    const [deleteProjectDialog, setDeleteProjectDialog] = useState(false);
 
     let newProject = false;
 
@@ -45,17 +51,12 @@ const DataProjectTable = ({ projectData, addProjects }) => {
         setProject(project);
     }
 
-    const onProjectSelect = (e) => {
-        newProject = false;
+    // const onProjectSelect = (e) => {
+    //     newProject = false;
 
-        setProject(Object.assign({}, e.data));
-        setDisplayDialog(true);
-    };
-
-    const dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
-        <Button label="Delete" icon="pi pi-times" onClick={onDelete} />
-        <Button label="Save" icon="pi pi-check" onClick={onSave} />
-    </div>;
+    //     setProject(Object.assign({}, e.data));
+    //     setDisplayDialog(true);
+    // };
 
     const header = (
         <div className="table-header">
@@ -64,6 +65,71 @@ const DataProjectTable = ({ projectData, addProjects }) => {
         </div>
     );
 
+    const onHideDialog = () => {
+        setDisplayDialog(false);
+    }
+
+    const editProject = (project) => {
+        setProject({ ...project })
+        setDisplayDialog(true)
+    }
+
+    const confirmDeleteProject = () => {
+        setDeleteProjectDialog(true);
+    }
+
+    const actionBodyTemplate = (rowData) => {
+        return (
+            <Fragment>
+                <Button icon="pi pi-plus" className="p-button-rounded" onClick={() => editProject(rowData)} />
+                <Button icon="pi pi-pencil" className="p-button-rounded p-button-success p-mr-2" onClick={() => editProject(rowData)} />
+                <Button icon="pi pi-trash" className="p-button-rounded p-button-warning" onHideDialog={(e) => onHideDialog(e)} onClick={(e) => confirmDeleteProject(e)} />
+            </Fragment>
+        );
+    }
+
+    const dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
+        <Button label="Cancel" icon="pi pi-times" onClick={onHideDialog} />
+        <Button label="Save" icon="pi pi-check" onClick={onSave} />
+    </div>;
+
+const deleteProject = () => {
+    let projects = this.filter(
+        (val) => val.id !== this.state.project.id
+    );
+    this.setState({
+        projects,
+        deleteProjectDialog: false,
+        project: this.emptyProject
+    });
+    // this.toast.show({ 
+    //     severity: "success",
+    //     summary: "Successful",
+    //     detail: "Project Deleted",
+    //     life: 3000
+    // });
+}
+
+    const hideDeleteProjectDialog = () => {
+        setDeleteProjectDialog(false)
+    }
+
+    const deleteProjectDialogFooter = (
+        <Fragment>
+            <Button
+                label="No"
+                icon="pi pi-times"
+                className="p-button-text"
+                onClick={hideDeleteProjectDialog}
+            />
+            <Button
+                label="Yes"
+                icon="pi pi-check"
+                className="p-button-text"
+                onClick={deleteProject}
+            />
+        </Fragment>
+    );
 
     return (
         <div className="table-section">
@@ -76,37 +142,33 @@ const DataProjectTable = ({ projectData, addProjects }) => {
                 selectionMode="single"
                 selection={selectedProject}
                 onSelectionChange={e => setSelectedProject(e.value)}
-                onRowSelect={onProjectSelect}
+            // onRowSelect={onProjectSelect}
             >
                 <Column field="name" header="Project Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
+                <Column field="tools" header="Edit" body={actionBodyTemplate} />
             </DataTable>
 
-            <Dialog
+            {/* Edit Dialog*/}
+
+            <EditDialog
                 visible={displayDialog}
-                className={`dialog-width`}
-                header="Project Details"
-                modal={true}
                 footer={dialogFooter}
                 onHide={() => setDisplayDialog(false)}
-                blockScroll={false}
-            >
-                {
-                    project &&
+                project={project}
+                onChange={(e) => { updateProperty('projectName', e.target.value) }}
+                value={project}
+            />
 
-                    <div className="p-grid p-fluid">
-                        <div className="p-col-4"><label htmlFor="projectName">Project Name</label></div>
-                        <div className="p-col-8">
-                            <Input
-                                id="projectName"
-                                type="text"
-                                onChange={(e) => { updateProperty('projectName', e.target.value) }}
-                                labelName="Project Name"
-                                value={project.name}
-                            />
-                        </div>
-                    </div>
-                }
-            </Dialog>
+            {/* Delete Dialog */}
+
+            <DeleteDialog
+                itemName={`Project`}
+                visible={deleteProjectDialog}
+                footer={deleteProjectDialogFooter}
+                onHide={hideDeleteProjectDialog}
+                setDisplayDialog={() => setDisplayDialog(false)}
+                item={project}
+            />
         </div>
     );
 }

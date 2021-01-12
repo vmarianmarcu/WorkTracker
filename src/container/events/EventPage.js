@@ -32,7 +32,7 @@ class EventPage extends Component {
                 <AddFreeDay addFreeDays={addFreeDays} />
 
 
-                {/* <div id='wrapperEvent'>
+                <div id='wrapperEvent'>
                     <div id='firstDiv'>
                         <EventsCalendar loadEvents={loadEvents} />
                     </div>
@@ -40,9 +40,9 @@ class EventPage extends Component {
                     <div id='secondDiv'>
                         <FreeDaysCalendar loadFreeDays={loadFreeDays} />
                     </div>
-                </div> */}
+                </div>
 
-                <DragTemp />
+                {/* <DragTemp /> */}
                 <Footer />
             </Fragment>
         );

@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 import Input from 'components/Input';
+import DeleteDialog from 'components/dialogs/DeleteDialog';
 
 const DataUserTable = ({ registredUsers }) => {
 
+    const emptyUser = {
+        id: null
+    };
+
+    const [user, setUser] = useState(emptyUser);
     const [users, setUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
-    const [user, setUser] = useState(null);
+    // const [user, setUser] = useState(null);
     const [displayDialog, setDisplayDialog] = useState(false);
+    const [deleteUserDialog, setDeleteUserDialog] = useState(false);
 
     let newUser = false;
 
@@ -47,12 +54,12 @@ const DataUserTable = ({ registredUsers }) => {
         setUser(user);
     }
 
-    const onUserSelect = (e) => {
-        newUser = false;
+    // const onUserSelect = (e) => {
+    //     newUser = false;
 
-        setUser(Object.assign({}, e.data));
-        setDisplayDialog(true);
-    }
+    //     setUser(Object.assign({}, e.data));
+    //     setDisplayDialog(true);
+    // }
 
     const header = (
         <div className="table-header">
@@ -61,10 +68,72 @@ const DataUserTable = ({ registredUsers }) => {
         </div>
     );
 
+    const confirmDeleteUser = () => {
+        setDeleteUserDialog(true);
+    }
+
+
+    const onHideDialog = () => {
+        setDisplayDialog(false);
+    }
+
+    const editUser = (user) => {
+        setUser({ ...user })
+        setDisplayDialog(true)
+    }
+
+    const actionBodyTemplate = (rowData) => {
+        return (
+            <Fragment>
+                <Button icon="pi pi-plus" className="p-button-rounded" onClick={() => editUser(rowData)} />
+                <Button icon="pi pi-pencil" className="p-button-rounded p-button-success p-mr-2" onClick={() => editUser(rowData)} />
+                <Button icon="pi pi-trash" className="p-button-rounded p-button-warning" onHideDialog={(e) => onHideDialog(e)} onClick={(e) => confirmDeleteUser(e)} />
+            </Fragment>
+        );
+    }
+
     const dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
         <Button label="Delete" icon="pi pi-times" onClick={onDelete} />
         <Button label="Save" icon="pi pi-check" onClick={onSave} />
     </div>;
+
+const deleteUser = () => {
+    let users = this.filter(
+        (val) => val.id !== this.state.user.id
+    );
+    this.setState({
+        users,
+        deleteUserDialog: false,
+        user: this.emptyUser
+    });
+    // this.toast.show({  
+    //     severity: "success",
+    //     summary: "Successful",
+    //     detail: "Project Deleted",
+    //     life: 3000
+    // });
+}
+
+    const hideDeleteUserDialog = () => {
+        setDeleteUserDialog(false)
+    }
+
+    const deleteUserDialogFooter = (
+        <Fragment>
+            <Button
+                label="No"
+                icon="pi pi-times"
+                className="p-button-text"
+                onClick={hideDeleteUserDialog}
+            />
+            <Button
+                label="Yes"
+                icon="pi pi-check"
+                className="p-button-text"
+                onClick={deleteUser}
+            />
+        </Fragment>
+    );
 
     return (
         <div className="table-section">
@@ -77,11 +146,12 @@ const DataUserTable = ({ registredUsers }) => {
                 selectionMode="single"
                 selection={selectedUser}
                 onSelectionChange={e => setSelectedUser(e.value)}
-                onRowSelect={onUserSelect}
+            // onRowSelect={onUserSelect}
             >
                 <Column field="firstName" header="First Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
                 <Column field="lastName" header="Last Name" sortable={true} filter={true} filterPlaceholder={`Search By Surname`} />
                 <Column field="email" header="Email" sortable={true} filter={true} filterPlaceholder={`Search By Email`} />
+                <Column field="tools" header="Edit" body={actionBodyTemplate} />
             </DataTable>
 
             <Dialog
@@ -138,6 +208,17 @@ const DataUserTable = ({ registredUsers }) => {
                         </div>
                     </div>
                 }
+
+                {/* Delete Dialog */}
+
+                <DeleteDialog
+                    itemName={`User`}
+                    visible={deleteUserDialog}
+                    footer={deleteUserDialogFooter}
+                    onHide={hideDeleteUserDialog}
+                    setDisplayDialog={() => setDisplayDialog(false)}
+                    item={user}
+                />
 
             </Dialog>
         </div>

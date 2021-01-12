@@ -1,14 +1,10 @@
 import React, { useState, useRef, Fragment } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { ColumnGroup } from 'primereact/columngroup';
-import { Row } from 'primereact/row';
-import { Button } from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
-import Input from 'components/Input';
+import { Button } from 'primereact/button'
 import RowExpansionTemplate from './RowExpansionTemplate';
 // import { Toast } from 'primereact/toast';
-import DeleteRowDialog from './DeleteRowDialog';
+import DeleteDialog from 'components/dialogs/DeleteDialog';
 import EditDialog from './EditDialog';
 
 const TableTest = ({ loadWorkDetails }) => {
@@ -227,12 +223,13 @@ const TableTest = ({ loadWorkDetails }) => {
 
             {/* Delete Dialog */}
 
-            <DeleteRowDialog
+            <DeleteDialog
+                itemName={`Record`}
                 visible={deleteProductDialog}
                 footer={deleteProductDialogFooter}
                 onHide={hideDeleteProductDialog}
                 setDisplayDialog={() => setDisplayDialog(false)}
-                product={product}
+                item={product}
             />
 
         </div>
