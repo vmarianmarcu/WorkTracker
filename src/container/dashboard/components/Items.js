@@ -83,7 +83,7 @@ const Item = ({ name, index, item, projects, onClick }) => (
             <div className="p-col-12">
                 <Button
                     key={index}
-                    className={`deleteItemButton p-button-danger`}
+                    className={`p-button-rounded p-button-danger deleteItemButton`}
                     type="button"
                     icon="pi pi-times"
                     onClick={onClick}

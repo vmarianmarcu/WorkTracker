@@ -75,6 +75,7 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                                 <div className="p-col-3">
                                                     <Button
                                                         type="button"
+                                                        className="p-button-rounded p-button-text p-button-plain"
                                                         icon="pi pi-plus"
                                                         onClick={() => push("panelSection", undefined)}
                                                     />
@@ -84,7 +85,7 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                                     <Button
                                                         label="SAVE"
                                                         type="submit"
-                                                        className="p-button-success"
+                                                        className="p-button-rounded p-button-text p-button-plain"
                                                         icon="pi pi-check"
                                                         disabled={submitting || pristine}
                                                         onClick={() => saveWorkDetails(values)}
@@ -94,6 +95,7 @@ const DashboardForm = ({ dash, projects, saveWorkDetails }) => (
                                                     <Button
                                                         label="Reset"
                                                         type="button"
+                                                        className="p-button-rounded p-button-text p-button-plain"
                                                         icon="pi pi-undo"
                                                         onClick={form.reset}
                                                         disabled={submitting || pristine}
