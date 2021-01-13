@@ -69,8 +69,8 @@ const DataProjectTable = ({ projectData, addProject }) => {
     const headerEditColum = (
         <div className="table-header">
             {/* <div className="p-clearfix" >Add</div> */}
-            <Button icon="pi pi-plus" className="p-button-rounded" onClick={(e) => addProjectDialog(e)} />
-            <Button icon="pi pi-refresh" onClick={() => window.location.reload(false)} />
+            <Button icon="pi pi-plus" className="p-button-rounded p-button-info p-button-text" onClick={(e) => addProjectDialog(e)} />
+            <Button icon="pi pi-refresh" className="p-button-rounded p-button-success p-button-text" onClick={() => window.location.reload(false)} />
         </div>
     );
 
