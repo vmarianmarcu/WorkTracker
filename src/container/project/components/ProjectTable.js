@@ -4,8 +4,9 @@ import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import EditDialog from './EditDialog';
 import DeleteDialog from 'components/dialogs/DeleteDialog';
+import AddProject from './AddProject';
 
-const DataProjectTable = ({ projectData, addProjects }) => {
+const DataProjectTable = ({ projectData, addProject }) => {
 
     const emptyProject = {
         id: null
@@ -17,6 +18,7 @@ const DataProjectTable = ({ projectData, addProjects }) => {
     // const [project, setProject] = useState(null);
     const [displayDialog, setDisplayDialog] = useState(false);
     const [deleteProjectDialog, setDeleteProjectDialog] = useState(false);
+    const [displayAddDialog, setDisplayAddDialog] = useState(false);
 
     let newProject = false;
 
@@ -61,6 +63,13 @@ const DataProjectTable = ({ projectData, addProjects }) => {
     const header = (
         <div className="table-header">
             <div className="p-clearfix" >Projects</div>
+        </div>
+    );
+
+    const headerEditColum = (
+        <div className="table-header">
+            {/* <div className="p-clearfix" >Add</div> */}
+            <Button icon="pi pi-plus" className="p-button-rounded" onClick={(e) => addProjectDialog(e)} />
             <Button icon="pi pi-refresh" onClick={() => window.location.reload(false)} />
         </div>
     );
@@ -78,10 +87,17 @@ const DataProjectTable = ({ projectData, addProjects }) => {
         setDeleteProjectDialog(true);
     }
 
+    const addProjectDialog = () => {
+        setDisplayAddDialog(true);
+    };
+
+    const hideAddDialog = () => {
+        setDisplayAddDialog(false);
+    }
+
     const actionBodyTemplate = (rowData) => {
         return (
             <Fragment>
-                <Button icon="pi pi-plus" className="p-button-rounded" onClick={() => editProject(rowData)} />
                 <Button icon="pi pi-pencil" className="p-button-rounded p-button-success p-mr-2" onClick={() => editProject(rowData)} />
                 <Button icon="pi pi-trash" className="p-button-rounded p-button-warning" onHideDialog={(e) => onHideDialog(e)} onClick={(e) => confirmDeleteProject(e)} />
             </Fragment>
@@ -93,22 +109,22 @@ const DataProjectTable = ({ projectData, addProjects }) => {
         <Button label="Save" icon="pi pi-check" onClick={onSave} />
     </div>;
 
-const deleteProject = () => {
-    let projects = this.filter(
-        (val) => val.id !== this.state.project.id
-    );
-    this.setState({
-        projects,
-        deleteProjectDialog: false,
-        project: this.emptyProject
-    });
-    // this.toast.show({ 
-    //     severity: "success",
-    //     summary: "Successful",
-    //     detail: "Project Deleted",
-    //     life: 3000
-    // });
-}
+    const deleteProject = () => {
+        let projects = this.filter(
+            (val) => val.id !== this.state.project.id
+        );
+        this.setState({
+            projects,
+            deleteProjectDialog: false,
+            project: this.emptyProject
+        });
+        // this.toast.show({ 
+        //     severity: "success",
+        //     summary: "Successful",
+        //     detail: "Project Deleted",
+        //     life: 3000
+        // });
+    }
 
     const hideDeleteProjectDialog = () => {
         setDeleteProjectDialog(false)
@@ -137,7 +153,7 @@ const deleteProject = () => {
                 // value={projects}
                 value={projectData.payload}
                 paginator={true}
-                rows={11}
+                rows={7}
                 header={header}
                 selectionMode="single"
                 selection={selectedProject}
@@ -145,8 +161,12 @@ const deleteProject = () => {
             // onRowSelect={onProjectSelect}
             >
                 <Column field="name" header="Project Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
-                <Column field="tools" header="Edit" body={actionBodyTemplate} />
+                <Column field="tools" header={headerEditColum} body={actionBodyTemplate} />
             </DataTable>
+
+            {/* Add Project Dialog */}
+
+            <AddProject addProject={addProject} visible={displayAddDialog} onHideDialog={hideAddDialog} />
 
             {/* Edit Dialog*/}
 

@@ -9,7 +9,7 @@ const onSubmit = async values => {
     await sleep(300);
 };
 
-const ProjectForm = ({ addProjects }) => (
+const ProjectForm = ({ addProject }) => (
     <div className="form-position">
         <Form
             onSubmit={onSubmit}
@@ -48,7 +48,7 @@ const ProjectForm = ({ addProjects }) => (
                                     className="p-button-success"
                                     icon="pi pi-check"
                                     disabled={submitting || pristine}
-                                    onClick={() => addProjects(values)}
+                                    onClick={() => addProject(values)}
                                 />
                                 <Button
                                     label="Reset"
