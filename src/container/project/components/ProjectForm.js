@@ -45,7 +45,7 @@ const ProjectForm = ({ addProject }) => (
                                 <Button
                                     label="SAVE"
                                     type="submit"
-                                    className="p-button-success"
+                                    className="p-button-rounded p-button-success"
                                     icon="pi pi-check"
                                     disabled={submitting || pristine}
                                     onClick={() => addProject(values)}
@@ -53,6 +53,7 @@ const ProjectForm = ({ addProject }) => (
                                 <Button
                                     label="Reset"
                                     type="button"
+                                    className="p-button-rounded"
                                     icon="pi pi-undo"
                                     onClick={form.reset}
                                     disabled={submitting || pristine}

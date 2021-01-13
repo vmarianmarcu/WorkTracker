@@ -148,24 +148,6 @@ const TableTest = ({ loadWorkDetails }) => {
         );
     }
 
-
-    const deleteProductDialogFooter = (
-        <Fragment>
-            <Button
-                label="No"
-                icon="pi pi-times"
-                className="p-button-text"
-                onClick={hideDeleteProductDialog}
-            />
-            <Button
-                label="Yes"
-                icon="pi pi-check"
-                className="p-button-text"
-                onClick={deleteProduct}
-            />
-        </Fragment>
-    );
-
     const rowExpansionTemplate = data => (<RowExpansionTemplate data={data} />)
 
     return (
@@ -226,10 +208,10 @@ const TableTest = ({ loadWorkDetails }) => {
             <DeleteDialog
                 itemName={`Record`}
                 visible={deleteProductDialog}
-                footer={deleteProductDialogFooter}
                 onHide={hideDeleteProductDialog}
                 setDisplayDialog={() => setDisplayDialog(false)}
                 item={product}
+                deleteItem={deleteProduct}
             />
 
         </div>

@@ -8,9 +8,9 @@ const renderFooter = (onHideDialog) => {
         <div className="footer-button">
             <Button
                 label="Close"
+                className="p-button-rounded p-button-secondary"
                 icon="pi pi-times"
                 onClick={(e) => onHideDialog(e)}
-                className="p-button-secondary"
             />
         </div>
     );

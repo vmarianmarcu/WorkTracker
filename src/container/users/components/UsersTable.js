@@ -97,43 +97,26 @@ const DataUserTable = ({ registredUsers }) => {
         <Button label="Save" icon="pi pi-check" onClick={onSave} />
     </div>;
 
-const deleteUser = () => {
-    let users = this.filter(
-        (val) => val.id !== this.state.user.id
-    );
-    this.setState({
-        users,
-        deleteUserDialog: false,
-        user: this.emptyUser
-    });
-    // this.toast.show({  
-    //     severity: "success",
-    //     summary: "Successful",
-    //     detail: "Project Deleted",
-    //     life: 3000
-    // });
-}
+    const deleteUser = () => {
+        let users = this.filter(
+            (val) => val.id !== this.state.user.id
+        );
+        this.setState({
+            users,
+            deleteUserDialog: false,
+            user: this.emptyUser
+        });
+        // this.toast.show({  
+        //     severity: "success",
+        //     summary: "Successful",
+        //     detail: "Project Deleted",
+        //     life: 3000
+        // });
+    }
 
     const hideDeleteUserDialog = () => {
         setDeleteUserDialog(false)
     }
-
-    const deleteUserDialogFooter = (
-        <Fragment>
-            <Button
-                label="No"
-                icon="pi pi-times"
-                className="p-button-text"
-                onClick={hideDeleteUserDialog}
-            />
-            <Button
-                label="Yes"
-                icon="pi pi-check"
-                className="p-button-text"
-                onClick={deleteUser}
-            />
-        </Fragment>
-    );
 
     return (
         <div className="table-section">
@@ -214,12 +197,11 @@ const deleteUser = () => {
                 <DeleteDialog
                     itemName={`User`}
                     visible={deleteUserDialog}
-                    footer={deleteUserDialogFooter}
                     onHide={hideDeleteUserDialog}
+                    deleteItem={deleteUser}
                     setDisplayDialog={() => setDisplayDialog(false)}
                     item={user}
                 />
-
             </Dialog>
         </div>
     );

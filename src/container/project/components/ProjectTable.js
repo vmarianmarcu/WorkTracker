@@ -105,8 +105,8 @@ const DataProjectTable = ({ projectData, addProject }) => {
     }
 
     const dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
-        <Button label="Cancel" icon="pi pi-times" onClick={onHideDialog} />
-        <Button label="Save" icon="pi pi-check" onClick={onSave} />
+        <Button label="Cancel" icon="pi pi-times" className="p-button-rounded" onClick={onHideDialog} />
+        <Button label="Save" icon="pi pi-check" className="p-button-rounded" onClick={onSave} />
     </div>;
 
     const deleteProject = () => {
@@ -129,23 +129,6 @@ const DataProjectTable = ({ projectData, addProject }) => {
     const hideDeleteProjectDialog = () => {
         setDeleteProjectDialog(false)
     }
-
-    const deleteProjectDialogFooter = (
-        <Fragment>
-            <Button
-                label="No"
-                icon="pi pi-times"
-                className="p-button-text"
-                onClick={hideDeleteProjectDialog}
-            />
-            <Button
-                label="Yes"
-                icon="pi pi-check"
-                className="p-button-text"
-                onClick={deleteProject}
-            />
-        </Fragment>
-    );
 
     return (
         <div className="table-section">
@@ -184,8 +167,8 @@ const DataProjectTable = ({ projectData, addProject }) => {
             <DeleteDialog
                 itemName={`Project`}
                 visible={deleteProjectDialog}
-                footer={deleteProjectDialogFooter}
                 onHide={hideDeleteProjectDialog}
+                deleteItem={deleteProject}
                 setDisplayDialog={() => setDisplayDialog(false)}
                 item={project}
             />

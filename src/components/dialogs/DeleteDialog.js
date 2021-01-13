@@ -1,7 +1,27 @@
 import React, { Fragment } from 'react';
 import { Dialog } from 'primereact/dialog';
+import { Button } from 'primereact/button'
 
-const DeleteDialog = ({ itemName, item, visible, footer, onHide, setDisplayDialog }) => (
+const deleteDialogFooter = (onHide, deleteItem) => {
+    return (
+        <Fragment>
+            <Button
+                label="No"
+                icon="pi pi-times"
+                className="p-button-rounded p-button-text"
+                onClick={onHide}
+            />
+            <Button
+                label="Yes"
+                icon="pi pi-check"
+                className="p-button-rounded p-button-text"
+                onClick={deleteItem}
+            />
+        </Fragment>
+    )
+};
+
+const DeleteDialog = ({ itemName, item, visible, onHide, deleteItem, setDisplayDialog }) => (
 
     <Fragment>
         <Dialog
@@ -9,8 +29,9 @@ const DeleteDialog = ({ itemName, item, visible, footer, onHide, setDisplayDialo
             className={`deleteDialog`}
             header="Confirm"
             modal
-            footer={footer}
+            footer={deleteDialogFooter(onHide)}
             onHide={onHide}
+            deleteItem={deleteItem}
             setDisplayDialog={setDisplayDialog}
         >
             <div className="confirmation-content">
