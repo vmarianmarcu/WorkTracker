@@ -5,8 +5,9 @@ import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 import Input from 'components/Input';
 import DeleteDialog from 'components/dialogs/DeleteDialog';
+import AddUser from './AddUser';
 
-const DataUserTable = ({ registredUsers }) => {
+const DataUserTable = ({ registredUsers, addUser }) => {
 
     const emptyUser = {
         id: null
@@ -18,6 +19,7 @@ const DataUserTable = ({ registredUsers }) => {
     // const [user, setUser] = useState(null);
     const [displayDialog, setDisplayDialog] = useState(false);
     const [deleteUserDialog, setDeleteUserDialog] = useState(false);
+    const [displayAddDialog, setDisplayAddDialog] = useState(false);
 
     let newUser = false;
 
@@ -64,7 +66,22 @@ const DataUserTable = ({ registredUsers }) => {
     const header = (
         <div className="table-header">
             <div className="p-clearfix">Users</div>
-            <Button icon="pi pi-refresh" onClick={() => window.location.reload(false)} />
+        </div>
+    );
+
+    const addUserDialog = () => {
+        setDisplayAddDialog(true);
+    };
+
+    const hideAddDialog = () => {
+        setDisplayAddDialog(false);
+    }
+
+    const headerEditColum = (
+        <div className="table-header">
+            {/* <div className="p-clearfix" >Add</div> */}
+            <Button icon="pi pi-plus" className="p-button-rounded p-button-info p-button-text" onClick={(e) => addUserDialog(e)} />
+            <Button icon="pi pi-refresh" className="p-button-rounded p-button-success p-button-text" onClick={() => window.location.reload(false)} />
         </div>
     );
 
@@ -82,7 +99,7 @@ const DataUserTable = ({ registredUsers }) => {
         setDisplayDialog(true)
     }
 
-    const actionBodyTemplate = (rowData) => {
+    const actionBodyTemplate = (rowData) => {    
         return (
             <Fragment>
                 <Button icon="pi pi-plus" className="p-button-rounded" onClick={() => editUser(rowData)} />
@@ -134,7 +151,7 @@ const DataUserTable = ({ registredUsers }) => {
                 <Column field="firstName" header="First Name" sortable={true} filter={true} filterPlaceholder={`Search By Name`} />
                 <Column field="lastName" header="Last Name" sortable={true} filter={true} filterPlaceholder={`Search By Surname`} />
                 <Column field="email" header="Email" sortable={true} filter={true} filterPlaceholder={`Search By Email`} />
-                <Column field="tools" header="Edit" body={actionBodyTemplate} />
+                <Column field="tools" header={headerEditColum} body={actionBodyTemplate} />
             </DataTable>
 
             <Dialog
@@ -191,6 +208,10 @@ const DataUserTable = ({ registredUsers }) => {
                         </div>
                     </div>
                 }
+
+                {/* Add Project Dialog */}
+
+                <AddUser addUser={addUser} visible={displayAddDialog} onHideDialog={hideAddDialog} />
 
                 {/* Delete Dialog */}
 
