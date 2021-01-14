@@ -17,7 +17,6 @@ const renderFooter = (onHideDialog) => {
 }
 
 const AddProjectComp = ({ addProject, visible, onHideDialog }) => (
-
     <Fragment>
         <Dialog
             header="Add Project"
@@ -31,7 +30,6 @@ const AddProjectComp = ({ addProject, visible, onHideDialog }) => (
             <ProjectForm addProject={addProject} />
         </Dialog>
     </Fragment>
-
 );
 
 export default AddProjectComp;
