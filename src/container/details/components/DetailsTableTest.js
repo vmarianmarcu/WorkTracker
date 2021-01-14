@@ -126,8 +126,8 @@ const TableTest = ({ loadWorkDetails }) => {
 
     const productDialogFooter = (
         <React.Fragment>
-            <Button label="Cancel" icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
-            <Button label="Save" icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
+            <Button label="Cancel" icon="pi pi-times" className="p-button-rounded p-button-text" onClick={hideDialog} />
+            <Button label="Save" icon="pi pi-check" className="p-button-rounded p-button-text" onClick={saveProduct} />
         </React.Fragment>
     );
 
