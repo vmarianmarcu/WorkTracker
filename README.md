@@ -27,9 +27,19 @@ WorkTracker este o aplicație web construită cu **React** pentru urmărirea tas
 1. Clonează repository-ul:
 ```bash
 git clone https://github.com/vmarianmarcu/WorkTracker.git
+Intră în folderul proiectului:
 
+bash
+Copiază codul
 cd WorkTracker
+Instalează dependențele:
+
+bash
+Copiază codul
 npm install
-npm start
+Rulează aplicația:
+
+bash
+Copiază codul
 npm start
 Aplicația va fi disponibilă la: http://localhost:3000
